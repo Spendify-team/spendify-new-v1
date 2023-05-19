@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Gilroy400";
+  font-weight: 400;
+  src: local("Gilroy-Regular"),
+    url("./fonts/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy500";
+  font-weight: 500;
+  src: local("Gilroy-Medium"),
+    url("./fonts/Gilroy-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy600";
+  font-weight: 600;
+  src: local("Gilroy-Semibold"),
+    url("./fonts/Gilroy-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy700";
+  font-weight: 700;
+  src: local("Gilroy-Bold"), url("./fonts/Gilroy-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy800";
+  font-weight: 800;
+  src: local("Gilroy-Heavy"), url("./fonts/Gilroy-Heavy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy900";
+  font-weight: 900;
+  src: local("Gilroy-Black"), url("./fonts/Gilroy-Black.ttf") format("truetype");
+}
+
+.unanimate {
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.animate-up {
+  transform-origin: top;
+  animation-name: bounce-down;
+  animation-timing-function: linear;
+}
+
+.animate-down {
+  transform-origin: bottom;
+  animation-name: bounce-up;
+  animation-timing-function: linear;
+}
+
+@keyframes bounce-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
