@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, {useState} from "react";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 import styled from "styled-components";
 import LogoImg from "../../assets/logo.svg";
 import SpendifyAppImg from "../../assets/spendify-app.svg";
@@ -7,12 +7,12 @@ import SpendifyAnalyticsImg from "../../assets/spendify-analytics.svg";
 import SolidButton from "../Buttons/SolidButton";
 // import NigeriaSvg from "../../assets/nigeria.svg";
 import SideDrawerMobile from "./SideDrawerMobile";
-import { Menu } from "@styled-icons/evaicons-solid/Menu";
-import { ArrowDropDown } from "@styled-icons/remix-fill/ArrowDropDown";
+import {Menu} from "@styled-icons/evaicons-solid/Menu";
+import {ArrowDropDown} from "@styled-icons/remix-fill/ArrowDropDown";
 import Dropdown from "rc-dropdown";
 import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import "rc-dropdown/assets/index.css";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const NavbarContainer = styled.div`
   background: #fff;
@@ -148,136 +148,140 @@ const ToggleAboutDropdownIcon = styled(ArrowDropDown)`
 `;
 
 const NavbarCmp = () => {
-  const [openMobileMenu, setOpenMobileMenu] = useState(false);
-  const navigate = useNavigate();
+    const [openMobileMenu, setOpenMobileMenu] = useState(false);
+    const navigate = useNavigate();
 
-  const [aboutVisible, setAboutVisible] = useState();
+    const [aboutVisible, setAboutVisible] = useState();
 
-  return (
-    <>
-      <NavbarContainer>
-        <NavbarWrapper>
-          <LogoAndMenuHolder>
-            <Logo
-              src={LogoImg}
-              alt="Spendify"
-              onClick={() => {
-                navigate("/");
-              }}
-            />
-            <GroupLink1>
-              <MenuLink
-                onClick={() => {
-                  navigate("/");
-                }}
-              >
-                Home
-              </MenuLink>
-              <Dropdown
-                trigger={["click"]}
-                overlay={
-                  <DropdownCmp maxWidth={"239px"} minWidth="220px">
-                    <AboutDropdownWrapper>
-                      <AboutDropdownItem>
-                        <AboutDropdownIcon
-                          src={SpendifyAppImg}
-                          alt="Spendify App"
+    return (
+        <>
+            <NavbarContainer>
+                <NavbarWrapper>
+                    <LogoAndMenuHolder>
+                        <Logo
+                            src={LogoImg}
+                            alt="Spendify"
+                            onClick={() => {
+                                navigate("/");
+                            }}
                         />
-                        <span
-                          onClick={() => {
-                            navigate("/spendify-app");
-                          }}
-                        >
+                        <GroupLink1>
+                            <MenuLink
+                                onClick={() => {
+                                    navigate("/");
+                                }}
+                            >
+                                Home
+                            </MenuLink>
+                            <Dropdown
+                                trigger={["click"]}
+                                overlay={
+                                    <DropdownCmp maxWidth={"239px"} minWidth="220px">
+                                        <AboutDropdownWrapper>
+                                            <AboutDropdownItem>
+                                                <AboutDropdownIcon
+                                                    src={SpendifyAppImg}
+                                                    alt="Spendify App"
+                                                />
+                                                <span
+                                                    onClick={() => {
+                                                        navigate("/spendify-app");
+                                                    }}
+                                                >
                           Spendify App
                         </span>
-                      </AboutDropdownItem>
-                      <AboutDropdownItem>
-                        <AboutDropdownIcon
-                          src={SpendifyAnalyticsImg}
-                          alt="Spendify Analytics"
-                        />
-                        <span
-                          onClick={() => {
-                            navigate("/spendify-analytics");
-                          }}
-                        >
+                                            </AboutDropdownItem>
+                                            <AboutDropdownItem>
+                                                <AboutDropdownIcon
+                                                    src={SpendifyAnalyticsImg}
+                                                    alt="Spendify Analytics"
+                                                />
+                                                <span
+                                                    onClick={() => {
+                                                        navigate("/spendify-analytics");
+                                                    }}
+                                                >
                           Spendify Analytics
                         </span>
-                      </AboutDropdownItem>
-                    </AboutDropdownWrapper>
-                  </DropdownCmp>
-                }
-                animation="slide-up"
-                overlayStyle={{
-                  fontFamily: "Gilroy600",
-                  fontSize: "16px",
-                  zIndex: "2000",
-                  width: "fit-content",
-                  // top: "75px",
-                }}
-                onVisibleChange={(visible) => {
-                  setAboutVisible(visible);
-                }}
-              >
-                <MenuLink>
-                  About us{" "}
-                  <span>
+                                            </AboutDropdownItem>
+                                        </AboutDropdownWrapper>
+                                    </DropdownCmp>
+                                }
+                                animation="slide-up"
+                                overlayStyle={{
+                                    fontFamily: "Gilroy600",
+                                    fontSize: "16px",
+                                    zIndex: "2000",
+                                    width: "fit-content",
+                                    // top: "75px",
+                                }}
+                                onVisibleChange={(visible) => {
+                                    setAboutVisible(visible);
+                                }}
+                            >
+                                <MenuLink>
+                                    About us{" "}
+                                    <span>
                     <ToggleAboutDropdownIcon
-                      size={30}
-                      color="#0F172A"
-                      visible={aboutVisible}
+                        size={30}
+                        color="#0F172A"
+                        visible={aboutVisible}
                     />
                   </span>
-                </MenuLink>
-              </Dropdown>
-              <MenuLink>F.A.Q</MenuLink>
-            </GroupLink1>
-          </LogoAndMenuHolder>
-          <MenuAndButtonHolder>
-            <GroupLink1>
-              {/* <MenuLink>Learn</MenuLink> */}
-              <MenuLink style={{ color: "#A93691" }}>Sign In</MenuLink>
-            </GroupLink1>
-            <ButtonFlagHolder>
-              <ButtonWrapper>
-                <SolidButton
-                  onClick={() => {}}
-                  text={"Download"}
-                  type="submit"
-                  weighty="600"
-                  textFontSize="16px"
-                  specifyPadding="1rem"
-                  color="#A93691"
-                  borderRadius="5px"
-                  backColor="rgba(169, 54, 145, 0.15)"
-                  backgroundHoverColor="rgba(169, 54, 145, 0.15)"
-                  textHoverColor="#A93691"
-                  widthWebkit="165px"
-                  widthMoz="165px"
-                  widthNormal="165px"
-                  fontFamily="Gilroy600"
-                />
-              </ButtonWrapper>
-              {/* <FlagImage src={NigeriaSvg} alt="Nigeria" /> */}
-              <HamburgerMenu
-                color="#1D1E2C"
-                size={"20px"}
-                onClick={() => {
-                  setOpenMobileMenu(true);
+                                </MenuLink>
+                            </Dropdown>
+                            <MenuLink>F.A.Q</MenuLink>
+                        </GroupLink1>
+                    </LogoAndMenuHolder>
+                    <MenuAndButtonHolder>
+                        <GroupLink1>
+                            {/* <MenuLink>Learn</MenuLink> */}
+                            <MenuLink style={{color: "#A93691"}}
+                                      onClick={() => window.location.href = 'https://personal.spendify.ca/'}>Sign
+                                In</MenuLink>
+                        </GroupLink1>
+                        <ButtonFlagHolder>
+                            <ButtonWrapper>
+                                <SolidButton
+                                    onClick={() => {
+                                        window.location.href = 'https://onelink.to/mzbpwd'
+                                    }}
+                                    text={"Download"}
+                                    type="submit"
+                                    weighty="600"
+                                    textFontSize="16px"
+                                    specifyPadding="1rem"
+                                    color="#A93691"
+                                    borderRadius="5px"
+                                    backColor="rgba(169, 54, 145, 0.15)"
+                                    backgroundHoverColor="rgba(169, 54, 145, 0.15)"
+                                    textHoverColor="#A93691"
+                                    widthWebkit="165px"
+                                    widthMoz="165px"
+                                    widthNormal="165px"
+                                    fontFamily="Gilroy600"
+                                />
+                            </ButtonWrapper>
+                            {/* <FlagImage src={NigeriaSvg} alt="Nigeria" /> */}
+                            <HamburgerMenu
+                                color="#1D1E2C"
+                                size={"20px"}
+                                onClick={() => {
+                                    setOpenMobileMenu(true);
+                                }}
+                            />
+                        </ButtonFlagHolder>
+                    </MenuAndButtonHolder>
+                </NavbarWrapper>
+            </NavbarContainer>
+            <SideDrawerMobile
+                isOpen={openMobileMenu}
+                onClose={() => {
+                    setOpenMobileMenu(false);
                 }}
-              />
-            </ButtonFlagHolder>
-          </MenuAndButtonHolder>
-        </NavbarWrapper>
-      </NavbarContainer>
-      <SideDrawerMobile
-        isOpen={openMobileMenu}
-        onClose={() => {
-          setOpenMobileMenu(false);
-        }}
-      />
-    </>
-  );
+            />
+        </>
+    );
 };
 
 export default NavbarCmp;

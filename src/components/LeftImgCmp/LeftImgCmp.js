@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import styled from "styled-components";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Fade } from "react-awesome-reveal";
+import {LazyLoadImage} from "react-lazy-load-image-component";
+import {Fade} from "react-awesome-reveal";
 import SolidButton from "../Buttons/SolidButton";
 
 const ContainerDiv = styled(Container)`
@@ -11,7 +11,7 @@ const ContainerDiv = styled(Container)`
 
   @media only screen and (max-width: 500px) {
     padding: ${(props) =>
-      props.mobilePadding ? props.mobilePadding : "0rem 1rem"};
+            props.mobilePadding ? props.mobilePadding : "0rem 1rem"};
   }
 `;
 
@@ -29,7 +29,7 @@ const ContentImgHolder = styled.div`
   align-items: center;
   /* gap: 60px; */
   flex-direction: ${(props) =>
-    props.flexDirection ? props.flexDirection : "row-everse"};
+          props.flexDirection ? props.flexDirection : "row-everse"};
 
   @media only screen and (max-width: 1220px) {
     gap: 40px;
@@ -121,59 +121,63 @@ const RightImg = styled(LazyLoadImage)`
 `;
 
 const LeftImgCmp = ({
-  bigTitle,
-  desc,
-  imgAlt,
-  imgSrc,
-  bgColor,
-  smallBigTitle,
-  btnText,
-  btnTextColor,
-  btnBackColor,
-  btnWidth,
-  borderColor,
-  flexDirection,
-  mobilePadding,
-}) => {
-  return (
-    <>
-      <ContainerDiv bgColor={bgColor} mobilePadding={mobilePadding} fluid>
-        <Wrapper>
-          <ContentImgHolder flexDirection={flexDirection}>
-            <LeftSection>
-              {smallBigTitle && <SmallBigTitle>{smallBigTitle}</SmallBigTitle>}
-              <BigTitle>{bigTitle}</BigTitle>
-              <Fade cascade direction="down" triggerOnce>
-                <Desc>{desc}</Desc>
-                <LearnMoreWrapper>
-                  <SolidButton
-                    text={btnText || "Learn more"}
-                    type="submit"
-                    weighty="700"
-                    textFontSize="16px"
-                    specifyPadding="0.8rem"
-                    color={btnTextColor || "#A93691"}
-                    borderRadius="5px"
-                    backColor={btnBackColor || "transparent"}
-                    backgroundHoverColor={btnBackColor || "transparent"}
-                    textHoverColor={btnTextColor || "#A93691"}
-                    widthWebkit={btnWidth || "178px"}
-                    widthMoz={btnWidth || "178px"}
-                    widthNormal={btnWidth || "178px"}
-                    margin="0"
-                    fontFamily="Gilroy700"
-                    borderColor={borderColor || "#A93691"}
-                    borderHoverColor={borderColor || "#A93691"}
-                  />
-                </LearnMoreWrapper>
-              </Fade>
-            </LeftSection>
-            <RightImg src={imgSrc} alt={imgAlt} effect="blur" />
-          </ContentImgHolder>
-        </Wrapper>
-      </ContainerDiv>
-    </>
-  );
+                        bigTitle,
+                        desc,
+                        imgAlt,
+                        imgSrc,
+                        bgColor,
+                        smallBigTitle,
+                        btnText,
+                        btnTextColor,
+                        btnBackColor,
+                        btnWidth,
+                        borderColor,
+                        flexDirection,
+                        mobilePadding,
+                        url
+                    }) => {
+    return (
+        <>
+            <ContainerDiv bgColor={bgColor} mobilePadding={mobilePadding} fluid>
+                <Wrapper>
+                    <ContentImgHolder flexDirection={flexDirection}>
+                        <LeftSection>
+                            {smallBigTitle && <SmallBigTitle>{smallBigTitle}</SmallBigTitle>}
+                            <BigTitle>{bigTitle}</BigTitle>
+                            <Fade cascade direction="down" triggerOnce>
+                                <Desc>{desc}</Desc>
+                                <LearnMoreWrapper>
+                                    <SolidButton
+                                        text={btnText || "Learn more"}
+                                        type="submit"
+                                        weighty="700"
+                                        textFontSize="16px"
+                                        specifyPadding="0.8rem"
+                                        color={btnTextColor || "#A93691"}
+                                        borderRadius="5px"
+                                        backColor={btnBackColor || "transparent"}
+                                        backgroundHoverColor={btnBackColor || "transparent"}
+                                        textHoverColor={btnTextColor || "#A93691"}
+                                        widthWebkit={btnWidth || "178px"}
+                                        widthMoz={btnWidth || "178px"}
+                                        widthNormal={btnWidth || "178px"}
+                                        margin="0"
+                                        fontFamily="Gilroy700"
+                                        borderColor={borderColor || "#A93691"}
+                                        borderHoverColor={borderColor || "#A93691"}
+                                        onClick={() => {
+                                            window.location.href = url || '/'
+                                        }}
+                                    />
+                                </LearnMoreWrapper>
+                            </Fade>
+                        </LeftSection>
+                        <RightImg src={imgSrc} alt={imgAlt} effect="blur"/>
+                    </ContentImgHolder>
+                </Wrapper>
+            </ContainerDiv>
+        </>
+    );
 };
 
 export default LeftImgCmp;

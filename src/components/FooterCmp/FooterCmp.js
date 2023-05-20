@@ -245,8 +245,12 @@ function FooterCmp() {
                   </IconContainer>
                 </SocialWrapper>
                 <StoreWrapper>
-                  <StoreImg src={GooglePlayImage} alt="Playstore" />
-                  <StoreImg src={AppleStoreImage} alt="Apple store" />
+                  <StoreImg src={GooglePlayImage} alt="Playstore" onClick={() => {
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'
+                  }} />
+                  <StoreImg src={AppleStoreImage} alt="Apple store" onClick={() => {
+                    window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'
+                  }}/>
                 </StoreWrapper>
               </ItemWrapper>
             </ColDiv>
