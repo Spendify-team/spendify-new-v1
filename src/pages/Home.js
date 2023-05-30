@@ -8,6 +8,7 @@ import SelectPlanCmp from "../components/SelectPlanCmp/SelectPlanCmp";
 import FaqSectionCmp from "../components/FaqSectionCmp/FaqSectionCmp";
 import ReviewCmp from "../components/ReviewCmp/ReviewCmp";
 import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
+import { Element } from 'react-scroll';
 
 const Home = () => {
   return (
@@ -24,13 +25,17 @@ const Home = () => {
           </>
         }
         desc={
-          "Looking for the best personal finance app? Look no further than Spendify Mobile App! With OLA your finance coach integration right on your WhatsApp, our app makes budget management and expense tracking a breeze."
+          "Looking for the best personal finance app? Look no further than Spendify Mobile App! With OLA your finance coach right on your WhatsApp, our app makes budget management and expense tracking a breeze."
         }
         imgAlt="Money manager"
         imgSrc={SpendifyMobileImg}
       />
       <SelectPlanCmp bgColor="#ffff" />
-      <FaqSectionCmp bgColor="#ffff" />
+
+        <Element name="faq" className="element">
+            <FaqSectionCmp bgColor="#ffff" id="faq"/>
+        </Element>
+
       <ReviewCmp bgColor="#ffff" />
       <CtaCmp />
       <FooterCmp />

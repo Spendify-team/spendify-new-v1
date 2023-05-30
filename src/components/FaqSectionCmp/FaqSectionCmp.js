@@ -112,6 +112,11 @@ const Right = styled.div`
     }
   }
 
+  &.right-wrapper .spendify-accordion .accordion__item:not(:has([hidden])) {
+    box-shadow: 0px 4px 60px rgba(15, 23, 42, 0.06);
+    border-radius: 10px;
+  }
+
   &.right-wrapper
     .spendify-accordion
     .accordion__item
@@ -176,18 +181,18 @@ const FaqSectionCmp = ({ bgColor }) => {
                   {
                     question: "Why do I need Spendify Mobile App?",
                     answer:
-                      "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you make simple and effective financial decisions.",
+                      "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you to make simple and effective financial decisions.",
                   },
                   {
                     question: "How do I start using the OLA?",
                     answer:
-                      "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you make simple and effective financial decisions.",
+                      "To begin using the OLA, all you need to do is open the chat interface and start typing your questions. The chatbot will provide you with relevant information and suggestions.",
                   },
                   {
                     question:
                       "How easily can I recover my lost information or data?",
                     answer:
-                      "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you make simple and effective financial decisions.",
+                      "To access your information and continue using Spendify, simply log in with your details on the Spendify web version.",
                   },
                 ].map((v, i) => {
                   return (

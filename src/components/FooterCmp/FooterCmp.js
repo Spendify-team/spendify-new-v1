@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "react-bootstrap";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import {Container} from "react-bootstrap";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import {
-  InstagramAlt,
-  Facebook,
-  Linkedin,
-  Twitter,
-  Tiktok,
+    InstagramAlt,
+    Facebook,
+    Linkedin,
+    Twitter,
+    Tiktok,
 } from "@styled-icons/boxicons-logos";
-import { Link as LinkR } from "react-router-dom";
+import {Link as LinkR} from "react-router-dom";
 import GooglePlayImage from "../../assets/Play.svg";
 import AppleStoreImage from "../../assets/Apple.svg";
 import LogoImg from "../../assets/logo.svg";
@@ -156,112 +156,115 @@ const IconContainer = styled.div`
 const LogoImage = styled(LazyLoadImage)``;
 
 function FooterCmp() {
-  const openLink = (link) => {
-    return window.open(link, "_blank");
-  };
+    const openLink = (link) => {
+        return window.open(link, "_blank");
+    };
 
-  //   const navigate = useNavigate();
-  return (
-    <>
-      <FooterContainer fluid>
-        <FooterWrapper>
-          <FirstRow>
-            <ColDiv>
-              <LogoImage src={LogoImg} alt="Spendify" effect="blur" />
-            </ColDiv>
-            <ColDiv>
-              <ColDivTitle>About us</ColDivTitle>
-              <ItemWrapper>
-                <ItemList>
-                  <ItemLink as={LinkR} to="/spendify-app">
-                    Spendify App
-                  </ItemLink>
-                </ItemList>
-                <ItemList>
-                  <ItemLink as={LinkR} to="/spendify-analytics">
-                    Spendify Analytics
-                  </ItemLink>
-                </ItemList>
-              </ItemWrapper>
-            </ColDiv>
-            <ColDiv>
-              <ColDivTitle>Transparency</ColDivTitle>
-              <ItemWrapper>
-                <ItemList>
-                  <ItemLink as={LinkR} to="/">
-                    Terms and conditions
-                  </ItemLink>
-                </ItemList>
-                <ItemList>
-                  <ItemLink as={LinkR} to="/">
-                    Privacy
-                  </ItemLink>
-                </ItemList>
-                <ItemList>
-                  <ItemLink as={LinkR} to="/">
-                    Contact us
-                  </ItemLink>
-                </ItemList>
-              </ItemWrapper>
-            </ColDiv>
-            <ColDiv>
-              <ColDivTitle>Contact us</ColDivTitle>
-              <ItemWrapper>
-                <SocialWrapper>
-                  <IconContainer
-                    onClick={() => {
-                      openLink("https://www.instagram.com/myspendify/");
-                    }}
-                  >
-                    <InstagramAlt size={18} color="#fff" />
-                  </IconContainer>
-                  <IconContainer
-                    onClick={() => {
-                      openLink("https://www.linkedin.com/company/spendify-ng/");
-                    }}
-                  >
-                    <Linkedin size={18} color="#fff" />
-                  </IconContainer>
-                  <IconContainer
-                    onClick={() => {
-                      openLink("#");
-                    }}
-                  >
-                    <Facebook size={18} color="#fff" />
-                  </IconContainer>
-                  <IconContainer
-                    onClick={() => {
-                      openLink("https://twitter.com/spendify_ng");
-                    }}
-                  >
-                    <Twitter size={18} color="#fff" />
-                  </IconContainer>
-                  <IconContainer
-                    onClick={() => {
-                      openLink("#");
-                    }}
-                  >
-                    <Tiktok size={18} color="#fff" />
-                  </IconContainer>
-                </SocialWrapper>
-                <StoreWrapper>
-                  <StoreImg src={GooglePlayImage} alt="Playstore" onClick={() => {
-                    window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'
-                  }} />
-                  <StoreImg src={AppleStoreImage} alt="Apple store" onClick={() => {
-                    window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'
-                  }}/>
-                </StoreWrapper>
-              </ItemWrapper>
-            </ColDiv>
-          </FirstRow>
-          <CopyrightFooter>
-            © 2023 Spendify Technologies All Rights Reserved.
-          </CopyrightFooter>
-        </FooterWrapper>
-      </FooterContainer>
-    </>
-  );
+    //   const navigate = useNavigate();
+    return (
+        <>
+            <FooterContainer fluid>
+                <FooterWrapper>
+                    <FirstRow>
+                        <ColDiv>
+                            <LogoImage src={LogoImg} alt="Spendify" effect="blur"/>
+                        </ColDiv>
+                        <ColDiv>
+                            <ColDivTitle>About us</ColDivTitle>
+                            <ItemWrapper>
+                                <ItemList>
+                                    <ItemLink as={LinkR} to="/">
+                                        OLA - Spendify Buddy
+                                    </ItemLink>
+                                </ItemList>
+                                <ItemList>
+                                    <ItemLink as={LinkR} to="/spendify-app">
+                                        Spendify App
+                                    </ItemLink>
+                                </ItemList>
+                                <ItemList>
+                                    <ItemLink as={LinkR} to="/spendify-analytics">
+                                        Spendify Analytics
+                                    </ItemLink>
+                                </ItemList>
+                            </ItemWrapper>
+                        </ColDiv>
+                        <ColDiv>
+                            <ColDivTitle>Transparency</ColDivTitle>
+                            <ItemWrapper>
+                                <ItemList>
+                                    <ItemLink as={LinkR} to="/">
+                                        Terms and conditions
+                                    </ItemLink>
+                                </ItemList>
+                                <ItemList>
+                                    <ItemLink as={LinkR} to="/">
+                                        Privacy
+                                    </ItemLink>
+                                </ItemList>
+                                <ItemList>
+                                    <ItemLink as={LinkR} to="/">
+                                        Contact us
+                                    </ItemLink>
+                                </ItemList>
+                            </ItemWrapper>
+                        </ColDiv>
+                        <ColDiv>
+                            <ColDivTitle>Contact us</ColDivTitle>
+                            <ItemWrapper>
+                                <SocialWrapper>
+                                    <IconContainer
+                                        onClick={() => {
+                                            openLink("https://www.instagram.com/myspendify/");
+                                        }}
+                                    >
+                                        <InstagramAlt size={18} color="#fff"/>
+                                    </IconContainer>
+                                    <IconContainer
+                                        onClick={() => {
+                                            openLink("https://www.linkedin.com/company/spendify-ng/");
+                                        }}
+                                    >
+                                        <Linkedin size={18} color="#fff"/>
+                                    </IconContainer>
+                                    <IconContainer
+                                        onClick={() => {
+                                            openLink("#");
+                                        }}
+                                    >
+                                        <Facebook size={18} color="#fff"/>
+                                    </IconContainer>
+                                    <IconContainer
+                                        onClick={() => {
+                                            openLink("https://twitter.com/spendify_ng");
+                                        }}
+                                    >
+                                        <Twitter size={18} color="#fff"/>
+                                    </IconContainer>
+                                    <IconContainer
+                                        onClick={() => {
+                                            openLink("#");
+                                        }}
+                                    >
+                                        <Tiktok size={18} color="#fff"/>
+                                    </IconContainer>
+                                </SocialWrapper>
+                                <StoreWrapper>
+                                    <StoreImg src={GooglePlayImage} alt="Playstore"
+                                              onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'}/>
+                                    <StoreImg src={AppleStoreImage} alt="Apple store"
+                                              onClick={() => window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'}/>
+                                </StoreWrapper>
+                            </ItemWrapper>
+                        </ColDiv>
+                    </FirstRow>
+                    <CopyrightFooter>
+                        © 2023 Spendify Technologies All Rights Reserved.
+                    </CopyrightFooter>
+                </FooterWrapper>
+            </FooterContainer>
+        </>
+    );
 }
 
 export default FooterCmp;

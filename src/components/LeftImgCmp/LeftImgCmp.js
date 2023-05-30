@@ -1,8 +1,8 @@
 import React from "react";
-import {Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import styled from "styled-components";
-import {LazyLoadImage} from "react-lazy-load-image-component";
-import {Fade} from "react-awesome-reveal";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Fade } from "react-awesome-reveal";
 import SolidButton from "../Buttons/SolidButton";
 
 const ContainerDiv = styled(Container)`
@@ -11,7 +11,7 @@ const ContainerDiv = styled(Container)`
 
   @media only screen and (max-width: 500px) {
     padding: ${(props) =>
-            props.mobilePadding ? props.mobilePadding : "0rem 1rem"};
+      props.mobilePadding ? props.mobilePadding : "0rem 1rem"};
   }
 `;
 
@@ -29,7 +29,7 @@ const ContentImgHolder = styled.div`
   align-items: center;
   /* gap: 60px; */
   flex-direction: ${(props) =>
-          props.flexDirection ? props.flexDirection : "row-everse"};
+    props.flexDirection ? props.flexDirection : "row-everse"};
 
   @media only screen and (max-width: 1220px) {
     gap: 40px;
@@ -121,63 +121,91 @@ const RightImg = styled(LazyLoadImage)`
 `;
 
 const LeftImgCmp = ({
-                        bigTitle,
-                        desc,
-                        imgAlt,
-                        imgSrc,
-                        bgColor,
-                        smallBigTitle,
-                        btnText,
-                        btnTextColor,
-                        btnBackColor,
-                        btnWidth,
-                        borderColor,
-                        flexDirection,
-                        mobilePadding,
-                        url
-                    }) => {
-    return (
-        <>
-            <ContainerDiv bgColor={bgColor} mobilePadding={mobilePadding} fluid>
-                <Wrapper>
-                    <ContentImgHolder flexDirection={flexDirection}>
-                        <LeftSection>
-                            {smallBigTitle && <SmallBigTitle>{smallBigTitle}</SmallBigTitle>}
-                            <BigTitle>{bigTitle}</BigTitle>
-                            <Fade cascade direction="down" triggerOnce>
-                                <Desc>{desc}</Desc>
-                                <LearnMoreWrapper>
-                                    <SolidButton
-                                        text={btnText || "Learn more"}
-                                        type="submit"
-                                        weighty="700"
-                                        textFontSize="16px"
-                                        specifyPadding="0.8rem"
-                                        color={btnTextColor || "#A93691"}
-                                        borderRadius="5px"
-                                        backColor={btnBackColor || "transparent"}
-                                        backgroundHoverColor={btnBackColor || "transparent"}
-                                        textHoverColor={btnTextColor || "#A93691"}
-                                        widthWebkit={btnWidth || "178px"}
-                                        widthMoz={btnWidth || "178px"}
-                                        widthNormal={btnWidth || "178px"}
-                                        margin="0"
-                                        fontFamily="Gilroy700"
-                                        borderColor={borderColor || "#A93691"}
-                                        borderHoverColor={borderColor || "#A93691"}
-                                        onClick={() => {
-                                            window.location.href = url || '/'
-                                        }}
-                                    />
-                                </LearnMoreWrapper>
-                            </Fade>
-                        </LeftSection>
-                        <RightImg src={imgSrc} alt={imgAlt} effect="blur"/>
-                    </ContentImgHolder>
-                </Wrapper>
-            </ContainerDiv>
-        </>
-    );
+  bigTitle,
+  desc,
+  imgAlt,
+  imgSrc,
+  bgColor,
+  smallBigTitle,
+  btnText,
+  btnTextColor,
+  btnBackColor,
+  btnWidth,
+  borderColor,
+  flexDirection,
+  mobilePadding,
+}) => {
+  return (
+    <>
+      <ContainerDiv bgColor={bgColor} mobilePadding={mobilePadding} fluid>
+        <Wrapper>
+          <ContentImgHolder flexDirection={flexDirection}>
+            <LeftSection>
+              {smallBigTitle && <SmallBigTitle>{smallBigTitle}</SmallBigTitle>}
+              <BigTitle>{bigTitle}</BigTitle>
+              <Fade cascade direction="down" triggerOnce>
+                <Desc>{desc}</Desc>
+                <LearnMoreWrapper>
+                  <SolidButton
+                    text={btnText || "Learn more"}
+                    type="submit"
+                    weighty="700"
+                    textFontSize="16px"
+                    specifyPadding="0.8rem"
+                    color={btnTextColor || "#A93691"}
+                    borderRadius="5px"
+                    backColor={btnBackColor || "transparent"}
+                    backgroundHoverColor={btnBackColor || "transparent"}
+                    textHoverColor={btnTextColor || "#A93691"}
+                    widthWebkit={btnWidth || "178px"}
+                    widthMoz={btnWidth || "178px"}
+                    widthNormal={btnWidth || "178px"}
+                    margin="0"
+                    fontFamily="Gilroy700"
+                    borderColor={borderColor || "#A93691"}
+                    borderHoverColor={borderColor || "#A93691"}
+                  />
+                </LearnMoreWrapper>
+              </Fade>
+            </LeftSection>
+            <RightImg src={imgSrc} alt={imgAlt} effect="blur" onClick={DetectAndServe} />
+          </ContentImgHolder>
+        </Wrapper>
+      </ContainerDiv>
+    </>
+  );
 };
 
+function getMobileOperatingSystem() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Windows Phone must come first because its UA also contains "Android"
+  if (/windows phone/i.test(userAgent)) {
+    return "Windows Phone";
+  }
+
+  if (/android/i.test(userAgent)) {
+    return "Android";
+  }
+
+  // iOS detection from: http://stackoverflow.com/a/9039885/177710
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    return "iOS";
+  }
+
+  return "unknown";
+}
+
+function DetectAndServe() {
+  let os = getMobileOperatingSystem();
+  if (os == "Android") {
+    window.location.href = "https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite";
+  } else if (os == "iOS") {
+    window.location.href = "https://apps.apple.com/us/app/spendify-mobile/id1629340357";
+  } else if (os == "Windows Phone") {
+    window.location.href = "https://personal.spendify.ca/";
+  } else {
+    window.location.href = "https://personal.spendify.ca/";
+  }
+}
 export default LeftImgCmp;

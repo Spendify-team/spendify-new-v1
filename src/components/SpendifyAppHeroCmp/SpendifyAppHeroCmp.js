@@ -163,9 +163,9 @@ const SpendifyAppHeroCmp = () => {
           starts with you.
         </Desc>
         <ActionWrapper>
-          <StoreImg src={AppleStoreImage} alt="Apple store" onClick={()=>window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'}/>
-          <StoreImg src={GooglePlayImage} alt="Playstore" onClick={()=>window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'}/>
-          <StoreImg src={SpendifyWebImage} alt="Spendify Web" onClick={()=>window.location.href = 'https://personal.spendify.ca/'}/>
+          <StoreImg src={AppleStoreImage} alt="Apple store"  onClick={() => window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'}/>
+          <StoreImg src={GooglePlayImage} alt="Playstore"  onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'}/>
+          <StoreImg src={SpendifyWebImage} alt="Spendify Web" onClick={() => window.location.href = 'https://personal.spendify.ca'}/>
         </ActionWrapper>
         <MockupWrapper>
           <Particle2></Particle2>

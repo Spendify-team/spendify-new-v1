@@ -1,4 +1,6 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
+
+import ScrollToTop from './ScrollToTop';
 
 import "./App.css";
 
@@ -12,19 +14,24 @@ import "./fonts/Gilroy-Black.ttf";
 import Home from "./pages/Home";
 import SpendifyApp from "./pages/SpendifyApp";
 import SpendifyAnalytics from "./pages/SpendifyAnalytics";
+import FaqSectionCmp from "./components/FaqSectionCmp/FaqSectionCmp";
+
 
 function App() {
-  return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/spendify-app" element={<SpendifyApp />} />
-          <Route path="/spendify-analytics" element={<SpendifyAnalytics />} />
-        </Routes>
-      </Router>
-    </>
-  );
+    return (
+        <>
+            <Router>
+                <ScrollToTop>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/spendify-app" element={<SpendifyApp/>}/>
+                        <Route path="/spendify-analytics" element={<SpendifyAnalytics/>}/>
+                        <Route path="/faq" component={<FaqSectionCmp/>}/>
+                    </Routes>
+                </ScrollToTop>
+            </Router>
+        </>
+    );
 }
 
 export default App;

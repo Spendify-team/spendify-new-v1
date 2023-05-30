@@ -145,8 +145,10 @@ const SelectPlanCmp = ({ bgColor }) => {
             <PlanName>{planName}</PlanName>
             {planName !== "Free Plan" && (
               <Price>
-                Starting <PriceSpan>$10 USD</PriceSpan>{" "}
-                <MonthlySpan>/user/month</MonthlySpan>
+                <PriceSpan>$5.99</PriceSpan>{" "}
+                <MonthlySpan>/month</MonthlySpan>
+                  <PriceSpan> | $50</PriceSpan>{" "}
+                  <MonthlySpan>/year (save 30%)</MonthlySpan>
               </Price>
             )}
           </TopPlanSection>
@@ -214,23 +216,27 @@ const SelectPlanCmp = ({ bgColor }) => {
           <Title>
             Choose the right <Span>plan for you</Span>
           </Title>
-          <Desc>Check out our pricing plans services!</Desc>
+          <Desc>Check out our pricing plans!</Desc>
           <PlanDisplayWrapper>
             <PlanCmp
               planName={"Free Plan"}
               featureList={[
-                "Available when demand is low",
-                "Standard response speed",
-                "Regular model updates",
+                "Free Spendify Mobile download",
+                "Full access to Spendify Mobile features ",
+                "Chat features-2 day free trial",
+                "AI features - 2 day free trial",
+                "Regular model update",
               ]}
               btnText="Your current plan"
             />
             <PlanCmp
               planName={"Pro Plan"}
               featureList={[
-                "Available even when demand is high",
-                "Faster response speed",
-                "Priority access to new features",
+                "Free Spendify Mobile download",
+                "Full access to Spendify Mobile features ",
+                "Full access to chat features",
+                "Full access to AI features",
+                "Priority model update to new features"
               ]}
               btnText="Upgrade to pro"
             />

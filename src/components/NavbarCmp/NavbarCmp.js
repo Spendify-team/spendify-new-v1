@@ -13,7 +13,11 @@ import Dropdown from "rc-dropdown";
 import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import "rc-dropdown/assets/index.css";
 import {useNavigate} from "react-router-dom";
+import {Link, animateScroll as scroll} from 'react-scroll';
 
+const activeStyle = {
+    color: "rgb(169, 54, 145)"
+};
 const NavbarContainer = styled.div`
   background: #fff;
   height: 80px;
@@ -147,7 +151,7 @@ const ToggleAboutDropdownIcon = styled(ArrowDropDown)`
   }
 `;
 
-const NavbarCmp = () => {
+const NavbarCmp = ({scrollToSection}) => {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const navigate = useNavigate();
 
@@ -230,7 +234,23 @@ const NavbarCmp = () => {
                   </span>
                                 </MenuLink>
                             </Dropdown>
-                            <MenuLink>F.A.Q</MenuLink>
+                            <MenuLink
+                                onClick={() => {
+                                    navigate("/");
+                                }}
+                            >
+                                <Link
+                                    to="faq"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-50}
+                                    spy={true}
+                                    exact="true"
+                                    activeClass={activeStyle}
+                                >
+                                    F.A.Q
+                                </Link>
+                            </MenuLink>
                         </GroupLink1>
                     </LogoAndMenuHolder>
                     <MenuAndButtonHolder>
@@ -243,9 +263,7 @@ const NavbarCmp = () => {
                         <ButtonFlagHolder>
                             <ButtonWrapper>
                                 <SolidButton
-                                    onClick={() => {
-                                        window.location.href = 'https://onelink.to/mzbpwd'
-                                    }}
+                                    onClick={DetectAndServe}
                                     text={"Download"}
                                     type="submit"
                                     weighty="600"
@@ -283,5 +301,38 @@ const NavbarCmp = () => {
         </>
     );
 };
+
+function getMobileOperatingSystem() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}
+
+function DetectAndServe() {
+    let os = getMobileOperatingSystem();
+    if (os == "Android") {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite";
+    } else if (os == "iOS") {
+        window.location.href = "https://apps.apple.com/us/app/spendify-mobile/id1629340357";
+    } else if (os == "Windows Phone") {
+        window.location.href = "https://personal.spendify.ca/";
+    } else {
+        window.location.href = "https://personal.spendify.ca/";
+    }
+}
 
 export default NavbarCmp;

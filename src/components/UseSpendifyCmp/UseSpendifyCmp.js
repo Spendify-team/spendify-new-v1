@@ -60,10 +60,11 @@ const FlagWrapper = styled.div`
 
 const FlagImg = styled.div`
   width: 20px;
-  aspect-ratio: 29/21;
-  display: flex;
+  /* height: auto; */
+  /* aspect-ratio: 29/21; */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 `;
 
 const FlagSliderWrapper = styled.div`
