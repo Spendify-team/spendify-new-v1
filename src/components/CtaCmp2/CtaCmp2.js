@@ -1,11 +1,11 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import styled from "styled-components";
-import { Fade } from "react-awesome-reveal";
+import {Fade} from "react-awesome-reveal";
 import GooglePlayImage from "../../assets/Play.svg";
 import AppleStoreImage from "../../assets/Apple.svg";
 import CtaImage from "../../assets/cta-mockup.svg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const CtaContainer = styled(Container)`
   padding: 2rem 2rem 5rem;
@@ -113,31 +113,33 @@ const CtaImg = styled.img`
   }
 `;
 
-const CtaCmp2 = ({ containerMargin }) => {
-  return (
-    <>
-      <CtaContainer fluid containerMargin={containerMargin}>
-        <CtaWrapper>
-          <ContentHolder>
-            <Fade cascade direction="up" triggerOnce>
-              <CtaTitle>
-                Experience a user-friendly, secure, and personal{" "}
-                <Span>finance solution.</Span>
-              </CtaTitle>
-            </Fade>
-            <Desc>
-              Our app offers a budget manager to handle your daily transactions
-            </Desc>
-            <StoreWrapper>
-              <StoreImg src={GooglePlayImage} alt="Playstore" />
-              <StoreImg src={AppleStoreImage} alt="Apple store" />
-            </StoreWrapper>
-          </ContentHolder>
-          <CtaImg src={CtaImage} alt="CTA" />
-        </CtaWrapper>
-      </CtaContainer>
-    </>
-  );
+const CtaCmp2 = ({containerMargin}) => {
+    return (
+        <>
+            <CtaContainer fluid containerMargin={containerMargin}>
+                <CtaWrapper>
+                    <ContentHolder>
+                        <Fade cascade direction="up" triggerOnce>
+                            <CtaTitle>
+                                Experience a user-friendly, secure, and personal{" "}
+                                <Span>finance solution.</Span>
+                            </CtaTitle>
+                        </Fade>
+                        <Desc>
+                            Our app offers a budget manager to handle your daily transactions
+                        </Desc>
+                        <StoreWrapper>
+                            <StoreImg src={GooglePlayImage} alt="Playstore"
+                                      onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'}/>
+                            <StoreImg src={AppleStoreImage} alt="Apple store"
+                                      onClick={() => window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'}/>
+                        </StoreWrapper>
+                    </ContentHolder>
+                    <CtaImg src={CtaImage} alt="CTA"/>
+                </CtaWrapper>
+            </CtaContainer>
+        </>
+    );
 };
 
 export default CtaCmp2;

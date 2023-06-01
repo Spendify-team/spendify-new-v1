@@ -51,7 +51,7 @@ const SpendifyApp = () => {
         btnTextColor={"#fff"}
         btnBackColor={"#A93691"}
         borderColor="transparent"
-        btnText="See report"
+        btnText="Download Now!"
       />
       <SimpleStepsCmp bgColor={"rgba(255, 244, 253, 0.5)"} />
       <AppFeaturesCmp bgColor={"#fff"} />

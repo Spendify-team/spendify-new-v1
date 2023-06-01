@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import styled from "styled-components";
 import CtaSvg from "../../assets/cta-svg.svg";
-import { Fade, Zoom } from "react-awesome-reveal";
+import {Fade, Zoom} from "react-awesome-reveal";
 import SolidButton from "../../components/Buttons/SolidButton";
 import Particle1 from "../../assets/particle-1.svg";
 import Particle2 from "../../assets/particle-2.svg";
@@ -116,43 +116,44 @@ const Particle2Img = styled.img`
   }
 `;
 
-const CtaCmp = ({ containerMargin, ctaText, btnText }) => {
-  return (
-    <>
-      <CtaContainer fluid containerMargin={containerMargin}>
-        <CtaWrapper>
-          <ContentHolder>
-            <Fade cascade direction="up" triggerOnce>
-              <CtaTitle>{ctaText || "We’re Trusted by thousands."}</CtaTitle>
-            </Fade>
-            <Zoom triggerOnce={true}>
-              <ActionWrapper>
-                <SolidButton
-                  text={btnText || "Chat here"}
-                  type="submit"
-                  weighty="600"
-                  textFontSize="16px"
-                  specifyPadding="0.8rem"
-                  color="#F8FAFC"
-                  borderRadius="5px"
-                  backColor="#A93691"
-                  backgroundHoverColor="#A93691"
-                  textHoverColor="#fff"
-                  widthWebkit="178px"
-                  widthMoz="178px"
-                  widthNormal="178px"
-                  margin="0"
-                  fontFamily="Gilroy600"
-                />
-              </ActionWrapper>
-            </Zoom>
-            <Particle1Img src={Particle1} alt="Particle1" />
-            <Particle2Img src={Particle2} alt="Particle2" />
-          </ContentHolder>
-        </CtaWrapper>
-      </CtaContainer>
-    </>
-  );
+const CtaCmp = ({containerMargin, ctaText, btnText}) => {
+    return (
+        <>
+            <CtaContainer fluid containerMargin={containerMargin}>
+                <CtaWrapper>
+                    <ContentHolder>
+                        <Fade cascade direction="up" triggerOnce>
+                            <CtaTitle>{ctaText || "We’re Trusted by thousands."}</CtaTitle>
+                        </Fade>
+                        <Zoom triggerOnce={true}>
+                            <ActionWrapper>
+                                <SolidButton
+                                    onClick={() => window.location.href = "https://wa.me/+16475602110"}
+                                    text={btnText || "Chat here"}
+                                    type="submit"
+                                    weighty="600"
+                                    textFontSize="16px"
+                                    specifyPadding="0.8rem"
+                                    color="#F8FAFC"
+                                    borderRadius="5px"
+                                    backColor="#A93691"
+                                    backgroundHoverColor="#A93691"
+                                    textHoverColor="#fff"
+                                    widthWebkit="178px"
+                                    widthMoz="178px"
+                                    widthNormal="178px"
+                                    margin="0"
+                                    fontFamily="Gilroy600"
+                                />
+                            </ActionWrapper>
+                        </Zoom>
+                        <Particle1Img src={Particle1} alt="Particle1"/>
+                        <Particle2Img src={Particle2} alt="Particle2"/>
+                    </ContentHolder>
+                </CtaWrapper>
+            </CtaContainer>
+        </>
+    );
 };
 
 export default CtaCmp;

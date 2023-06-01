@@ -1,7 +1,7 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import styled from "styled-components";
-import { CheckboxCircle } from "@styled-icons/remix-line";
+import {CheckboxCircle} from "@styled-icons/remix-line";
 import SolidButton from "../Buttons/SolidButton";
 
 const ContainerDiv = styled(Container)`
@@ -136,115 +136,116 @@ const PlanDisplayWrapper = styled.div`
   }
 `;
 
-const SelectPlanCmp = ({ bgColor }) => {
-  const PlanCmp = ({ planName, featureList, btnText }) => {
-    return (
-      <>
-        <PlanWrapper>
-          <TopPlanSection>
-            <PlanName>{planName}</PlanName>
-            {planName !== "Free Plan" && (
-              <Price>
-                <PriceSpan>$5.99</PriceSpan>{" "}
-                <MonthlySpan>/month</MonthlySpan>
-                  <PriceSpan> | $50</PriceSpan>{" "}
-                  <MonthlySpan>/year (save 30%)</MonthlySpan>
-              </Price>
-            )}
-          </TopPlanSection>
-          <MiddlePlanSection>
-            {featureList.map((v) => {
-              return (
-                <FeatureItemWrapper>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <CheckboxCircle
-                      color={
-                        planName === "Free Plan"
-                          ? "rgba(148, 163, 184, 0.5)"
-                          : "#A93691"
-                      }
-                      size={18}
-                    />
-                  </div>
+const SelectPlanCmp = ({bgColor}) => {
+    const PlanCmp = ({planName, featureList, btnText}) => {
+        return (
+            <>
+                <PlanWrapper>
+                    <TopPlanSection>
+                        <PlanName>{planName}</PlanName>
+                        {planName !== "Free Plan" && (
+                            <Price>
+                                <PriceSpan>$5.99</PriceSpan>{" "}
+                                <MonthlySpan>/month</MonthlySpan>
+                                <PriceSpan> | $50</PriceSpan>{" "}
+                                <MonthlySpan>/year (save 30%)</MonthlySpan>
+                            </Price>
+                        )}
+                    </TopPlanSection>
+                    <MiddlePlanSection>
+                        {featureList.map((v) => {
+                            return (
+                                <FeatureItemWrapper>
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        <CheckboxCircle
+                                            color={
+                                                planName === "Free Plan"
+                                                    ? "rgba(148, 163, 184, 0.5)"
+                                                    : "#A93691"
+                                            }
+                                            size={18}
+                                        />
+                                    </div>
 
-                  <FeatureText>{v}</FeatureText>
-                </FeatureItemWrapper>
-              );
-            })}
-          </MiddlePlanSection>
-          <BottomPlanSection>
-            <SolidButton
-              text={btnText}
-              type="submit"
-              weighty="600"
-              textFontSize="16px"
-              specifyPadding="0.8rem"
-              color="#fff"
-              borderRadius="5px"
-              backColor={
-                planName === "Free Plan"
-                  ? "rgba(148, 163, 184, 0.3)"
-                  : "#A93691"
-              }
-              backgroundHoverColor={
-                planName === "Free Plan"
-                  ? "rgba(148, 163, 184, 0.3)"
-                  : "#A93691"
-              }
-              textHoverColor="#fff"
-              widthWebkit="100%"
-              widthMoz="100%"
-              widthNormal="100%"
-              margin="0"
-              fontFamily="Gilroy600"
-            />
-          </BottomPlanSection>
-        </PlanWrapper>
-      </>
+                                    <FeatureText>{v}</FeatureText>
+                                </FeatureItemWrapper>
+                            );
+                        })}
+                    </MiddlePlanSection>
+                    <BottomPlanSection>
+                        <SolidButton
+                            text={btnText}
+                            onClick={() => planName === "Free Plan" ? window.location.href = "https://wa.me/+16475602110" : '/'}
+                            type="submit"
+                            weighty="600"
+                            textFontSize="16px"
+                            specifyPadding="0.8rem"
+                            color="#fff"
+                            borderRadius="5px"
+                            backColor={
+                                planName === "Free Plan"
+                                    ? "rgba(148, 163, 184, 0.3)"
+                                    : "#A93691"
+                            }
+                            backgroundHoverColor={
+                                planName === "Free Plan"
+                                    ? "rgba(148, 163, 184, 0.3)"
+                                    : "#A93691"
+                            }
+                            textHoverColor="#fff"
+                            widthWebkit="100%"
+                            widthMoz="100%"
+                            widthNormal="100%"
+                            margin="0"
+                            fontFamily="Gilroy600"
+                        />
+                    </BottomPlanSection>
+                </PlanWrapper>
+            </>
+        );
+    };
+    return (
+        <>
+            <ContainerDiv bgColor={bgColor} fluid>
+                <Wrapper>
+                    <Title>
+                        Choose the right <Span>plan for you</Span>
+                    </Title>
+                    <Desc>Check out our pricing plans!</Desc>
+                    <PlanDisplayWrapper>
+                        <PlanCmp
+                            planName={"Free Plan"}
+                            featureList={[
+                                "Free Spendify Mobile download",
+                                "Full access to Spendify Mobile features ",
+                                "Chat features-2 day free trial",
+                                "AI features - 2 day free trial",
+                                "Regular model update",
+                            ]}
+                            btnText="Your current plan"
+                        />
+                        <PlanCmp
+                            planName={"Pro Plan"}
+                            featureList={[
+                                "Free Spendify Mobile download",
+                                "Full access to Spendify Mobile features ",
+                                "Full access to chat features",
+                                "Full access to AI features",
+                                "Priority model update to new features"
+                            ]}
+                            btnText="Upgrade to pro"
+                        />
+                    </PlanDisplayWrapper>
+                </Wrapper>
+            </ContainerDiv>
+        </>
     );
-  };
-  return (
-    <>
-      <ContainerDiv bgColor={bgColor} fluid>
-        <Wrapper>
-          <Title>
-            Choose the right <Span>plan for you</Span>
-          </Title>
-          <Desc>Check out our pricing plans!</Desc>
-          <PlanDisplayWrapper>
-            <PlanCmp
-              planName={"Free Plan"}
-              featureList={[
-                "Free Spendify Mobile download",
-                "Full access to Spendify Mobile features ",
-                "Chat features-2 day free trial",
-                "AI features - 2 day free trial",
-                "Regular model update",
-              ]}
-              btnText="Your current plan"
-            />
-            <PlanCmp
-              planName={"Pro Plan"}
-              featureList={[
-                "Free Spendify Mobile download",
-                "Full access to Spendify Mobile features ",
-                "Full access to chat features",
-                "Full access to AI features",
-                "Priority model update to new features"
-              ]}
-              btnText="Upgrade to pro"
-            />
-          </PlanDisplayWrapper>
-        </Wrapper>
-      </ContainerDiv>
-    </>
-  );
 };
 
 export default SelectPlanCmp;

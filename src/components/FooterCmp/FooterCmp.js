@@ -179,7 +179,7 @@ function FooterCmp() {
                                 </ItemList>
                                 <ItemList>
                                     <ItemLink as={LinkR} to="/spendify-app">
-                                        Spendify App
+                                        Spendify Mobile App
                                     </ItemLink>
                                 </ItemList>
                                 <ItemList>
@@ -193,17 +193,17 @@ function FooterCmp() {
                             <ColDivTitle>Transparency</ColDivTitle>
                             <ItemWrapper>
                                 <ItemList>
-                                    <ItemLink as={LinkR} to="/">
+                                    <ItemLink as={LinkR} to="https://spendify.ca/policies/terms">
                                         Terms and conditions
                                     </ItemLink>
                                 </ItemList>
                                 <ItemList>
-                                    <ItemLink as={LinkR} to="/">
+                                    <ItemLink as={LinkR} to="https://spendify.ca/policies/privacy">
                                         Privacy
                                     </ItemLink>
                                 </ItemList>
                                 <ItemList>
-                                    <ItemLink as={LinkR} to="/">
+                                    <ItemLink as={LinkR} to="mailto:info@spendify.ca">
                                         Contact us
                                     </ItemLink>
                                 </ItemList>

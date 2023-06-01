@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import {Container} from "react-bootstrap";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 import styled from "styled-components";
 import SolidButton from "../Buttons/SolidButton";
 import SpendifyMockupImage from "../../assets/spendify-mockup.svg";
@@ -209,65 +209,67 @@ const PatternBg = styled.img`
 `;
 
 const HeroCmp = () => {
-  return (
-    <ContainerDiv>
-      <Wrapper>
-        <Particle1></Particle1>
-        <Heading>
-          Chat with Ola your <Span>Spendify</Span> <Span2>Buddy</Span2>
-        </Heading>
-        <Desc>
-          Connecting with OLA on your WhatsApp goes beyond basic financial
-          tracking and budgeting.
-        </Desc>
-        <ActionWrapper>
-          <SolidButton
-            text={"Chat here"}
-            type="submit"
-            weighty="600"
-            textFontSize="16px"
-            specifyPadding="0.8rem"
-            color="#F8FAFC"
-            borderRadius="5px"
-            backColor="#A93691"
-            backgroundHoverColor="#A93691"
-            textHoverColor="#fff"
-            widthWebkit="178px"
-            widthMoz="178px"
-            widthNormal="178px"
-            margin="0"
-            fontFamily="Gilroy600"
-          />
-        </ActionWrapper>
-        <MockupWrapper>
-          <Particle2></Particle2>
-          <PatternBg src={PatternImage} alt="Pattern" />
-          <div style={{ position: "relative" }}>
-            <MockupLazyImg
-              src={SpendifyMockupImage}
-              alt="Spendify"
-              effect="blur"
-            />
-            <Feature1Img
-              src={Feature1Image}
-              alt="Personalized insights"
-              className={"unanimate animate-up"}
-            />
-            <Feature2Img
-              src={Feature2Image}
-              alt="Real-time financial insights"
-              className={"unanimate animate-down"}
-            />
-            <Feature3Img
-              src={Feature3Image}
-              alt="Finance coach"
-              className={"unanimate animate-down"}
-            />
-          </div>
-        </MockupWrapper>
-      </Wrapper>
-    </ContainerDiv>
-  );
+    return (
+        <ContainerDiv>
+            <Wrapper>
+                <Particle1></Particle1>
+                <Heading>
+                    Chat with Ola your <Span>Spendify</Span> <Span2>Buddy</Span2>
+                </Heading>
+                <Desc>
+                    Connecting with OLA on your WhatsApp goes beyond basic financial
+                    tracking and budgeting.
+                </Desc>
+                <ActionWrapper>
+                    <SolidButton
+                        onClick={() => window.location.href = "https://wa.me/+16475602110"}
+                        text={"Chat here"}
+                        type="submit"
+                        weighty="600"
+                        textFontSize="16px"
+                        specifyPadding="0.8rem"
+                        color="#F8FAFC"
+                        borderRadius="5px"
+                        backColor="#A93691"
+                        backgroundHoverColor="#A93691"
+                        textHoverColor="#fff"
+                        widthWebkit="178px"
+                        widthMoz="178px"
+                        widthNormal="178px"
+                        margin="0"
+                        fontFamily="Gilroy600"
+
+                    />
+                </ActionWrapper>
+                <MockupWrapper>
+                    <Particle2></Particle2>
+                    <PatternBg src={PatternImage} alt="Pattern"/>
+                    <div style={{position: "relative"}}>
+                        <MockupLazyImg
+                            src={SpendifyMockupImage}
+                            alt="Spendify"
+                            effect="blur"
+                        />
+                        <Feature1Img
+                            src={Feature1Image}
+                            alt="Personalized insights"
+                            className={"unanimate animate-up"}
+                        />
+                        <Feature2Img
+                            src={Feature2Image}
+                            alt="Real-time financial insights"
+                            className={"unanimate animate-down"}
+                        />
+                        <Feature3Img
+                            src={Feature3Image}
+                            alt="Finance coach"
+                            className={"unanimate animate-down"}
+                        />
+                    </div>
+                </MockupWrapper>
+            </Wrapper>
+        </ContainerDiv>
+    );
 };
 
 export default HeroCmp;
