@@ -185,6 +185,19 @@ const NavbarCmp = ({scrollToSection}) => {
                                             <AboutDropdownItem>
                                                 <AboutDropdownIcon
                                                     src={SpendifyAppImg}
+                                                    alt="OLA - Spendify Buddy"
+                                                />
+                                                <span
+                                                    onClick={() => {
+                                                        navigate("/");
+                                                    }}
+                                                >
+                                                OLA - Spendify Buddy
+                                                </span>
+                                            </AboutDropdownItem>
+                                            <AboutDropdownItem>
+                                                <AboutDropdownIcon
+                                                    src={SpendifyAppImg}
                                                     alt="Spendify App"
                                                 />
                                                 <span
