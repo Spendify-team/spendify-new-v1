@@ -111,6 +111,7 @@ const UseSpendifyCmp = () => {
               { name: "Jamaica", icon: <Flag code={"JM"} /> },
               { name: "Portugal", icon: <Flag code={"PT"} /> },
               { name: "Nigeria", icon: <Flag code={"NG"} /> },
+              { name: "Canada", icon: <Flag code={"CA"} /> },
             ].map((v, i) => {
               return (
                 <SwiperSlide key={i}>

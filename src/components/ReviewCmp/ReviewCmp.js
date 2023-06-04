@@ -1,10 +1,11 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { Rating as RenderRating } from "react-simple-star-rating";
+import {Container} from "react-bootstrap";
+import {Rating as RenderRating} from "react-simple-star-rating";
 import styled from "styled-components";
-import ManImg from "../../assets/man.svg";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import ManImg from "../../assets/man-user.svg";
+import WomanImg from "../../assets/woman.svg";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay, Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -142,133 +143,128 @@ const ReviewPagination = styled.div`
   }
 `;
 
-const ReviewCmp = ({ bgColor }) => {
-  const ReviewCard = ({ review, name, title, rating, img }) => {
-    return (
-      <>
-        <ReviewCardWrapper>
-          <ReviewText>{review}</ReviewText>
+const ReviewCmp = ({bgColor}) => {
+    const ReviewCard = ({review, name, title, rating, img}) => {
+        return (
+            <>
+                <ReviewCardWrapper>
+                    <ReviewText>{review}</ReviewText>
 
-          <MainWrapper>
-            <ReviewerWrapper>
-              <ReviewerImage src={img} alt={name} />
-              <ReviewerDetails>
-                <ReviewerName>{name}</ReviewerName>
-                <ReviewerRole>{title}</ReviewerRole>
-              </ReviewerDetails>
-            </ReviewerWrapper>
-            <RatingWrapper>
-              <RenderRating
-                size={15}
-                readonly={true}
-                iconsCount={5}
-                initialValue={5}
-                SVGstrokeColor={"#FFB619"}
-              />
-            </RatingWrapper>
-          </MainWrapper>
-        </ReviewCardWrapper>
-      </>
+                    <MainWrapper>
+                        <ReviewerWrapper>
+                            <ReviewerImage src={img} alt={name}/>
+                            <ReviewerDetails>
+                                <ReviewerName>{name}</ReviewerName>
+                                <ReviewerRole>{title}</ReviewerRole>
+                            </ReviewerDetails>
+                        </ReviewerWrapper>
+                        <RatingWrapper>
+                            <RenderRating
+                                size={15}
+                                readonly={true}
+                                iconsCount={5}
+                                initialValue={5}
+                                SVGstrokeColor={"#FFB619"}
+                            />
+                        </RatingWrapper>
+                    </MainWrapper>
+                </ReviewCardWrapper>
+            </>
+        );
+    };
+    return (
+        <>
+            <ContainerDiv bgColor={bgColor} fluid>
+                <Wrapper>
+                    <Title>
+                        <Span>Reviews from</Span> our customers
+                    </Title>
+                    <Desc>See what our users say about us.</Desc>
+                    <ReviewSliderWrapper>
+                        <Swiper
+                            className="review-carousel"
+                            modules={[Autoplay, Pagination]}
+                            slidesPerView={3}
+                            breakpoints={{
+                                // when window width is >= 320px
+                                300: {slidesPerView: 0.7},
+                                360: {slidesPerView: 0.8},
+                                510: {slidesPerView: 1},
+                                550: {slidesPerView: 1.1},
+                                590: {slidesPerView: 1.2},
+                                670: {slidesPerView: 1.4},
+                                750: {slidesPerView: 1.7},
+                                850: {slidesPerView: 2},
+                                1010: {slidesPerView: 2.5},
+                                1170: {slidesPerView: 3},
+                            }}
+                            autoplay={{
+                                delay: 5000,
+                            }}
+                            pagination={{
+                                clickable: true,
+                                el: ".review-pagination",
+                            }}
+                            speed={1500}
+                            style={{width: "100%"}}
+                            loop={true}
+                        >
+                            {[
+                                {
+                                    review: "Accuracy is just too much...if it's possible I would have given the developer ten 10 🌟",
+                                    name: "Michael M. Ogale",
+                                    title: "Nigeria",
+                                    rating: 5,
+                                    img: ManImg,
+                                },
+                                {
+                                    review: "Spendify is simply the best expense tracker that fit into my personal budgetary control system. I can call it 'a good guidance and perfect checker",
+                                    name: "A Google User",
+                                    title: "Egypt",
+                                    rating: 5,
+                                    img: WomanImg,
+                                },
+                                {
+                                    review: "This app is great. It's simplicity allows individuals clear understanding on how their finances flow daily, weekly, quarterly and annual",
+                                    name: "A Google User",
+                                    title: "United States of America",
+                                    rating: 5,
+                                    img: ManImg,
+                                },
+                                {
+                                    review: "I love this app, it really helps in managing your financial plans for the month. A must have on your phone.",
+                                    name: "A Google User",
+                                    title: "UAE",
+                                    rating: 5,
+                                    img: ManImg,
+                                },
+                                {
+                                    review: "It is very helpful in displaying your money habits\n",
+                                    name: "Ajibike Jimoh",
+                                    title: "Nigeria",
+                                    rating: 5,
+                                    img: WomanImg,
+                                },
+                            ].map((v, i) => {
+                                return (
+                                    <SwiperSlide key={i}>
+                                        <ReviewCard
+                                            review={v.review}
+                                            name={v.name}
+                                            title={v.title}
+                                            rating={v.rating}
+                                            img={v.img}
+                                        />
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
+                    </ReviewSliderWrapper>
+                    <ReviewPagination className="review-pagination"></ReviewPagination>
+                </Wrapper>
+            </ContainerDiv>
+        </>
     );
-  };
-  return (
-    <>
-      <ContainerDiv bgColor={bgColor} fluid>
-        <Wrapper>
-          <Title>
-            <Span>Reviews from</Span> our customers
-          </Title>
-          <Desc>See what are users says about us.</Desc>
-          <ReviewSliderWrapper>
-            <Swiper
-              className="review-carousel"
-              modules={[Autoplay, Pagination]}
-              slidesPerView={3}
-              breakpoints={{
-                // when window width is >= 320px
-                300: { slidesPerView: 0.7 },
-                360: { slidesPerView: 0.8 },
-                510: { slidesPerView: 1 },
-                550: { slidesPerView: 1.1 },
-                590: { slidesPerView: 1.2 },
-                670: { slidesPerView: 1.4 },
-                750: { slidesPerView: 1.7 },
-                850: { slidesPerView: 2 },
-                1010: { slidesPerView: 2.5 },
-                1170: { slidesPerView: 3 },
-              }}
-              autoplay={{
-                delay: 5000,
-              }}
-              pagination={{
-                clickable: true,
-                el: ".review-pagination",
-              }}
-              speed={1500}
-              style={{ width: "100%" }}
-              loop={true}
-            >
-              {[
-                {
-                  review:
-                    "I used to struggle with keeping track of my finances, but ever since I started using this budgeting OLA, everything has become so much easier. It's like having a personal financial advisor in my pocket.",
-                  name: "Peterson Wilson",
-                  title: "Ceo Hive haven",
-                  rating: 5,
-                  img: ManImg,
-                },
-                {
-                  review:
-                    "I used to struggle with keeping track of my finances, but ever since I started using this budgeting OLA, everything has become so much easier. It's like having a personal financial advisor in my pocket.",
-                  name: "Peterson Wilson",
-                  title: "Ceo Hive haven",
-                  rating: 5,
-                  img: ManImg,
-                },
-                {
-                  review:
-                    "I used to struggle with keeping track of my finances, but ever since I started using this budgeting OLA, everything has become so much easier. It's like having a personal financial advisor in my pocket.",
-                  name: "Peterson Wilson",
-                  title: "Ceo Hive haven",
-                  rating: 5,
-                  img: ManImg,
-                },
-                {
-                  review:
-                    "I used to struggle with keeping track of my finances, but ever since I started using this budgeting OLA, everything has become so much easier. It's like having a personal financial advisor in my pocket.",
-                  name: "Peterson Wilson",
-                  title: "Ceo Hive haven",
-                  rating: 5,
-                  img: ManImg,
-                },
-                {
-                  review:
-                    "I used to struggle with keeping track of my finances, but ever since I started using this budgeting OLA, everything has become so much easier. It's like having a personal financial advisor in my pocket.",
-                  name: "Peterson Wilson",
-                  title: "Ceo Hive haven",
-                  rating: 5,
-                  img: ManImg,
-                },
-              ].map((v, i) => {
-                return (
-                  <SwiperSlide key={i}>
-                    <ReviewCard
-                      review={v.review}
-                      name={v.name}
-                      title={v.title}
-                      rating={v.rating}
-                      img={v.img}
-                    />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </ReviewSliderWrapper>
-          <ReviewPagination className="review-pagination"></ReviewPagination>
-        </Wrapper>
-      </ContainerDiv>
-    </>
-  );
 };
 
 export default ReviewCmp;

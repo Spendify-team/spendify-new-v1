@@ -1,17 +1,19 @@
 import Dropdown from "rc-dropdown";
 import React from "react";
-import { useState } from "react";
+import {useState} from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
-import { Close } from "@styled-icons/evil/Close";
-import { ArrowDropDown } from "@styled-icons/remix-fill/ArrowDropDown";
+import {Close} from "@styled-icons/evil/Close";
+import {ArrowDropDown} from "@styled-icons/remix-fill/ArrowDropDown";
 import styled from "styled-components";
 import LogoImg from "../../assets/logo.svg";
 // import NigeriaSvg from "../../assets/nigeria.svg";
 import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import SpendifyAppImg from "../../assets/spendify-app.svg";
 import SpendifyAnalyticsImg from "../../assets/spendify-analytics.svg";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {Link, animateScroll as scroll} from 'react-scroll';
+
 
 const MenuWrapper = styled.div`
   padding: 2rem 1rem;
@@ -69,100 +71,127 @@ const ToggleAboutDropdownIcon = styled(ArrowDropDown)`
   transform: ${(props) => props.visible === true && "rotate(180deg)"};
 `;
 
-const SideDrawerMobile = ({ isOpen, onClose }) => {
-  const [aboutVisible, setAboutVisible] = useState();
-  const navigate = useNavigate();
-  return (
-    <>
-      <Drawer
-        open={isOpen}
-        onClose={onClose}
-        direction="left"
-        size={"320px"}
-        zIndex={1001}
-      >
-        <MenuWrapper>
-          <TopSection>
-            <Logo src={LogoImg} alt="Spendify" />
-            <ButtonFlagHolder>
-              {/* <FlagImage src={NigeriaSvg} alt="Nigeria" /> */}
-              <CloseIcon color="#1E293B" size={"20px"} onClick={onClose} />
-            </ButtonFlagHolder>
-          </TopSection>
-          <GroupLink1>
-            <MenuLink
-              onClick={() => {
-                navigate("/");
-              }}
+const SideDrawerMobile = ({isOpen, onClose}) => {
+    const [aboutVisible, setAboutVisible] = useState();
+    const navigate = useNavigate();
+    return (
+        <>
+            <Drawer
+                open={isOpen}
+                onClose={onClose}
+                direction="left"
+                size={"320px"}
+                zIndex={1001}
             >
-              Home
-            </MenuLink>
+                <MenuWrapper>
+                    <TopSection>
+                        <Logo src={LogoImg} alt="Spendify"/>
+                        <ButtonFlagHolder>
+                            {/* <FlagImage src={NigeriaSvg} alt="Nigeria" /> */}
+                            <CloseIcon color="#1E293B" size={"20px"} onClick={onClose}/>
+                        </ButtonFlagHolder>
+                    </TopSection>
+                    <GroupLink1>
+                        <MenuLink
+                            onClick={() => {
+                                navigate("/");
+                            }}
+                        >
+                            Home
+                        </MenuLink>
 
-            <Dropdown
-              trigger={["click"]}
-              overlay={
-                <DropdownCmp maxWidth={"239px"} minWidth="220px">
-                  <AboutDropdownWrapper>
-                    <AboutDropdownItem>
-                      <AboutDropdownIcon
-                        src={SpendifyAppImg}
-                        alt="Spendify App"
-                      />
-                      <span
-                        onClick={() => {
-                          navigate("/spendify-app");
-                        }}
-                      >
+                        <Dropdown
+                            trigger={["click"]}
+                            overlay={
+                                <DropdownCmp maxWidth={"239px"} minWidth="220px">
+                                    <AboutDropdownWrapper>
+                                        <AboutDropdownItem>
+                                            <AboutDropdownIcon
+                                                src={SpendifyAppImg}
+                                                alt="OLA - Spendify Buddy"
+                                            />
+                                            <span
+                                                onClick={() => {
+                                                    navigate("/");
+                                                }}
+                                            >
+                                                OLA - Spendify Buddy
+                                                </span>
+                                        </AboutDropdownItem>
+                                        <AboutDropdownItem>
+                                            <AboutDropdownIcon
+                                                src={SpendifyAppImg}
+                                                alt="Spendify App"
+                                            />
+                                            <span
+                                                onClick={() => {
+                                                    navigate("/spendify-app");
+                                                }}
+                                            >
                         Spendify App
                       </span>
-                    </AboutDropdownItem>
-                    <AboutDropdownItem>
-                      <AboutDropdownIcon
-                        src={SpendifyAnalyticsImg}
-                        alt="Spendify Analytics"
-                      />
-                      <span
-                        onClick={() => {
-                          navigate("/spendify-analytics");
-                        }}
-                      >
+                                        </AboutDropdownItem>
+                                        <AboutDropdownItem>
+                                            <AboutDropdownIcon
+                                                src={SpendifyAnalyticsImg}
+                                                alt="Spendify Analytics"
+                                            />
+                                            <span
+                                                onClick={() => {
+                                                    navigate("/spendify-analytics");
+                                                }}
+                                            >
                         Spendify Analytics
                       </span>
-                    </AboutDropdownItem>
-                  </AboutDropdownWrapper>
-                </DropdownCmp>
-              }
-              animation="slide-up"
-              overlayStyle={{
-                fontFamily: "Gilroy600",
-                fontSize: "16px",
-                zIndex: "2000",
-                width: "fit-content",
-                // bottom: "-10px",
-              }}
-              onVisibleChange={(visible) => {
-                setAboutVisible(visible);
-              }}
-            >
-              <MenuLink>
-                About us{" "}
-                <span>
+                                        </AboutDropdownItem>
+                                    </AboutDropdownWrapper>
+                                </DropdownCmp>
+                            }
+                            animation="slide-up"
+                            overlayStyle={{
+                                fontFamily: "Gilroy600",
+                                fontSize: "16px",
+                                zIndex: "2000",
+                                width: "fit-content",
+                                // bottom: "-10px",
+                            }}
+                            onVisibleChange={(visible) => {
+                                setAboutVisible(visible);
+                            }}
+                        >
+                            <MenuLink>
+                                About us{" "}
+                                <span>
                   <ToggleAboutDropdownIcon
-                    size={30}
-                    color="#0F172A"
-                    visible={aboutVisible}
+                      size={30}
+                      color="#0F172A"
+                      visible={aboutVisible}
                   />
                 </span>
-              </MenuLink>
-            </Dropdown>
-            <MenuLink>F.A.Q</MenuLink>
-            {/* <MenuLink>Learn</MenuLink> */}
-            <MenuLink style={{ color: "#A93691" }}>Sign In</MenuLink>
-          </GroupLink1>
-        </MenuWrapper>
-      </Drawer>
-    </>
-  );
+                            </MenuLink>
+                        </Dropdown>
+                        <MenuLink
+                            onClick={() => {
+                                navigate("/");
+                            }}
+                        >
+                            <Link
+                                to="faq"
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                                spy={true}
+                                exact="true"
+                            >F.A.Q</Link></MenuLink>
+                        {/* <MenuLink>Learn</MenuLink> */}
+                        <MenuLink style={{color: "#A93691"}}
+                                  onClick={() => window.location.href = 'https://personal.spendify.ca/'}>Sign
+                            In</MenuLink>
+                    </GroupLink1>
+                </MenuWrapper>
+            </Drawer>
+        </>
+    );
 };
 
 export default SideDrawerMobile;
