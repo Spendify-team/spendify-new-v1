@@ -148,7 +148,7 @@ const ReviewCmp = ({bgColor}) => {
         return (
             <>
                 <ReviewCardWrapper>
-                    <ReviewText>{review}</ReviewText>
+                    <ReviewText>"{review}"</ReviewText>
 
                     <MainWrapper>
                         <ReviewerWrapper>
@@ -211,7 +211,7 @@ const ReviewCmp = ({bgColor}) => {
                         >
                             {[
                                 {
-                                    review: "Accuracy is just too much...if it's possible I would have given the developer ten 10 🌟",
+                                    review: "Accuracy is just too much...if it's possible I would have given the developer ten 10 🌟. What a well orchestrated app? It is fantastic.",
                                     name: "Michael M. Ogale",
                                     title: "Nigeria",
                                     rating: 5,
@@ -239,7 +239,7 @@ const ReviewCmp = ({bgColor}) => {
                                     img: ManImg,
                                 },
                                 {
-                                    review: "It is very helpful in displaying your money habits\n",
+                                    review: "It is very helpful in displaying your money habits. Wow, it is very important in this current situation of economic meltdown.",
                                     name: "Ajibike Jimoh",
                                     title: "Nigeria",
                                     rating: 5,

@@ -181,7 +181,7 @@ const SelectPlanCmp = ({bgColor}) => {
                     <BottomPlanSection>
                         <SolidButton
                             text={btnText}
-                            onClick={() => planName === "Free Plan" ? window.location.href = "https://wa.me/+16475602110" : '/'}
+                            onClick={() => planName === "Free Plan" ? window.location.href = "https://wa.me/+16475602110" : window.location.href = "https://wa.me/+16475602110?text=Subscribe"}
                             type="submit"
                             weighty="600"
                             textFontSize="16px"
