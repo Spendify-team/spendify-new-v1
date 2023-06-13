@@ -182,6 +182,7 @@ const SideDrawerMobile = ({isOpen, onClose}) => {
                                 offset={-50}
                                 spy={true}
                                 exact="true"
+                                onClick={onClose}
                             >F.A.Q</Link></MenuLink>
                         {/* <MenuLink>Learn</MenuLink> */}
                         <MenuLink style={{color: "#A93691"}}

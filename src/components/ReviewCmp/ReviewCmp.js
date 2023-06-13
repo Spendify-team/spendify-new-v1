@@ -177,7 +177,7 @@ const ReviewCmp = ({bgColor}) => {
             <ContainerDiv bgColor={bgColor} fluid>
                 <Wrapper>
                     <Title>
-                        <Span>Reviews from</Span> our customers
+                        <Span>Reviews from</Span> our users
                     </Title>
                     <Desc>See what our users say about us.</Desc>
                     <ReviewSliderWrapper>
