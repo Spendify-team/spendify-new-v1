@@ -174,7 +174,7 @@ function FooterCmp() {
                             <ItemWrapper>
                                 <ItemList>
                                     <ItemLink as={LinkR} to="/">
-                                        OLA - Spendify Buddy
+                                        Spendify AI
                                     </ItemLink>
                                 </ItemList>
                                 <ItemList>

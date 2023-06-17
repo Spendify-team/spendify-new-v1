@@ -108,14 +108,14 @@ const SideDrawerMobile = ({isOpen, onClose}) => {
                                         <AboutDropdownItem>
                                             <AboutDropdownIcon
                                                 src={SpendifyAppImg}
-                                                alt="OLA - Spendify Buddy"
+                                                alt="Spendify AI"
                                             />
                                             <span
                                                 onClick={() => {
                                                     navigate("/");
                                                 }}
                                             >
-                                                OLA - Spendify Buddy
+                                                Spendify AI
                                                 </span>
                                         </AboutDropdownItem>
                                         <AboutDropdownItem>

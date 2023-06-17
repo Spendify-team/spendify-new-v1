@@ -214,11 +214,11 @@ const HeroCmp = () => {
             <Wrapper>
                 <Particle1></Particle1>
                 <Heading>
-                    Chat with Ola your <Span>Spendify</Span> <Span2>Buddy</Span2>
+                    Chat with OLA your <Span>Spendify</Span> <Span2>Financial Assistant.</Span2>
                 </Heading>
                 <Desc>
-                    Connecting with OLA on your WhatsApp goes beyond basic financial
-                    tracking and budgeting.
+                    Connecting with OLA on your WhatsApp goes beyond expense tracking and budgeting. Chat, engage and
+                    get financial education!
                 </Desc>
                 <ActionWrapper>
                     <SolidButton
