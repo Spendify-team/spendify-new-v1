@@ -3,6 +3,7 @@ import {LazyLoadImage} from "react-lazy-load-image-component";
 import styled from "styled-components";
 import LogoImg from "../../assets/logo.svg";
 import SpendifyAppImg from "../../assets/spendify-app.svg";
+import SpendifyAIImg from "../../assets/robot-icon.svg";
 import SpendifyAnalyticsImg from "../../assets/spendify-analytics.svg";
 import SolidButton from "../Buttons/SolidButton";
 // import NigeriaSvg from "../../assets/nigeria.svg";
@@ -141,7 +142,10 @@ const AboutDropdownItem = styled.div`
   }
 `;
 
-const AboutDropdownIcon = styled.img``;
+const AboutDropdownIcon = styled.img`
+  width: 20px;
+  height: 20px;
+`;
 
 const ToggleAboutDropdownIcon = styled(ArrowDropDown)`
   transform: ${(props) => props.visible === true && "rotate(180deg)"};
@@ -184,7 +188,7 @@ const NavbarCmp = ({scrollToSection}) => {
                                         <AboutDropdownWrapper>
                                             <AboutDropdownItem>
                                                 <AboutDropdownIcon
-                                                    src={SpendifyAppImg}
+                                                    src={SpendifyAIImg}
                                                     alt="Spendify AI"
                                                 />
                                                 <span

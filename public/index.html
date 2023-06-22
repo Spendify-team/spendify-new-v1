@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!-- Primary Meta Tags -->
-    <title>Spendify</title>
-    <meta name="title" content="Spendify" />
-    <meta name="description" content="Chat with your spendify buddy" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      integrity="sha256-YvdLHPgkqJ8DVUxjjnGVlMMJtNimJ6dYkowFFvp4kKs="
-      crossorigin="anonymous"
-    />
-    <style>
-      html {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!-- Primary Meta Tags -->
+  <title>Spendify</title>
+  <meta name="title" content="Spendify" />
+  <meta name="description" content="Chat with your spendify buddy" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha256-YvdLHPgkqJ8DVUxjjnGVlMMJtNimJ6dYkowFFvp4kKs="
+          crossorigin="anonymous"
+  />
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #fff;
+      color: #A93691;
+      border: none;
+      outline: none;
+      cursor: move;
+      z-index: 9999;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-button i {
+      font-size: 24px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/3d7f43cf01.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<button class="floating-button" onclick="translateUrl()" draggable="true">
+  <i class="fa fa-language" aria-hidden="true"></i>
+</button>
+
+<div id="root"></div>
+<script>
+  function translateUrl() {
+    // Translation parameters
+    let translationParams = {
+      _x_tr_sl: "auto",  // Source language (auto-detect)
+      _x_tr_tl: "en",    // Target language (English)
+      _x_tr_hl: "en",    // UI language (English)
+      _x_tr_pto: "wapp"  // Translation mode (web app)
+    };
+
+    // Build the translated URL
+    let translatedUrl = window.location.origin;
+    const convertedUrl = translatedUrl.replace(/-/g, "--").replace(/\./g, "-");
+    let googleAddOn = ".translate.goog/?"
+    translatedUrl = convertedUrl + googleAddOn;
+    Object.keys(translationParams).forEach(function (key) {
+      translatedUrl += encodeURIComponent(key) + "=" + encodeURIComponent(translationParams[key]) + "&";
+    });
+
+    // Redirect to the translated URL
+    window.location.href = translatedUrl;
+  }
+</script>
+</body>
 </html>

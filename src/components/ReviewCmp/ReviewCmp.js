@@ -179,7 +179,7 @@ const ReviewCmp = ({bgColor}) => {
                     <Title>
                         <Span>Reviews from</Span> our users
                     </Title>
-                    <Desc>See what our users say about us.</Desc>
+                    <Desc>Our users stories.</Desc>
                     <ReviewSliderWrapper>
                         <Swiper
                             className="review-carousel"
@@ -219,21 +219,21 @@ const ReviewCmp = ({bgColor}) => {
                                 },
                                 {
                                     review: "Spendify is simply the best expense tracker that fit into my personal budgetary control system. I can call it 'a good guidance and perfect checker",
-                                    name: "A Google User",
+                                    name: "Anonymous",
                                     title: "Egypt",
                                     rating: 5,
                                     img: WomanImg,
                                 },
                                 {
                                     review: "This app is great. It's simplicity allows individuals clear understanding on how their finances flow daily, weekly, quarterly and annual",
-                                    name: "A Google User",
+                                    name: "Anonymous",
                                     title: "United States of America",
                                     rating: 5,
                                     img: ManImg,
                                 },
                                 {
                                     review: "I love this app, it really helps in managing your financial plans for the month. A must have on your phone.",
-                                    name: "A Google User",
+                                    name: "Anonymous",
                                     title: "UAE",
                                     rating: 5,
                                     img: ManImg,

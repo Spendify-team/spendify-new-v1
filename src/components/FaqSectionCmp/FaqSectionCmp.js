@@ -184,7 +184,7 @@ const FaqSectionCmp = ({ bgColor }) => {
                       "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you to make simple and effective financial decisions.",
                   },
                   {
-                    question: "How do I start using the OLA?",
+                    question: "How do I start using OLA?",
                     answer:
                       "To begin using the OLA, all you need to do is open the chat interface and start typing your questions. The chatbot will provide you with relevant information and suggestions.",
                   },

@@ -6,6 +6,7 @@ import GooglePlayImage from "../../assets/Play.svg";
 import AppleStoreImage from "../../assets/Apple.svg";
 import CtaImage from "../../assets/cta-mockup.svg";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import SpendifyWebImage from "../../assets/spendify-web.svg";
 
 const CtaContainer = styled(Container)`
   padding: 2rem 2rem 5rem;
@@ -133,6 +134,7 @@ const CtaCmp2 = ({containerMargin}) => {
                                       onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite'}/>
                             <StoreImg src={AppleStoreImage} alt="Apple store"
                                       onClick={() => window.location.href = 'https://apps.apple.com/us/app/spendify-mobile/id1629340357'}/>
+                            <StoreImg src={SpendifyWebImage} alt="Spendify Web" onClick={() => window.location.href = 'https://personal.spendify.ca'}/>
                         </StoreWrapper>
                     </ContentHolder>
                     <CtaImg src={CtaImage} alt="CTA"/>
