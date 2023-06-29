@@ -145,10 +145,10 @@ const SelectPlanCmp = ({bgColor}) => {
                         <PlanName>{planName}</PlanName>
                         {planName !== "Free Plan" && (
                             <Price>
-                                <PriceSpan>$5.99</PriceSpan>{" "}
+                                <PriceSpan>$4.99</PriceSpan>{" "}
                                 <MonthlySpan>/month</MonthlySpan>
                                 <PriceSpan> | $50</PriceSpan>{" "}
-                                <MonthlySpan>/year (save 30%)</MonthlySpan>
+                                <MonthlySpan>/year (20% discount)</MonthlySpan>
                             </Price>
                         )}
                     </TopPlanSection>
