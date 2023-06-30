@@ -193,12 +193,12 @@ function FooterCmp() {
                             <ColDivTitle>Transparency</ColDivTitle>
                             <ItemWrapper>
                                 <ItemList>
-                                    <ItemLink as={LinkR} to="https://spendify.ca/policies/terms">
+                                    <ItemLink as={LinkR} to="/policies/terms">
                                         Terms and conditions
                                     </ItemLink>
                                 </ItemList>
                                 <ItemList>
-                                    <ItemLink as={LinkR} to="https://spendify.ca/policies/privacy">
+                                    <ItemLink as={LinkR} to="/policies/privacy">
                                         Privacy
                                     </ItemLink>
                                 </ItemList>

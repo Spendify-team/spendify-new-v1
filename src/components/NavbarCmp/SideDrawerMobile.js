@@ -184,6 +184,20 @@ const SideDrawerMobile = ({isOpen, onClose}) => {
                                 exact="true"
                                 onClick={onClose}
                             >F.A.Q</Link></MenuLink>
+                        <MenuLink
+                            onClick={() => {
+                                navigate("/policies/privacy");
+                            }}
+                        >
+                            Privacy
+                        </MenuLink>
+                        <MenuLink
+                            onClick={() => {
+                                navigate("/policies/terms");
+                            }}
+                        >
+                            Terms
+                        </MenuLink>
                         {/* <MenuLink>Learn</MenuLink> */}
                         <MenuLink style={{color: "#A93691"}}
                                   onClick={() => window.location.href = 'https://personal.spendify.ca/'}>Sign

@@ -268,6 +268,20 @@ const NavbarCmp = ({scrollToSection}) => {
                                     F.A.Q
                                 </Link>
                             </MenuLink>
+                            <MenuLink
+                                onClick={() => {
+                                    navigate("/policies/privacy");
+                                }}
+                            >
+                                Privacy
+                            </MenuLink>
+                            <MenuLink
+                                onClick={() => {
+                                    navigate("/policies/terms");
+                                }}
+                            >
+                                Terms
+                            </MenuLink>
                         </GroupLink1>
                     </LogoAndMenuHolder>
                     <MenuAndButtonHolder>

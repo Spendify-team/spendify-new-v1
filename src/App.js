@@ -15,6 +15,8 @@ import Home from "./pages/Home";
 import SpendifyApp from "./pages/SpendifyApp";
 import SpendifyAnalytics from "./pages/SpendifyAnalytics";
 import FaqSectionCmp from "./components/FaqSectionCmp/FaqSectionCmp";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
                         <Route path="/" element={<Home/>}/>
                         <Route path="/spendify-app" element={<SpendifyApp/>}/>
                         <Route path="/spendify-analytics" element={<SpendifyAnalytics/>}/>
+                        <Route path="/policies/privacy" element={<Privacy/>}/>
+                        <Route path="/policies/terms" element={<Terms/>}/>
                         <Route path="/faq" component={<FaqSectionCmp/>}/>
                     </Routes>
                 </ScrollToTop>
