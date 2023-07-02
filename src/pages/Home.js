@@ -25,7 +25,7 @@ const Home = () => {
           </>
         }
         desc={
-          "Looking for the best personal finance app? Look no further than Spendify Mobile App! With OLA your finance coach right on your WhatsApp, our app makes budget management and expense tracking a breeze."
+          "Looking for the best personal finance app ? Look no further than Spendify Mobile App! With OLA your finance coach right on your WhatsApp, our app makes budget management and expense tracking a breeze."
         }
         imgAlt="Money manager"
         imgSrc={SpendifyMobileImg}
