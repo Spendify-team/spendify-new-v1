@@ -67,27 +67,35 @@
             _x_tr_pto: "wapp"  // Translation mode (web app)
         };
 
-        // Build the translated URL
-        let translatedUrl = window.location.origin;
-        const convertedUrl = translatedUrl.replace(/-/g, "--").replace(/\./g, "-");
-        let googleAddOn = ".translate.goog/?";
-        translatedUrl = convertedUrl + googleAddOn;
+        // Build the original and translated URLs
+        let originalUrl = window.location.href;
+        let translatedUrl = originalUrl;
 
         // Toggle translation state
         if (isTranslated) {
             // Remove the translation part from the URL
-            translatedUrl = translatedUrl.replace(googleAddOn, "");
+            const googleAddOn = ".translate.goog/?";
+            const translatedUrlIndex = translatedUrl.indexOf(googleAddOn);
+            if (translatedUrlIndex !== -1) {
+                translatedUrl = translatedUrl.slice(0, translatedUrlIndex);
+            }
             localStorage.setItem('isTranslated', 'false');
         } else {
             // Append translation parameters to the URL
+            let translatedParams = "";
             Object.keys(translationParams).forEach(function (key) {
-                translatedUrl += encodeURIComponent(key) + "=" + encodeURIComponent(translationParams[key]) + "&";
+                translatedParams += encodeURIComponent(key) + "=" + encodeURIComponent(translationParams[key]) + "&";
             });
+            const googleAddOn = ".translate.goog/?";
+            translatedUrl = translatedUrl.replace(/#.*$/, ''); // Remove hash
+            translatedUrl += googleAddOn + translatedParams;
             localStorage.setItem('isTranslated', 'true');
         }
 
         // Redirect to the translated or original URL
-        window.location.href = translatedUrl;
+        if (translatedUrl !== originalUrl) {
+            window.location.href = translatedUrl;
+        }
     }
 
 </script>
