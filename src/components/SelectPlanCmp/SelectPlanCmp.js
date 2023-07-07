@@ -148,7 +148,7 @@ const SelectPlanCmp = ({bgColor}) => {
                                 <PriceSpan>$4.99</PriceSpan>{""}
                                 <MonthlySpan>/Month</MonthlySpan>{" | "}
                                 <PriceSpan>$50</PriceSpan>{""}
-                                <MonthlySpan>/Year (20% discount)</MonthlySpan>
+                                <MonthlySpan>/Year (17% discount)</MonthlySpan>
                             </Price>
                         )}
                     </TopPlanSection>
@@ -217,26 +217,26 @@ const SelectPlanCmp = ({bgColor}) => {
                     <Title>
                         Choose the right <Span>plan for you</Span>
                     </Title>
-                    <Desc>Check out our pricing plans!</Desc>
+                    <Desc>Check out our pricing plan!</Desc>
                     <PlanDisplayWrapper>
-                        <PlanCmp
-                            planName={"Free Plan"}
-                            featureList={[
-                                "Free Spendify Mobile download",
-                                "Full access to Spendify Mobile features ",
-                                "Chat features-2 day free trial",
-                                "AI features - 2 day free trial",
-                                "Regular model update",
-                            ]}
-                            btnText="Your current plan"
-                        />
+                        {/*<PlanCmp*/}
+                        {/*    planName={"Free Plan"}*/}
+                        {/*    featureList={[*/}
+                        {/*        "Free Spendify Mobile download",*/}
+                        {/*        "Full access to Spendify Mobile features ",*/}
+                        {/*        "Chat features-2 day free trial",*/}
+                        {/*        "AI features - 2 day free trial",*/}
+                        {/*        "Regular model update",*/}
+                        {/*    ]}*/}
+                        {/*    btnText="Your current plan"*/}
+                        {/*/>*/}
                         <PlanCmp
                             planName={"Pro Plan"}
                             featureList={[
-                                "Free Spendify Mobile download",
-                                "Full access to Spendify Mobile features ",
-                                "Full access to chat features",
-                                "Full access to AI features",
+                                "Spendify Mobile download",
+                                "Full access to Spendify app features ",
+                                "Full access to AI chat features",
+                                "Full access to Spendify AI features",
                                 "Priority model update to new features"
                             ]}
                             btnText="Upgrade to pro"

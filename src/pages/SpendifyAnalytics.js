@@ -47,8 +47,11 @@ const SpendifyAnalytics = () => {
         borderColor="transparent"
         btnText="Login"
         flexDirection={"row"}
+        onClick={() => window.location.href = "https://analytic.spendify.ca"}
       />
-      <CtaCmp btnText="Subscribe" ctaText={"We’re Trusted by Our Partners"} />
+      <CtaCmp
+          onClick={() => window.location.href = "https://analytic.spendify.ca"}
+          btnText="Subscribe" ctaText={"We’re Trusted by Our Partners"} />
       <FooterCmp />
     </>
   );

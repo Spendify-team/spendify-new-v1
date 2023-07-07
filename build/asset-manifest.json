@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.77554fb7.css",
-    "main.js": "/static/js/main.f60790af.js",
+    "main.js": "/static/js/main.17496adc.js",
     "static/media/SpendifyAppHeroImg.svg": "/static/media/SpendifyAppHeroImg.dc0cf3625d40f461cda5cf7aa008d377.svg",
     "static/media/03.png": "/static/media/03.a213d3e280c48af3ed08.png",
     "static/media/cta-mockup.svg": "/static/media/cta-mockup.07bb35cba3a0290bd6e164b271205616.svg",
@@ -32,21 +32,21 @@
     "static/media/Apple.svg": "/static/media/Apple.3452218d4935e1e06cb9c53449cd372f.svg",
     "static/media/feature-3.svg": "/static/media/feature-3.885ba672a565c383553d09d68911eacd.svg",
     "static/media/Play.svg": "/static/media/Play.2e7c5b881494a4d487bf0a3bf5b8a2cf.svg",
-    "static/media/woman.svg": "/static/media/woman.b33cedf1c39accdff22921c6312f1963.svg",
+    "static/media/woman.svg": "/static/media/woman.2694e1e1f7e635eb7854a68b52249bf6.svg",
     "static/media/spendify-app.svg": "/static/media/spendify-app.ee7061acdf10795f5dad9a24e29d35cf.svg",
-    "static/media/man-user.svg": "/static/media/man-user.cae37cf8a1504696613d0cc79a82b263.svg",
-    "static/media/particle-1.svg": "/static/media/particle-1.270c770f0b4fe593f8921c2a53af6fcd.svg",
+    "static/media/man-user.svg": "/static/media/man-user.6dc33bcc0e01cca175cef0db07b7892f.svg",
     "index.html": "/index.html",
+    "static/media/particle-1.svg": "/static/media/particle-1.270c770f0b4fe593f8921c2a53af6fcd.svg",
     "static/media/spendify-analytics.svg": "/static/media/spendify-analytics.fdf04effff7d4433ded6e80601aeb121.svg",
     "static/media/robot-icon.svg": "/static/media/robot-icon.6394de769926c044182d8dc7d09ac795.svg",
     "static/media/particle-2.svg": "/static/media/particle-2.ac95d23b5c4820451fd378287d3f6fca.svg",
     "static/media/cta-svg.svg": "/static/media/cta-svg.158d3c946ca3943e0f5e6fe777881b8d.svg",
     "static/media/vertical-arrow.svg": "/static/media/vertical-arrow.33f161685397c90d1718cd8688bde317.svg",
     "main.77554fb7.css.map": "/static/css/main.77554fb7.css.map",
-    "main.f60790af.js.map": "/static/js/main.f60790af.js.map"
+    "main.17496adc.js.map": "/static/js/main.17496adc.js.map"
   },
   "entrypoints": [
     "static/css/main.77554fb7.css",
-    "static/js/main.f60790af.js"
+    "static/js/main.17496adc.js"
   ]
 }

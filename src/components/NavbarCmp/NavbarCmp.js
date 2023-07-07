@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import styled from "styled-components";
 import LogoImg from "../../assets/logo.svg";
@@ -13,7 +13,7 @@ import {ArrowDropDown} from "@styled-icons/remix-fill/ArrowDropDown";
 import Dropdown from "rc-dropdown";
 import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import "rc-dropdown/assets/index.css";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 import {Link, animateScroll as scroll} from 'react-scroll';
 
 const activeStyle = {
@@ -159,6 +159,17 @@ const NavbarCmp = ({scrollToSection}) => {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const navigate = useNavigate();
 
+    const location = useLocation();
+    const currentPage = location.pathname;
+    const isHomePage = currentPage === "/";
+
+    const handleMenuClick = () => {
+        if (!isHomePage) {
+            navigate("/faq");
+        }
+    };
+
+
     const [aboutVisible, setAboutVisible] = useState();
 
     return (
@@ -251,22 +262,22 @@ const NavbarCmp = ({scrollToSection}) => {
                   </span>
                                 </MenuLink>
                             </Dropdown>
-                            <MenuLink
-                                onClick={() => {
-                                    navigate("/");
-                                }}
-                            >
-                                <Link
-                                    to="faq"
-                                    smooth={true}
-                                    duration={500}
-                                    offset={-50}
-                                    spy={true}
-                                    exact="true"
-                                    activeClass={activeStyle}
-                                >
-                                    F.A.Q
-                                </Link>
+                            <MenuLink onClick={handleMenuClick}>
+                                {isHomePage ? (
+                                    <Link
+                                        to="faq"
+                                        smooth={true}
+                                        duration={500}
+                                        offset={-50}
+                                        spy={true}
+                                        exact="true"
+                                        activeClass={activeStyle}
+                                    >
+                                        F.A.Q
+                                    </Link>
+                                ) : (
+                                    <Link to="/faq" onClick={handleMenuClick}>F.A.Q</Link>
+                                )}
                             </MenuLink>
                             <MenuLink
                                 onClick={() => {

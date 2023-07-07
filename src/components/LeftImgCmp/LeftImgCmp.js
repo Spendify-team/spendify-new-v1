@@ -135,7 +135,7 @@ const LeftImgCmp = ({
                         borderColor,
                         flexDirection,
                         mobilePadding,
-
+                        onClick
                     }) => {
     const navigate = useNavigate();
 
@@ -152,9 +152,7 @@ const LeftImgCmp = ({
                                 <LearnMoreWrapper>
                                     <SolidButton
                                         text={btnText || "Learn more"}
-                                        onClick={() => {
-                                            navigate("/spendify-app");
-                                        }}
+                                        onClick={onClick || (() => navigate("/spendify-app"))}
                                         type="submit"
                                         weighty="700"
                                         textFontSize="16px"

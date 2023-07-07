@@ -11,7 +11,7 @@ import LogoImg from "../../assets/logo.svg";
 import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import SpendifyAppImg from "../../assets/spendify-app.svg";
 import SpendifyAnalyticsImg from "../../assets/spendify-analytics.svg";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {Link, animateScroll as scroll} from 'react-scroll';
 
 
@@ -74,6 +74,16 @@ const ToggleAboutDropdownIcon = styled(ArrowDropDown)`
 const SideDrawerMobile = ({isOpen, onClose}) => {
     const [aboutVisible, setAboutVisible] = useState();
     const navigate = useNavigate();
+
+    const location = useLocation();
+    const currentPage = location.pathname;
+    const isHomePage = currentPage === "/";
+
+    const handleMenuClick = () => {
+        if (!isHomePage) {
+            navigate("/faq");
+        }
+    };
     return (
         <>
             <Drawer
@@ -170,20 +180,23 @@ const SideDrawerMobile = ({isOpen, onClose}) => {
                 </span>
                             </MenuLink>
                         </Dropdown>
-                        <MenuLink
-                            onClick={() => {
-                                navigate("/");
-                            }}
-                        >
-                            <Link
-                                to="faq"
-                                smooth={true}
-                                duration={500}
-                                offset={-50}
-                                spy={true}
-                                exact="true"
-                                onClick={onClose}
-                            >F.A.Q</Link></MenuLink>
+                        <MenuLink onClick={handleMenuClick}>
+                            {isHomePage ? (
+                                <Link
+                                    to="faq"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-50}
+                                    spy={true}
+                                    exact="true"
+                                    onClick={onClose}
+                                >
+                                    F.A.Q
+                                </Link>
+                            ) : (
+                                <Link to="/faq" onClick={handleMenuClick}>F.A.Q</Link>
+                            )}
+                        </MenuLink>
                         <MenuLink
                             onClick={() => {
                                 navigate("/policies/privacy");

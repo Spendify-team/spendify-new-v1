@@ -116,7 +116,7 @@ const Particle2Img = styled.img`
   }
 `;
 
-const CtaCmp = ({containerMargin, ctaText, btnText}) => {
+const CtaCmp = ({containerMargin, ctaText, btnText,onClick}) => {
     return (
         <>
             <CtaContainer fluid containerMargin={containerMargin}>
@@ -128,7 +128,7 @@ const CtaCmp = ({containerMargin, ctaText, btnText}) => {
                         <Zoom triggerOnce={true}>
                             <ActionWrapper>
                                 <SolidButton
-                                    onClick={() => window.location.href = "https://wa.me/+16475602110"}
+                                    onClick={onClick || (() => window.location.href = "https://wa.me/+16475602110")}
                                     text={btnText || "Chat here"}
                                     type="submit"
                                     weighty="600"

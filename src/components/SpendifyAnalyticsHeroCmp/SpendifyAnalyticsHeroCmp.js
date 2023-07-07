@@ -157,6 +157,7 @@ const SpendifyAnalyticsHeroCmp = () => {
         <ActionWrapper>
           <SolidButton
             text={"Subscribe"}
+            onClick={() => window.location.href = "https://analytic.spendify.ca"}
             type="submit"
             weighty="600"
             textFontSize="16px"

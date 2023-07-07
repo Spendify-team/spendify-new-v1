@@ -241,13 +241,6 @@ function FooterCmp() {
                                     >
                                         <Twitter size={18} color="#fff"/>
                                     </IconContainer>
-                                    <IconContainer
-                                        onClick={() => {
-                                            openLink("#");
-                                        }}
-                                    >
-                                        <Tiktok size={18} color="#fff"/>
-                                    </IconContainer>
                                 </SocialWrapper>
                                 <StoreWrapper>
                                     <StoreImg src={GooglePlayImage} alt="Playstore"
