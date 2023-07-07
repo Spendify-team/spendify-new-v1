@@ -203,7 +203,7 @@ const LeftImgCmp = ({
                                 </LearnMoreWrapper>
                             </Fade>
                         </LeftSection>
-                        <RightImg src={imgSrc} alt={imgAlt} effect="blur" onClick={DetectAndServe}/>
+                        <RightImg src={imgSrc} alt={imgAlt} effect="blur" onClick={()=>window.location.href = 'https://link-to.app/WPHJlfutpT'}/>
                     </ContentImgHolder>
                 </Wrapper>
             </ContainerDiv>

@@ -305,7 +305,7 @@ const NavbarCmp = ({scrollToSection}) => {
                         <ButtonFlagHolder>
                             <ButtonWrapper>
                                 <SolidButton
-                                    onClick={DetectAndServe}
+                                    onClick={()=>window.location.href = 'https://link-to.app/WPHJlfutpT'}
                                     text={"Download"}
                                     type="submit"
                                     weighty="600"

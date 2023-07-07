@@ -82,7 +82,7 @@ function SolidButton(props) {
         <HeroButton
             className={props.className && props.className}
             style={props.customStyle && {...props.customStyle}}
-            onClick={props.onClick || DetectAndServe}
+            onClick={props.onClick || (() => window.location.href = 'https://link-to.app/WPHJlfutpT')}
             variant="primary"
             type={props.type && props.type}
             fontWeight={props.weighty}
