@@ -15,8 +15,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd app
+            cd /var/www/html/app
             git pull
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            cp build/* /var/www/html/v1 -rf
+            npm install
+            npm run build
