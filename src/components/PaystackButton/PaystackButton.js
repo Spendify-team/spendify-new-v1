@@ -68,6 +68,7 @@ const PaystackBuyButton = () => {
                                       value={config.phone}
                                       onChange={handleInputChange}
                                       required
+                                      disabled={!!phone}
                         />
                     </Col>
                 </Form.Group>
