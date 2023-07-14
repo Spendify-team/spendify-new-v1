@@ -3,6 +3,7 @@ import {Container} from "react-bootstrap";
 import styled from "styled-components";
 import {CheckboxCircle} from "@styled-icons/remix-line";
 import SolidButton from "../Buttons/SolidButton";
+import {useNavigate, useLocation} from "react-router-dom";
 
 const ContainerDiv = styled(Container)`
   padding: 4rem 3rem;
@@ -137,6 +138,8 @@ const PlanDisplayWrapper = styled.div`
 `;
 
 const SelectPlanCmp = ({bgColor}) => {
+    const navigate = useNavigate();
+
     const PlanCmp = ({planName, featureList, btnText}) => {
         return (
             <>
@@ -181,7 +184,7 @@ const SelectPlanCmp = ({bgColor}) => {
                     <BottomPlanSection>
                         <SolidButton
                             text={btnText}
-                            onClick={() => planName === "Free Plan" ? window.location.href = "https://wa.me/+16475602110" : window.location.href = "https://wa.me/+16475602110?text=Subscribe"}
+                            onClick={() => planName === "Free Plan" ? window.location.href = "https://wa.me/+16475602110" : navigate("/subscribe")}
                             type="submit"
                             weighty="600"
                             textFontSize="16px"

@@ -17,6 +17,7 @@ import SpendifyAnalytics from "./pages/SpendifyAnalytics";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Faq from "./pages/Faq";
+import Subscribe from "./pages/Subscribe";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                         <Route path="/policies/privacy" element={<Privacy/>}/>
                         <Route path="/policies/terms" element={<Terms/>}/>
                         <Route path="/faq" element={<Faq/>}/>
+                        <Route path="/subscribe" element={<Subscribe/>}/>
                     </Routes>
                 </ScrollToTop>
             </Router>
