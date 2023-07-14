@@ -33,6 +33,7 @@ const PaystackBuyButton = () => {
         console.log('Payment successful:', response);
     };
 
+
     const handlePaymentError = (error) => {
         // Handle payment error
         console.error('Payment error:', error);
