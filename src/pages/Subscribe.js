@@ -82,6 +82,7 @@ const Subscribe = () => {
                         </CardGroup>
                     </Tab>
                 </Tabs>
+
             </Container>
             <br/>
             <br/>
