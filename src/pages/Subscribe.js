@@ -2,10 +2,18 @@ import React from "react";
 import FooterCmp from "../components/FooterCmp/FooterCmp";
 import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
 import PaystackBuyButton from "../components/PaystackButton/PaystackButton";
-import {CardGroup, Tabs, Tab, Container, Card} from "react-bootstrap";
+import {CardGroup, Tabs, Tab, Container, Card, Row, Col} from "react-bootstrap";
+import {useLocation} from 'react-router-dom';
+import {useEffect} from 'react';
 
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
 const Subscribe = () => {
+    const query = useQuery();
+    const email = query.get('email');
+    const phone = query.get('phone');
 
     return (
         <>
@@ -15,44 +23,46 @@ const Subscribe = () => {
             <Container>
 
                 <Tabs
-                    defaultActiveKey="paystack"
+                    defaultActiveKey="stripe"
                     id="uncontrolled-tab-example"
                     className="mb-3"
                 >
-                    {/*<Tab eventKey="stripe" title={<><img src="https://i.im.ge/2023/07/14/5Lms90.Stripe-Emblem.png" alt="Stripe Icon" className="icon" /> Stripe</>}>*/}
-                    {/*    <Row>*/}
-                    {/*        <Col>*/}
-                    {/*            <Card className="text-center">*/}
-                    {/*                <Card.Body className="shadow">*/}
-                    {/*                    <Card.Title>Monthly Subscription</Card.Title>*/}
-                    {/*                    <Card.Text>*/}
-                    {/*                        <stripe-buy-button*/}
-                    {/*                            customer-email="jaysage73@gmail.com"*/}
-                    {/*                            customer-phone="09016258859"*/}
-                    {/*                            buy-button-id="buy_btn_1NTjXvAcxvDdmAlwSrC8btLa"*/}
-                    {/*                            publishable-key="pk_live_51NB3uKAcxvDdmAlw0eNmlewWf2ezFANPnrhMOSskWHHMHWWlpnW2OeLpJIc8jZPOX6QRAE8v0xXPOdPfqAw9aVyC00o7IFjwD9"*/}
-                    {/*                        >*/}
-                    {/*                        </stripe-buy-button>*/}
-                    {/*                    </Card.Text>*/}
-                    {/*                </Card.Body>*/}
-                    {/*            </Card>*/}
-                    {/*        </Col>*/}
-                    {/*        <Col>*/}
-                    {/*            <Card className="text-center">*/}
-                    {/*                <Card.Body className="shadow">*/}
-                    {/*                    <Card.Title>Yearly Subscription</Card.Title>*/}
-                    {/*                    <Card.Text>*/}
-                    {/*                        <stripe-buy-button*/}
-                    {/*                            buy-button-id="buy_btn_1NTjaGAcxvDdmAlwyhXkTK3S"*/}
-                    {/*                            publishable-key="pk_live_51NB3uKAcxvDdmAlw0eNmlewWf2ezFANPnrhMOSskWHHMHWWlpnW2OeLpJIc8jZPOX6QRAE8v0xXPOdPfqAw9aVyC00o7IFjwD9"*/}
-                    {/*                        >*/}
-                    {/*                        </stripe-buy-button>*/}
-                    {/*                    </Card.Text>*/}
-                    {/*                </Card.Body>*/}
-                    {/*            </Card>*/}
-                    {/*        </Col>*/}
-                    {/*    </Row>*/}
-                    {/*</Tab>*/}
+                    <Tab eventKey="stripe"
+                         title={<><img src="https://i.im.ge/2023/07/14/5Lms90.Stripe-Emblem.png" alt="Stripe Icon"
+                                       className="icon"/> Stripe</>}>
+                        <Row>
+                            <Col>
+                                <Card className="text-center">
+                                    <Card.Body className="shadow">
+                                        <Card.Title>Monthly Subscription</Card.Title>
+                                        <Card.Text>
+                                            <stripe-buy-button
+                                                customer-email={email}
+                                                customer-phone={phone}
+                                                buy-button-id="buy_btn_1NTjXvAcxvDdmAlwSrC8btLa"
+                                                publishable-key="pk_live_51NB3uKAcxvDdmAlw0eNmlewWf2ezFANPnrhMOSskWHHMHWWlpnW2OeLpJIc8jZPOX6QRAE8v0xXPOdPfqAw9aVyC00o7IFjwD9"
+                                            >
+                                            </stripe-buy-button>
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col>
+                                <Card className="text-center">
+                                    <Card.Body className="shadow">
+                                        <Card.Title>Yearly Subscription</Card.Title>
+                                        <Card.Text>
+                                            <stripe-buy-button
+                                                buy-button-id="buy_btn_1NTjaGAcxvDdmAlwyhXkTK3S"
+                                                publishable-key="pk_live_51NB3uKAcxvDdmAlw0eNmlewWf2ezFANPnrhMOSskWHHMHWWlpnW2OeLpJIc8jZPOX6QRAE8v0xXPOdPfqAw9aVyC00o7IFjwD9"
+                                            >
+                                            </stripe-buy-button>
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </Tab>
                     <Tab eventKey="paystack"
                          title={<><img src="https://i.im.ge/2023/07/14/5Lwbpa.Paystack-mark-white-twitter.png"
                                        alt="Paystack Icon" className="picon"/> Paystack</>}>
@@ -65,8 +75,9 @@ const Subscribe = () => {
                             <Card className="text-center align-content-center custom-card border-0">
                                 <Card.Body className="">
                                     <br/>
-                                    <Card.Title><img src="https://i.im.ge/2023/07/15/5UDPzF.6079706c752a09007a6ebea3-Paystack-Logo.png"
-                                                     alt="Paystack Icon" className="ptitle"/></Card.Title>
+                                    <Card.Title><img
+                                        src="https://i.im.ge/2023/07/15/5UDPzF.6079706c752a09007a6ebea3-Paystack-Logo.png"
+                                        alt="Paystack Icon" className="ptitle"/></Card.Title>
                                     <br/>
                                     <br/>
                                     <Card.Text>
