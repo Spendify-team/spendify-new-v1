@@ -2,7 +2,7 @@ import React from "react";
 import FooterCmp from "../components/FooterCmp/FooterCmp";
 import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
 import PaystackBuyButton from "../components/PaystackButton/PaystackButton";
-import {Col, Row, Tabs, Tab, Container, Card} from "react-bootstrap";
+import {CardGroup, Tabs, Tab, Container, Card} from "react-bootstrap";
 
 
 const Subscribe = () => {
@@ -53,21 +53,33 @@ const Subscribe = () => {
                     {/*        </Col>*/}
                     {/*    </Row>*/}
                     {/*</Tab>*/}
-                    <Tab eventKey="paystack" title={<><img src="https://i.im.ge/2023/07/14/5Lwbpa.Paystack-mark-white-twitter.png" alt="Paystack Icon" className="picon" /> Paystack</>}>
-
-                        <Card className="text-center">
-                            <Card.Body className="shadow">
-                                <Card.Title>Paystack Payment</Card.Title>
+                    <Tab eventKey="paystack"
+                         title={<><img src="https://i.im.ge/2023/07/14/5Lwbpa.Paystack-mark-white-twitter.png"
+                                       alt="Paystack Icon" className="picon"/> Paystack</>}>
+                        <CardGroup className={'shadow'}>
+                            <Card className="text-center align-content-center border-0">
+                                <Card.Img variant="top"
+                                          src="https://i.im.ge/2023/07/15/5U7llx.WhatsApp-Image-2023-06-29-at-11-46-44-PM.jpg"
+                                          className={'image'}/>
+                            </Card>
+                            <Card className="text-center align-content-center custom-card border-0">
+                                <Card.Body className="">
+                                    <br/>
+                                    <Card.Title><img src="https://i.im.ge/2023/07/15/5UDPzF.6079706c752a09007a6ebea3-Paystack-Logo.png"
+                                                     alt="Paystack Icon" className="ptitle"/></Card.Title>
+                                    <br/>
+                                    <br/>
+                                    <Card.Text>
+                                        <PaystackBuyButton/>
+                                    </Card.Text>
+                                    {/*<Card.Img variant="top"*/}
+                                    {/*          src="https://i.im.ge/2023/07/15/5UDQxY.paystack-logo-1.png"*/}
+                                    {/*          className={'image'}/>*/}
+                                </Card.Body>
                                 <br/>
-                                <Card.Text>
-                                    <PaystackBuyButton/>
-                                </Card.Text>
-                            </Card.Body>
-                            <Card.Footer>
-                                Subscription
-                            </Card.Footer>
-                        </Card>
+                            </Card>
 
+                        </CardGroup>
                     </Tab>
                 </Tabs>
             </Container>
