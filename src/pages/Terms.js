@@ -18,6 +18,7 @@ const titleStyle = {
     color: '#0f172a',
     opacity: '0.8'
 };
+
 const Terms = () => {
     return (
         <>
