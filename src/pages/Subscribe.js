@@ -38,6 +38,7 @@ const Subscribe = () => {
                                         <Card.Text>
                                             <stripe-buy-button
                                                 customer-email={email}
+                                                client-reference-id={phone}
                                                 customer-phone={phone}
                                                 buy-button-id="buy_btn_1NTjXvAcxvDdmAlwSrC8btLa"
                                                 publishable-key="pk_live_51NB3uKAcxvDdmAlw0eNmlewWf2ezFANPnrhMOSskWHHMHWWlpnW2OeLpJIc8jZPOX6QRAE8v0xXPOdPfqAw9aVyC00o7IFjwD9"
@@ -53,6 +54,8 @@ const Subscribe = () => {
                                         <Card.Title>Yearly Subscription</Card.Title>
                                         <Card.Text>
                                             <stripe-buy-button
+                                                customer-email={email}
+                                                client-reference-id={phone}
                                                 buy-button-id="buy_btn_1NTjaGAcxvDdmAlwyhXkTK3S"
                                                 publishable-key="pk_live_51NB3uKAcxvDdmAlw0eNmlewWf2ezFANPnrhMOSskWHHMHWWlpnW2OeLpJIc8jZPOX6QRAE8v0xXPOdPfqAw9aVyC00o7IFjwD9"
                                             >
