@@ -1,15 +1,23 @@
 import React from "react";
 import FooterCmp from "../components/FooterCmp/FooterCmp";
-import LeftImgCmp from "../components/LeftImgCmp/LeftImgCmp";
 import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
-import PeriodicReportImg from "../assets/periodic-report.svg";
-import AllInOneImg from "../assets/all-in-one.svg";
-import SpendifyAppHeroCmp from "../components/SpendifyAppHeroCmp/SpendifyAppHeroCmp";
-import UseSpendifyCmp from "../components/UseSpendifyCmp/UseSpendifyCmp";
-import SimpleStepsCmp from "../components/SimpleStepsCmp/SimpleStepsCmp";
-import CtaCmp2 from "../components/CtaCmp2/CtaCmp2";
-import AppFeaturesCmp from "../components/AppFeaturesCmp/AppFeaturesCmp";
 
+
+const pStyle = {
+    margin: '0',
+    padding: '15px 0',
+    fontFamily: "Gilroy500",
+    fontSize: '16px',
+    opacity: '0.7',
+    color: '#6c757d'
+};
+
+const titleStyle = {
+    margin: '0',
+    fontFamily: "Gilroy600",
+    color: '#0f172a',
+    opacity: '0.8'
+};
 const Terms = () => {
     return (
         <>
@@ -17,13 +25,14 @@ const Terms = () => {
             <section className="privacy-section padding-top padding-bottom">
                 <div className="container">
                     <br/>
-                    <div className="row justify-content-between">
-
+                    <div className="row">
+                        <div className='col'>
+                        </div>
                         <div className="col-lg-8 col-xl-7">
-                            <article className="mt-70 mt-lg-0">
+                            <article className="mt-70 mt-lg-0 justify-content-center">
                                 <div className="privacy-item" id="general">
-                                    <h3 className="title" style={{fontFamily: "Gilroy700"}}>General</h3>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <h3 className="title" style={titleStyle}>General</h3>
+                                    <p style={pStyle}>
                                         By downloading or using the app, these terms will automatically apply to you –
                                         you should make sure therefore that you read them carefully before using the
                                         app. You’re not allowed to copy or modify the app, any part of the app, or our
@@ -33,14 +42,14 @@ const Terms = () => {
                                         database rights, and other intellectual property rights related to it, still
                                         belong to Spendify Technologies.
                                     </p>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <p style={pStyle}>
                                         Spendify Technologies is committed to ensuring that the app is as useful and
                                         efficient as possible. For that reason, we reserve the right to make changes to
                                         the app or to charge for its services, at any time and for any reason. We will
                                         never charge you for the app or its services without making it very clear to you
                                         exactly what you’re paying for
                                     </p>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <p style={pStyle}>
                                         The Spendify Mobile app stores and processes personal data that you have
                                         provided to us, in order to provide our Service. It’s your responsibility to
                                         keep your phone and access to the app secure. We, therefore, recommend that you
@@ -50,7 +59,7 @@ const Terms = () => {
                                         programs, compromise your phone’s security features and it could mean that the
                                         Spendify Mobile app won’t work properly or at all.
                                     </p>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <p style={pStyle}>
                                         You should be aware that there are certain things that Spendify Technologies
                                         will not take responsibility for. Certain functions of the app will require the
                                         app to have an active internet connection. The connection can be Wi-Fi or
@@ -58,7 +67,7 @@ const Terms = () => {
                                         responsibility for the app not working at full functionality if you don’t have
                                         access to Wi-Fi, and you don’t have any of your data allowance left.
                                     </p>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <p style={pStyle}>
                                         If you’re using the app outside of an area with Wi-Fi, you should remember that
                                         the terms of the agreement with your mobile network provider will still apply.
                                         As a result, you may be charged by your mobile provider for the cost of data for
@@ -73,7 +82,7 @@ const Terms = () => {
                                         charged – if it runs out of battery and you can’t turn it on to avail of the
                                         Service, Spendify Technologies cannot accept responsibility.
                                     </p>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <p style={pStyle}>
                                         With respect to Spendify Technologies’s responsibility for your use of the app,
                                         when you’re using the app, it’s important to bear in mind that although we
                                         endeavor to ensure that it is updated and correct at all times, we do rely on
@@ -82,7 +91,7 @@ const Terms = () => {
                                         indirect, you experience as a result of relying wholly on this functionality of
                                         the app.
                                     </p>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <p style={pStyle}>
                                         At some point, we may wish to update the app. The app is currently available on
                                         Android – the requirements for the system (and for any additional systems we
                                         decide to extend the availability of the app to) may change, and you’ll need to
@@ -98,8 +107,9 @@ const Terms = () => {
                                     </p>
                                 </div>
                                 <div className="privacy-item" id="change">
-                                    <h3 className="title" style={{fontFamily: "Gilroy700"}}>Changes to This Privacy Policy</h3>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <h3 className="title" style={titleStyle}>Changes to This Privacy
+                                        Policy</h3>
+                                    <p style={pStyle}>
                                         We may update our Terms and Conditions from time to time. Thus, you are advised
                                         to review this page periodically for any changes. We will notify you of any
                                         changes by posting the new Terms and Conditions on this page. These changes are
@@ -107,13 +117,15 @@ const Terms = () => {
                                     </p>
                                 </div>
                                 <div className="privacy-item" id="contact">
-                                    <h3 className="title" style={{fontFamily: "Gilroy700"}}>Get In Touch</h3>
-                                    <p style={{fontFamily: "Gilroy500"}}>
+                                    <h3 className="title" style={titleStyle}>Get In Touch</h3>
+                                    <p style={pStyle}>
                                         If you have any questions or suggestions about our Terms and Conditions, do not
                                         hesitate to contact us at <a href="mailto:info@spendify.ca">info@spendify.ca</a>.
                                     </p>
                                 </div>
                             </article>
+                        </div>
+                        <div className='col'>
                         </div>
                     </div>
                 </div>

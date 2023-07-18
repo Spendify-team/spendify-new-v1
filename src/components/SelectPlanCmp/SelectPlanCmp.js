@@ -3,7 +3,7 @@ import {Container} from "react-bootstrap";
 import styled from "styled-components";
 import {CheckboxCircle} from "@styled-icons/remix-line";
 import SolidButton from "../Buttons/SolidButton";
-import {useNavigate, useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const ContainerDiv = styled(Container)`
   padding: 4rem 3rem;
@@ -151,7 +151,7 @@ const SelectPlanCmp = ({bgColor}) => {
                                 <PriceSpan>$4.99</PriceSpan>{""}
                                 <MonthlySpan>/Month</MonthlySpan>{" | "}
                                 <PriceSpan>$50</PriceSpan>{""}
-                                <MonthlySpan>/Year (17% discount)</MonthlySpan>
+                                <MonthlySpan>/Year</MonthlySpan>
                             </Price>
                         )}
                     </TopPlanSection>
@@ -234,7 +234,7 @@ const SelectPlanCmp = ({bgColor}) => {
                         {/*    btnText="Your current plan"*/}
                         {/*/>*/}
                         <PlanCmp
-                            planName={"Subscription Plan"}
+                            planName={"Subscription"}
                             featureList={[
                                 "Spendify Mobile download",
                                 "Full access to Spendify app features ",
