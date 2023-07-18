@@ -234,7 +234,7 @@ const SelectPlanCmp = ({bgColor}) => {
                         {/*    btnText="Your current plan"*/}
                         {/*/>*/}
                         <PlanCmp
-                            planName={"Pro Plan"}
+                            planName={"Subscription Plan"}
                             featureList={[
                                 "Spendify Mobile download",
                                 "Full access to Spendify app features ",
@@ -242,7 +242,7 @@ const SelectPlanCmp = ({bgColor}) => {
                                 "Full access to Spendify AI features",
                                 "Priority model update to new features"
                             ]}
-                            btnText="Upgrade to pro"
+                            btnText="Subscribe"
                         />
                     </PlanDisplayWrapper>
                 </Wrapper>
