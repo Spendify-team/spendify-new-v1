@@ -218,9 +218,9 @@ const SelectPlanCmp = ({bgColor}) => {
             <ContainerDiv bgColor={bgColor} fluid>
                 <Wrapper>
                     <Title>
-                        Choose the right <Span>plan for you</Span>
+                        Our Subscription <Span>Plan</Span>
                     </Title>
-                    <Desc>Check out our pricing plan!</Desc>
+                    <Desc>Value for money!</Desc>
                     <PlanDisplayWrapper>
                         {/*<PlanCmp*/}
                         {/*    planName={"Free Plan"}*/}
