@@ -16,6 +16,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/html/app
+            git stash
             git pull
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
