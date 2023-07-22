@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mikekorakakis/react-3d-animated-card": "^1.0.12",
     "@stripe/react-stripe-js": "^2.1.1",
     "@stripe/stripe-js": "^1.54.1",
     "@styled-icons/boxicons-logos": "^10.47.0",
@@ -59,5 +60,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-loader": "^7.3.3",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.64.0",
+    "sass-loader": "^13.3.2"
   }
 }

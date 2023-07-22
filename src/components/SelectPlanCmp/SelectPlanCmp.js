@@ -218,9 +218,9 @@ const SelectPlanCmp = ({bgColor}) => {
             <ContainerDiv bgColor={bgColor} fluid>
                 <Wrapper>
                     <Title>
-                        Our Subscription <Span>Plan</Span>
+                        Choose the right <Span>plan for you</Span>
                     </Title>
-                    <Desc>Value for money!</Desc>
+                    <Desc>Monthly and Yearly Plan</Desc>
                     <PlanDisplayWrapper>
                         {/*<PlanCmp*/}
                         {/*    planName={"Free Plan"}*/}
@@ -234,7 +234,7 @@ const SelectPlanCmp = ({bgColor}) => {
                         {/*    btnText="Your current plan"*/}
                         {/*/>*/}
                         <PlanCmp
-                            planName={"Subscription"}
+                            planName={"Pricing"}
                             featureList={[
                                 "Spendify Mobile download",
                                 "Full access to Spendify app features ",

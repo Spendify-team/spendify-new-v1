@@ -32,12 +32,27 @@
 }
 
 .image {
-    width: 100%; /* Adjust width as needed */
+    width: 76%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
-.custom-card {
-    flex-basis: 31.66% !important;
+
+.floating-logo {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 30%; /* Adjust this value to control the distance of the logo from the input card */
 }
 
+.logo-image {
+    position: absolute;
+    top: -15px; /* Adjust this value to fine-tune the logo's position */
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 50%; /* Adjust this value to control how much of the logo floats above the card */
+}
 
+.custom-card {
+    position: relative;
+    z-index: 1; /* Ensure the card is on top of the floating logo */
+}
