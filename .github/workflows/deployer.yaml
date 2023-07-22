@@ -16,9 +16,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/html/app
+            rm node_modules -r
             git stash
             git pull
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            npm install
+            npm install --force
             npm run build
