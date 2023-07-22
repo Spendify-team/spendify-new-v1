@@ -22,15 +22,16 @@ const Subscribe = () => {
             <br/>
             <Container>
 
-                <div style={{display: "flex", justifyContent: "center"}}>
+                <div>
                     <CardGroup className="shadow">
                         <Card className="text-center align-content-center border-0">
                             <Card.Img variant="top"
-                                      src="https://i.im.ge/2023/07/22/5cKXZp.olaback.png"
+                                      src="https://i.im.ge/2023/07/23/5g4P2x.olaback.png"
                                       className="image"/>
                         </Card>
-                        <Card className="text-center align-content-center custom-card border-0">
+                        <Card className="custom-card border-0">
                             <Card.Body className="">
+                                <br/>
                                 <br/>
                                 <br/>
                                 <Card.Text>

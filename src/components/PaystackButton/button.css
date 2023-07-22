@@ -32,7 +32,7 @@
 }
 
 .image {
-    width: 76%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 

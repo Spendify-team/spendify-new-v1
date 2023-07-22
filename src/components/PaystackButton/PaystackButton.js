@@ -130,20 +130,21 @@ const PaystackBuyButton = () => {
                         </Form.Select>
                     </Col>
                 </Form.Group>
-                {config.paymentGt === '1' ?
-                    <PaystackButton
-                        text="Pay Now"
-                        amount={config.type === '12' ? '3000000' : '100000'}
-                        metadata={{type: config.type}}
-                        {...config}
-                        onSuccess={handlePaymentSuccess}
-                        onError={handlePaymentError}
-                        className="paystack-button"
-                    /> :
-                    <button onClick={handleClick} type={'submit'} className={"paystack-button"}>Pay Now
-                    </button>
-                }
-
+                <div className="text-center align-content-center ">
+                    {config.paymentGt === '1' ?
+                        <PaystackButton
+                            text="Pay Now"
+                            amount={config.type === '12' ? '3000000' : '100000'}
+                            metadata={{type: config.type}}
+                            {...config}
+                            onSuccess={handlePaymentSuccess}
+                            onError={handlePaymentError}
+                            className="paystack-button"
+                        /> :
+                        <button onClick={handleClick} type={'submit'} className={"paystack-button"}>Pay Now
+                        </button>
+                    }
+                </div>
             </fieldset>
         </Form>
     )

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mikekorakakis/react-3d-animated-card": "^1.0.12",
     "@stripe/react-stripe-js": "^2.1.1",
     "@stripe/stripe-js": "^1.54.1",
     "@styled-icons/boxicons-logos": "^10.47.0",
