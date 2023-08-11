@@ -3,16 +3,8 @@ import FooterCmp from "../components/FooterCmp/FooterCmp";
 import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
 import PaystackBuyButton from "../components/PaystackButton/PaystackButton";
 import {CardGroup, Container, Card} from "react-bootstrap";
-import {useLocation} from 'react-router-dom';
-
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
 
 const Subscribe = () => {
-    const query = useQuery();
-    const email = query.get('email');
-    const phone = query.get('phone');
 
     return (
         <>

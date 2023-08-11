@@ -8,7 +8,6 @@ import {
     Facebook,
     Linkedin,
     Twitter,
-    Tiktok,
 } from "@styled-icons/boxicons-logos";
 import {Link as LinkR} from "react-router-dom";
 import GooglePlayImage from "../../assets/Play.svg";

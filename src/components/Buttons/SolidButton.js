@@ -131,17 +131,5 @@ function getMobileOperatingSystem() {
     return "unknown";
 }
 
-function DetectAndServe() {
-    let os = getMobileOperatingSystem();
-    if (os == "Android") {
-        window.location.href = "https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite";
-    } else if (os == "iOS") {
-        window.location.href = "https://apps.apple.com/us/app/spendify-mobile/id1629340357";
-    } else if (os == "Windows Phone") {
-        window.location.href = "https://personal.spendify.ca/";
-    } else {
-        window.location.href = "https://personal.spendify.ca/";
-    }
-}
 
 export default SolidButton;

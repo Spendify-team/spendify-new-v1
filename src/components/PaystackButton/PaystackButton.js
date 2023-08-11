@@ -30,11 +30,6 @@ const PaystackBuyButton = () => {
         setConfig((prevConfig) => ({...prevConfig, [name]: value}));
     };
 
-    const isFormValid = () => {
-
-        // Check if all required fields are filled
-        return config.email.trim() !== '' && config.phone.trim() !== '' && config.amount.trim() !== '';
-    };
 
     const handlePaymentSuccess = (response) => {
         // Handle successful payment
@@ -134,7 +129,7 @@ const PaystackBuyButton = () => {
                     {config.paymentGt === '1' ?
                         <PaystackButton
                             text="Pay Now"
-                            amount={config.type === '12' ? '3000000' : '100000'}
+                            amount={config.type === '12' ? '1200000' : '100000'}
                             metadata={{type: config.type}}
                             {...config}
                             onSuccess={handlePaymentSuccess}

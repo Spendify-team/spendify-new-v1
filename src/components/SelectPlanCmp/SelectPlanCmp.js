@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Container} from "react-bootstrap";
 import styled from "styled-components";
 import {CheckboxCircle} from "@styled-icons/remix-line";
@@ -139,7 +139,17 @@ const PlanDisplayWrapper = styled.div`
 
 const SelectPlanCmp = ({bgColor}) => {
     const navigate = useNavigate();
+    const [country, setCountry] = useState('')
 
+    async function fetchCountry() {
+        const response = await (await fetch('https://api.ipify.org/?format=json')).json()
+        const lookup = await (await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_6SXAi2WibgDpaBsfhW1WpYz411rcq&ipAddress=${response.ip}`)).json()
+        setCountry(lookup.location.country)
+    }
+
+    useEffect(() => {
+        fetchCountry();
+    }, [fetchCountry])
     const PlanCmp = ({planName, featureList, btnText}) => {
         return (
             <>
@@ -148,9 +158,9 @@ const SelectPlanCmp = ({bgColor}) => {
                         <PlanName>{planName}</PlanName>
                         {planName !== "Free Plan" && (
                             <Price>
-                                <PriceSpan>$4.99</PriceSpan>{""}
+                                <PriceSpan>{country === 'NG' ? 'NGN1,000' : '$4.99'}</PriceSpan>{""}
                                 <MonthlySpan>/Month</MonthlySpan>{" | "}
-                                <PriceSpan>$50</PriceSpan>{""}
+                                <PriceSpan>{country === 'NG' ? 'NGN12,000' : '$50'}</PriceSpan>{""}
                                 <MonthlySpan>/Year</MonthlySpan>
                             </Price>
                         )}

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import styled from "styled-components";
 import LogoImg from "../../assets/logo.svg";
@@ -14,7 +14,7 @@ import Dropdown from "rc-dropdown";
 import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import "rc-dropdown/assets/index.css";
 import {useNavigate, useLocation} from "react-router-dom";
-import {Link, animateScroll as scroll} from 'react-scroll';
+import {Link} from 'react-scroll';
 
 const activeStyle = {
     color: "rgb(169, 54, 145)"

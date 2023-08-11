@@ -12,7 +12,8 @@ import DropdownCmp from "../DropdownCmp/DropdownCmp";
 import SpendifyAppImg from "../../assets/spendify-app.svg";
 import SpendifyAnalyticsImg from "../../assets/spendify-analytics.svg";
 import {useLocation, useNavigate} from "react-router-dom";
-import {Link, animateScroll as scroll} from 'react-scroll';
+// eslint-disable-next-line
+import {Link} from 'react-scroll';
 
 
 const MenuWrapper = styled.div`
