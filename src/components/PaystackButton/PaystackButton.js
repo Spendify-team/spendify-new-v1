@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {PaystackButton} from 'react-paystack';
 import Form from 'react-bootstrap/Form';
 import {Row, Col} from 'react-bootstrap';
@@ -10,6 +10,19 @@ function useQuery() {
 }
 
 const PaystackBuyButton = () => {
+
+    const [country, setCountry] = useState('')
+
+    async function fetchCountry() {
+        const response = await (await fetch('https://api.ipify.org/?format=json')).json()
+        const lookup = await (await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_6SXAi2WibgDpaBsfhW1WpYz411rcq&ipAddress=${response.ip}`)).json()
+        setCountry(lookup.location.country)
+    }
+
+    useEffect(() => {
+        fetchCountry();
+    }, [fetchCountry])
+
     const apiCall = 'https://api.spendify.ca/api/v1/bot/new';
 
     const query = useQuery();
@@ -120,8 +133,11 @@ const PaystackBuyButton = () => {
                                      onChange={handleInputChange}
                                      required
                         >
-                            <option value={'1'}>Paystack</option>
-                            <option value={'0'}>Stripe</option>
+                            {country === 'NG' ?
+                                <option value={'1'}>Paystack</option>
+                                :
+                                <option value={'0'}>Stripe</option>
+                            }
                         </Form.Select>
                     </Col>
                 </Form.Group>
