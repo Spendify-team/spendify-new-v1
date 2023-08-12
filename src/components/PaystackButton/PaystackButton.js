@@ -120,8 +120,8 @@ const PaystackBuyButton = () => {
                                      onChange={handleInputChange}
                                      required
                         >
-                            <option value={'1'}>Paystack (NGN)</option>
-                            <option value={'0'}>Stripe (USD)</option>
+                            <option value={'1'}>Paystack</option>
+                            <option value={'0'}>Stripe</option>
                         </Form.Select>
                     </Col>
                 </Form.Group>
