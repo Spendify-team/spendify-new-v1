@@ -34,7 +34,7 @@ const PaystackBuyButton = () => {
         email: email ? email : '',
         phone: phone ? phone : '',
         type: '1',
-        paymentGt: '1',
+        paymentGt: country === 'NG' ? '1' : '0',
         publicKey: 'pk_live_24e56df86f6a8c8789ebbfa5c93cd21e8f4c1b92',
     });
 
