@@ -4,7 +4,7 @@ import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
 import PaystackBuyButton from "../components/PaystackButton/PaystackButton";
 import {CardGroup, Container, Card} from "react-bootstrap";
 
-const Subscribe = () => {
+const Subscribe = ({country}) => {
 
     return (
         <>
@@ -27,7 +27,7 @@ const Subscribe = () => {
                                 <br/>
                                 <br/>
                                 <Card.Text>
-                                    <PaystackBuyButton/>
+                                    <PaystackBuyButton country={country}/>
                                 </Card.Text>
                             </Card.Body>
                             <br/>

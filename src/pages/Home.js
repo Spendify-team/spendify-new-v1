@@ -10,7 +10,7 @@ import ReviewCmp from "../components/ReviewCmp/ReviewCmp";
 import NavbarCmp from "../components/NavbarCmp/NavbarCmp";
 import { Element } from 'react-scroll';
 
-const Home = () => {
+const Home = ({country}) => {
   return (
     <>
       <NavbarCmp />
@@ -30,7 +30,7 @@ const Home = () => {
         imgAlt="Money manager"
         imgSrc={SpendifyMobileImg}
       />
-      <SelectPlanCmp bgColor="#ffff" />
+      <SelectPlanCmp bgColor="#ffff" country={country} />
 
         <Element name="faq" className="element">
             <FaqSectionCmp bgColor="#ffff" id="faq"/>
