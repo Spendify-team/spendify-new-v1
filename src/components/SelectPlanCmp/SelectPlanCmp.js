@@ -234,13 +234,14 @@ const SelectPlanCmp = ({bgColor, country}) => {
                         {/*    btnText="Your current plan"*/}
                         {/*/>*/}
                         <PlanCmp
-                            planName={"Pricing"}
+                            planName={"Price"}
                             featureList={[
-                                "Spendify Mobile download",
+                                "Spendify app download in all devices",
                                 "Full access to Spendify app features ",
                                 "Full access to AI chat features",
                                 "Full access to Spendify AI features",
-                                "Priority model update to new features"
+                                "Priority model update to new features",
+                                "Finance coach features"
                             ]}
                             btnText="Subscribe"
                         />
