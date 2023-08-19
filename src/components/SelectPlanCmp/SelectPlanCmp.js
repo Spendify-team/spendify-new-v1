@@ -236,7 +236,7 @@ const SelectPlanCmp = ({bgColor, country}) => {
                         <PlanCmp
                             planName={"Price"}
                             featureList={[
-                                "Spendify app download in all devices",
+                                "Spendify app download on all devices",
                                 "Full access to Spendify app features ",
                                 "Full access to AI chat features",
                                 "Full access to Spendify AI features",
