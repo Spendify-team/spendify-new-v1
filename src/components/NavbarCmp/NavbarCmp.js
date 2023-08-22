@@ -293,6 +293,13 @@ const NavbarCmp = ({scrollToSection}) => {
                             >
                                 Terms
                             </MenuLink>
+                            <MenuLink
+                                onClick={() => {
+                                    navigate("/commands");
+                                }}
+                            >
+                                Command Hub
+                            </MenuLink>
                         </GroupLink1>
                     </LogoAndMenuHolder>
                     <MenuAndButtonHolder>

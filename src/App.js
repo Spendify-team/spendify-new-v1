@@ -46,7 +46,7 @@ function App() {
                         <Route path="/policies/privacy" element={<Privacy/>}/>
                         <Route path="/policies/terms" element={<Terms/>}/>
                         <Route path="/faq" element={<Faq/>}/>
-                        <Route path="/how-to" element={<FaqOla/>}/>
+                        <Route path="/commands" element={<FaqOla/>}/>
                         <Route path="/subscribe" element={<Subscribe country={country}/>}/>
                     </Routes>
                 </ScrollToTop>

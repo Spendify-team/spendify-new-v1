@@ -198,6 +198,7 @@ const SideDrawerMobile = ({isOpen, onClose}) => {
                                 <Link to="/faq" onClick={handleMenuClick}>F.A.Q</Link>
                             )}
                         </MenuLink>
+
                         <MenuLink
                             onClick={() => {
                                 navigate("/policies/privacy");
@@ -211,6 +212,13 @@ const SideDrawerMobile = ({isOpen, onClose}) => {
                             }}
                         >
                             Terms
+                        </MenuLink>
+                        <MenuLink
+                            onClick={() => {
+                                navigate("/commands");
+                            }}
+                        >
+                            Command Hub
                         </MenuLink>
                         {/* <MenuLink>Learn</MenuLink> */}
                         <MenuLink style={{color: "#A93691"}}
