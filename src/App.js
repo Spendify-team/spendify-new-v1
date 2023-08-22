@@ -19,6 +19,7 @@ import Terms from "./pages/Terms";
 import Faq from "./pages/Faq";
 import Subscribe from "./pages/Subscribe";
 import {useEffect, useState} from "react";
+import FaqOla from "./pages/FaqOla";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                         <Route path="/policies/privacy" element={<Privacy/>}/>
                         <Route path="/policies/terms" element={<Terms/>}/>
                         <Route path="/faq" element={<Faq/>}/>
+                        <Route path="/how-to" element={<FaqOla/>}/>
                         <Route path="/subscribe" element={<Subscribe country={country}/>}/>
                     </Routes>
                 </ScrollToTop>
