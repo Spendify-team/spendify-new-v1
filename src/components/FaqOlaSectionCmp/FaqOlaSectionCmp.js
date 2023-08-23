@@ -144,7 +144,7 @@ const FaqOlaSectionCmp = ({bgColor}) => {
                     <ContentHolder>
                         <Left>
                             <CountWrapper>
-                                <video autoPlay muted loop className="img">
+                                <video autoPlay muted loop playsInline={true} className="img">
                                     <source
                                         src="https://res.cloudinary.com/dckonxwzh/video/upload/v1692706774/ola_phone_commands_kp7iws_wy6sdg.mp4"
                                         type="video/mp4"/>
