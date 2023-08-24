@@ -16,9 +16,7 @@ import "rc-dropdown/assets/index.css";
 import {useNavigate, useLocation} from "react-router-dom";
 import {Link} from 'react-scroll';
 
-const activeStyle = {
-    color: "rgb(169, 54, 145)"
-};
+
 const NavbarContainer = styled.div`
   background: #fff;
   height: 80px;
@@ -271,7 +269,7 @@ const NavbarCmp = ({scrollToSection}) => {
                                         offset={-50}
                                         spy={true}
                                         exact="true"
-                                        activeClass={activeStyle}
+                                        style={{color: "rgb(15, 23, 42)", textDecoration: "none"}}
                                     >
                                         F.A.Q
                                     </Link>
@@ -312,7 +310,7 @@ const NavbarCmp = ({scrollToSection}) => {
                         <ButtonFlagHolder>
                             <ButtonWrapper>
                                 <SolidButton
-                                    onClick={()=>window.location.href = 'https://link-to.app/WPHJlfutpT'}
+                                    onClick={() => window.location.href = 'https://link-to.app/WPHJlfutpT'}
                                     text={"Download"}
                                     type="submit"
                                     weighty="600"
