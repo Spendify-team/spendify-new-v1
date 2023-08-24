@@ -209,6 +209,7 @@ const PatternBg = styled.img`
 `;
 
 const HeroCmp = () => {
+
     return (
         <ContainerDiv>
             <Wrapper>
@@ -244,12 +245,22 @@ const HeroCmp = () => {
                 <MockupWrapper>
                     <Particle2></Particle2>
                     <PatternBg src={PatternImage} alt="Pattern"/>
-                    <div style={{position: "relative"}}>
-                        <MockupLazyImg
-                            src={SpendifyMockupImage}
-                            alt="Spendify"
-                            effect="blur"
-                        />
+                    <div style={{position: "relative", width:"20em"}}>
+
+                            <video
+                                onLoadedMetadata={(event) => {
+                                    event.target.playbackRate = 2.0;
+                                }}
+                                autoPlay muted loop playsInline={true} style={{width: "inherit"}}>
+                                <source
+                                    src="https://res.cloudinary.com/dckonxwzh/video/upload/v1692706774/ola_phone_commands_kp7iws_wy6sdg.mp4"
+                                    type="video/mp4"/>
+                            </video>
+                        {/*<MockupLazyImg*/}
+                        {/*    src={SpendifyMockupImage}*/}
+                        {/*    alt="Spendify"*/}
+                        {/*    effect="blur"*/}
+                        {/*/>*/}
                         <Feature1Img
                             src={Feature1Image}
                             alt="Personalized insights"
