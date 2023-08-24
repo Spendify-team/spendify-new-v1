@@ -73,7 +73,7 @@ const GroupLink1 = styled.div`
 `;
 
 const MenuLink = styled.p`
-  margin: 0;
+  margin: -3px;
   font-family: "Gilroy600";
   font-size: 16px;
   color: #0f172a;

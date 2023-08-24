@@ -156,7 +156,9 @@ const SpendifyAppHeroCmp = () => {
       <Wrapper>
         <Particle1></Particle1>
         <Heading>
-          Easily budget, track expenses, and control <Span>finances</Span>
+          Easily budget, track expenses,
+          <br/>
+          and control <Span>finances</Span>
         </Heading>
         <Desc>
           We believe that the right step to effective personal finance decisions

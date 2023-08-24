@@ -135,8 +135,9 @@ const FaqOlaSectionCmp = ({bgColor}) => {
             <ContainerDiv bgColor={bgColor} fluid>
                 <Wrapper>
                     <FaqTitle>How to use Spendify AI</FaqTitle>
-                    <FaqDesc>Please note that for Budget, Income, and Expense Tracking, OLA's name must be
-                        called or brought to attention.
+                    <FaqDesc>Please note that for Budget, Income, and Expense Tracking, OLA's name
+                        <br/>
+                        must be called or brought to attention.
                         <br/>
                         <strong style={{color: 'rgb(255, 17, 129)'}}>Note: Other commands coming
                             soon...</strong>
