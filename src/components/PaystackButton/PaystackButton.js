@@ -14,9 +14,9 @@ const PaystackBuyButton = ({country}) => {
 
     async function fetchCountry() {
         const response = await (await fetch('https://api.ipify.org/?format=json')).json()
-        const lookup = await (await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_6SXAi2WibgDpaBsfhW1WpYz411rcq&ipAddress=${response.ip}`)).json()
+        const lookup = await(await fetch(`https://api.ipdata.co/${response.ip}?api-key=598258db594c7e41437bea7c913a1aa92e1e82c07932e9be261a2bd8&fields=ip,is_eu,city,region,region_code,country_name,country_code,continent_name,continent_code,latitude,longitude,postal,calling_code,flag,emoji_flag,emoji_unicode`)).json()
         if (!!country) {
-            setCountry(lookup.location.country)
+            setCountry(lookup.country_code)
             country = countryMain;
         }
     }
