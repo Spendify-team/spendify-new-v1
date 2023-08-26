@@ -102,6 +102,7 @@ const Feature1Img = styled.img`
   @media only screen and (max-width: 599px) {
     width: 140px;
     left: -10%;
+    display: none;
   }
 `;
 
@@ -119,6 +120,7 @@ const Feature2Img = styled.img`
     width: 140px;
     right: -10%;
     top: 25%;
+    display: none;
   }
 
   @media only screen and (max-width: 325px) {
@@ -142,6 +144,7 @@ const Feature3Img = styled.img`
     width: 120px;
     right: -10%;
     bottom: 25%;
+    display: none;
   }
 
   @media only screen and (max-width: 325px) {
