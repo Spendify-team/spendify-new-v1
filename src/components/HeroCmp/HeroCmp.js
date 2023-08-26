@@ -1,9 +1,9 @@
 import React from "react";
 import {Container} from "react-bootstrap";
-import {LazyLoadImage} from "react-lazy-load-image-component";
+// import {LazyLoadImage} from "react-lazy-load-image-component";
 import styled from "styled-components";
 import SolidButton from "../Buttons/SolidButton";
-import SpendifyMockupImage from "../../assets/spendify-mockup.svg";
+// import SpendifyMockupImage from "../../assets/spendify-mockup.svg";
 import Feature1Image from "../../assets/feature-1.svg";
 import Feature2Image from "../../assets/feature-2.svg";
 import Feature3Image from "../../assets/feature-3.svg";
@@ -87,7 +87,7 @@ const MockupWrapper = styled.div`
   position: relative;
 `;
 
-const MockupLazyImg = styled(LazyLoadImage)``;
+// const MockupLazyImg = styled(LazyLoadImage)``;
 
 const Feature1Img = styled.img`
   position: absolute;
@@ -255,7 +255,7 @@ const HeroCmp = () => {
                                 }}
                                 autoPlay muted loop playsInline={true} style={{width: "inherit"}}>
                                 <source
-                                    src="https://res.cloudinary.com/dckonxwzh/video/upload/v1692706774/ola_phone_commands_kp7iws_wy6sdg.mp4"
+                                    src="https://res.cloudinary.com/dckonxwzh/video/upload/v1693062671/Ola_Home_Screen_fedvd9.mp4"
                                     type="video/mp4"/>
                             </video>
                         {/*<MockupLazyImg*/}
