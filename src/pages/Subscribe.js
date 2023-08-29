@@ -31,7 +31,7 @@ const Subscribe = ({country}) => {
                         <Card className="text-center align-content-center border-0">
                             <Card.Img variant="top"
                                       src="https://i.im.ge/2023/07/23/5g4P2x.olaback.png"
-                                      lazy
+                                      loading="lazy"
                                       className="image"/>
                         </Card>
                         <Card className="custom-card border-0">
