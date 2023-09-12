@@ -30,7 +30,7 @@ const Home = ({country}) => {
         imgAlt="Money manager"
         imgSrc={SpendifyMobileImg}
       />
-      <SelectPlanCmp bgColor="#ffff" country={country} />
+      {/*<SelectPlanCmp bgColor="#ffff" country={country} />*/}
 
         <Element name="faq" className="element">
             <FaqSectionCmp bgColor="#ffff" id="faq"/>
