@@ -229,14 +229,14 @@ function FooterCmp() {
                                     </IconContainer>
                                     <IconContainer
                                         onClick={() => {
-                                            openLink("#");
+                                            openLink("https://web.facebook.com/spendify.ng");
                                         }}
                                     >
                                         <Facebook size={18} color="#fff"/>
                                     </IconContainer>
                                     <IconContainer
                                         onClick={() => {
-                                            openLink("https://twitter.com/spendify_ng");
+                                            openLink("https://twitter.com/myspendify");
                                         }}
                                     >
                                         <Twitter size={18} color="#fff"/>
