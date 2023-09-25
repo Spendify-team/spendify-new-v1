@@ -1,14 +1,14 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import styled from "styled-components";
 import CounterCmp from "../CounterCmp/CounterCmp";
 import LineCmp from "../LineCmp/LineCmp";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel,
 } from "react-accessible-accordion";
 
 const ContainerDiv = styled(Container)`
@@ -118,10 +118,10 @@ const Right = styled.div`
   }
 
   &.right-wrapper
-    .spendify-accordion
-    .accordion__item
-    .accordion__heading
-    .accordion__button {
+  .spendify-accordion
+  .accordion__item
+  .accordion__heading
+  .accordion__button {
     font-family: "Gilroy700";
     font-size: 18px;
     color: #0f172a;
@@ -138,83 +138,83 @@ const Right = styled.div`
   }
 `;
 
-const FaqSectionCmp = ({ bgColor }) => {
-  return (
-    <>
-      <ContainerDiv bgColor={bgColor} fluid>
-        <Wrapper>
-          <ContentHolder>
-            <Left>
-              <FaqTitle>Frequently asked questions</FaqTitle>
-              <FaqDesc>Most Asked Question about Spendify.</FaqDesc>
-              <CountWrapper>
-                <EachCounterWraper>
-                  <CounterCmp
-                    suffix="K+"
-                    textColor={"#5E075F"}
-                    count={8}
-                    duration={8}
-                  />
-                  <SmallCounterText>Trusted Users</SmallCounterText>
-                </EachCounterWraper>
-                <LineCmp color="#042552" width="50px" rotation="90deg" />
-                <EachCounterWraper>
-                  <CounterCmp
-                    suffix="+"
-                    textColor={"#FF1181"}
-                    count={100}
-                    duration={6}
-                  />
-                  <SmallCounterText>5 Star Ratings</SmallCounterText>
-                </EachCounterWraper>
-              </CountWrapper>
-            </Left>
-            <Right className="right-wrapper">
-              <Accordion
-                className="spendify-accordion"
-                preExpanded={[0]}
-                // onChange={(uuid) => {
-                //   setUuid(uuid[0]);
-                // }}
-              >
-                {[
-                  {
-                    question: "Why do I need Spendify Mobile App?",
-                    answer:
-                      "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you to make simple and effective financial decisions.",
-                  },
-                  {
-                    question: "How do I start using OLA?",
-                    answer:
-                      "To begin using the OLA, all you need to do is open the chat interface and start typing your questions. The chatbot will provide you with relevant information and suggestions.",
-                  },
-                  {
-                    question:
-                      "How easily can I recover my lost information or data?",
-                    answer:
-                      "To access your information and continue using Spendify, simply log in with your details on the Spendify web version.",
-                  },
-                ].map((v, i) => {
-                  return (
-                    <AccordionItem uuid={i}>
-                      <AccordionItemHeading>
-                        <AccordionItemButton>
-                          Q. {v.question}
-                        </AccordionItemButton>
-                      </AccordionItemHeading>
-                      <AccordionItemPanel>
-                        <p>{v.answer}</p>
-                      </AccordionItemPanel>
-                    </AccordionItem>
-                  );
-                })}
-              </Accordion>
-            </Right>
-          </ContentHolder>
-        </Wrapper>
-      </ContainerDiv>
-    </>
-  );
+const FaqSectionCmp = ({bgColor}) => {
+    return (
+        <>
+            <ContainerDiv bgColor={bgColor} fluid>
+                <Wrapper>
+                    <ContentHolder>
+                        <Left>
+                            <FaqTitle>Frequently asked questions</FaqTitle>
+                            <FaqDesc>Most Asked Question about Spendify.</FaqDesc>
+                            <Accordion
+                                className="spendify-accordion"
+                                preExpanded={[0]}
+                                // onChange={(uuid) => {
+                                //   setUuid(uuid[0]);
+                                // }}
+                            >
+                                {[
+                                    {
+                                        question: "Why do I need Spendify Mobile App?",
+                                        answer:
+                                            "Our finance management app focuses on guiding you to make better use of your money. It analyses users’ financial situation based on available personal financial transactions information that you stored manually, automatically through our AI (OLA)  integrated on your WhatsApp mobile phone. We provide AI-based options for you to make simple and effective financial decisions.",
+                                    },
+                                    {
+                                        question: "How do I start using OLA?",
+                                        answer:
+                                            "To begin using the OLA, all you need to do is open the chat interface and start typing your questions. The chatbot will provide you with relevant information and suggestions.",
+                                    },
+                                    {
+                                        question:
+                                            "How easily can I recover my lost information or data?",
+                                        answer:
+                                            "To access your information and continue using Spendify, simply log in with your details on the Spendify web version.",
+                                    },
+                                ].map((v, i) => {
+                                    return (
+                                        <AccordionItem uuid={i}>
+                                            <AccordionItemHeading>
+                                                <AccordionItemButton>
+                                                    Q. {v.question}
+                                                </AccordionItemButton>
+                                            </AccordionItemHeading>
+                                            <AccordionItemPanel>
+                                                <p>{v.answer}</p>
+                                            </AccordionItemPanel>
+                                        </AccordionItem>
+                                    );
+                                })}
+                            </Accordion>
+                        </Left>
+                        <Right className="right-wrapper">
+                            <CountWrapper>
+                                <EachCounterWraper>
+                                    <CounterCmp
+                                        suffix="K+"
+                                        textColor={"#5E075F"}
+                                        count={8}
+                                        duration={8}
+                                    />
+                                    <SmallCounterText>Trusted Users</SmallCounterText>
+                                </EachCounterWraper>
+                                <LineCmp color="#042552" width="50px" rotation="90deg"/>
+                                <EachCounterWraper>
+                                    <CounterCmp
+                                        suffix="+"
+                                        textColor={"#FF1181"}
+                                        count={100}
+                                        duration={6}
+                                    />
+                                    <SmallCounterText>5 Star Ratings</SmallCounterText>
+                                </EachCounterWraper>
+                            </CountWrapper>
+                        </Right>
+                    </ContentHolder>
+                </Wrapper>
+            </ContainerDiv>
+        </>
+    );
 };
 
 export default FaqSectionCmp;

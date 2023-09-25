@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0be4f988.css",
-    "main.js": "/static/js/main.fa05aeb6.js",
+    "main.js": "/static/js/main.a48dbe6c.js",
     "static/media/SpendifyAppHeroImg.svg": "/static/media/SpendifyAppHeroImg.dc0cf3625d40f461cda5cf7aa008d377.svg",
     "static/media/03.png": "/static/media/03.a213d3e280c48af3ed08.png",
     "static/media/cta-mockup.svg": "/static/media/cta-mockup.07bb35cba3a0290bd6e164b271205616.svg",
@@ -42,10 +42,10 @@
     "static/media/cta-svg.svg": "/static/media/cta-svg.158d3c946ca3943e0f5e6fe777881b8d.svg",
     "static/media/vertical-arrow.svg": "/static/media/vertical-arrow.33f161685397c90d1718cd8688bde317.svg",
     "main.0be4f988.css.map": "/static/css/main.0be4f988.css.map",
-    "main.fa05aeb6.js.map": "/static/js/main.fa05aeb6.js.map"
+    "main.a48dbe6c.js.map": "/static/js/main.a48dbe6c.js.map"
   },
   "entrypoints": [
     "static/css/main.0be4f988.css",
-    "static/js/main.fa05aeb6.js"
+    "static/js/main.a48dbe6c.js"
   ]
 }

@@ -20,6 +20,7 @@ import Faq from "./pages/Faq";
 import Subscribe from "./pages/Subscribe";
 import {useEffect, useState} from "react";
 import FaqOla from "./pages/FaqOla";
+import store from "store-js";
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
 // eslint-disable-next-line
     async function fetchCountry() {
         const response = await (await fetch('https://api.ipify.org/?format=json')).json()
-        const lookup = await(await fetch(`https://api.ipdata.co/${response.ip}?api-key=598258db594c7e41437bea7c913a1aa92e1e82c07932e9be261a2bd8&fields=ip,is_eu,city,region,region_code,country_name,country_code,continent_name,continent_code,latitude,longitude,postal,calling_code,flag,emoji_flag,emoji_unicode`)).json()
+        const lookup = await (await fetch(`https://api.ipdata.co/${response.ip}?api-key=598258db594c7e41437bea7c913a1aa92e1e82c07932e9be261a2bd8&fields=ip,is_eu,city,region,region_code,country_name,country_code,continent_name,continent_code,latitude,longitude,postal,calling_code,flag,emoji_flag,emoji_unicode`)).json()
         setCountry(lookup.country_code)
     }
 
