@@ -20,7 +20,6 @@ import Faq from "./pages/Faq";
 import Subscribe from "./pages/Subscribe";
 import {useEffect, useState} from "react";
 import FaqOla from "./pages/FaqOla";
-import store from "store-js";
 
 
 function App() {
