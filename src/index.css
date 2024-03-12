@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "Gilroy900";
+  font-weight: 900;
+  src: local("Gilroy-Black"),
+    url(./assets/fonts/gilroy/Gilroy-Black.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy700";
+  font-weight: 700;
+  src: local("Gilroy-Bold"),
+    url(./assets/fonts/gilroy/Gilroy-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy600";
+  font-weight: 600;
+  src: local("Gilroy-SemiBold"),
+    url(./assets/fonts/gilroy/Gilroy-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy500";
+  font-weight: 500;
+  src: local("Gilroy-Medium"),
+    url(./assets/fonts/gilroy/Gilroy-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy400";
+  font-weight: 400;
+  src: local("Gilroy-Regular"),
+    url(./assets/fonts/gilroy/Gilroy-Regular.ttf) format("truetype");
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overflow: hidden;
+}
+
+body {
+  font-family: "Gilroy", sans-serif;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+.herosection {
+  margin-top: 90px;
+}
+
+.userReview > .slick-list {
+  padding: 50px 16px;
+}
+
+.userReview > .slick-dots {
+  bottom: -20px;
+}
+
+.userReview > .slick-dots li {
+  margin: 0 8px;
+}
+
+.userReview > .slick-dots li button:before {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: #ebebeb;
+  border: none;
+  cursor: pointer;
+}
+
+.userReview > .slick-dots li.slick-active button:before {
+  color: #a93691;
+  opacity: 1;
+}
+
+.experienceBg {
+  background-image: url("/src/assets/img/BgExperience.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.heroBg {
+  background-image: url("/src/assets/img/HeroBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .heroBg {
+    height: 100%;
+  }
+}
+
+.appFeatureSection {
+  min-width: 100vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.appFeature > .slick-list {
+  margin: 55px 0 55px;
+}
+
+.appFeature .slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* .slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+} */
+
+.appFeature > .slick-slide:nth-child(5) {
+  display: flex;
+  justify-content: end;
+}
+
+.appFeature > .slick-dots {
+  bottom: -50px;
+}
+
+.appFeature > .slick-dots li {
+  margin: 0 8px;
+}
+
+.appFeature > .slick-dots li button:before {
+  font-size: 16px;
+  width: 45px;
+  height: 8px;
+  border-radius: 50%;
+  color: #ebebeb;
+  border: none;
+  cursor: pointer;
+}
+
+.appFeature > .slick-dots li.slick-active button:before {
+  color: #a93691;
+  width: 45px;
+  opacity: 1;
+}
