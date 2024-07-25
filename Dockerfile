@@ -21,7 +21,7 @@ ARG BUILD_DIRECTORY="dist"
 
 COPY --from=builder /app/${BUILD_DIRECTORY} /usr/share/nginx/html
 # Copying our nginx.conf
-COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/nginx.conf /etc/nginx/conf.d
 
 # Modify nginx file permissions
 RUN chown -R nginx:nginx /var/cache/nginx && \
