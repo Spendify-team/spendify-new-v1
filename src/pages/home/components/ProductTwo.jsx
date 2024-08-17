@@ -8,7 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import Girl from "../../../assets/img/girl.png";
+import Girl from "../../../assets/img/boy.png";
 import IphoneGroup from "../../../assets/img/IphoneGroup.png";
 import LearnMore from "../../../assets/icon/LearnMore.svg";
 import { Link } from "react-router-dom";

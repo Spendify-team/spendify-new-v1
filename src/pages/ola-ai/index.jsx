@@ -10,7 +10,7 @@ const OlaAi = () => {
     <main>
       <Header />
       <HeroSection />
-      <MoneyManagerSummary />
+      {/* <MoneyManagerSummary /> */}
       <MoneyManager />
       <Experience />
       <Footer />

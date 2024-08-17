@@ -91,7 +91,7 @@ const Footer = () => {
                             fontSize={16}
                             mb="20px"
                         >
-                            About us
+                            Products
                         </Heading>
                         <VStack
                             spacing={13}
@@ -101,8 +101,12 @@ const Footer = () => {
                             color="darkSlateBlue"
                             alignItems="flex-start"
                         >
-                            <Link to="/spendify-app">Spendify App</Link>
-                            <Link to="/spendify-analytics">Spendify Analytics</Link>
+                            <Link to="/ola-ai">Spendify AI OLA</Link>
+                            <Link to="/spendify-tracker">Tracker</Link>
+                            <Link to="/spendify-news">Finance news</Link>
+                            <Link to="/spendify-insights">Insights</Link>
+                            <Link to="/analysis">Analytics</Link>
+                            <Link to="/spendify-101">Spendify 101</Link>
                         </VStack>
                     </Box>
                     <Box>
