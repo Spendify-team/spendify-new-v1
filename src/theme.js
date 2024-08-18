@@ -34,6 +34,11 @@ export const theme = extendTheme({
     analyticsBorder: "rgba(196, 215, 233, 0.70)",
     neutralGray50: "#F8FAFC",
     stepsBg: "#FFFAFE",
+    lightGray: "#F0F2F5",
+    lightGray00: "#D3D5D7",
+    lightGray01: "#F9F9F9",
+    lightGray02: "#f2f2f2",
+    veryDarkGray: "#363F52"
   },
   fontWeights: {
     normal: 400,

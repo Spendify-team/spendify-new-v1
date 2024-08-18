@@ -15,6 +15,7 @@ import {
     MenuButton,
     MenuItem,
     MenuList,
+    SimpleGrid,
     Text,
     UnorderedList,
     VStack,
@@ -29,11 +30,13 @@ import Chart from "../../assets/icon/Chart.svg";
 import {Link, useLocation} from "react-router-dom";
 import HamburgerIcon from "../../assets/icon/HamburgerIcon";
 import {useState} from "react";
+import { navItems } from "../../utils/constants";
 
 const Header = () => {
     const [dropdown, setDropdown] = useState(false);
     const location = useLocation();
     const {isOpen, onOpen, onClose} = useDisclosure();
+    const notWhiteBgRoute = ["/", "/spendify-insights", "/spendify-news", "/spendify-101", "/blog", "/spendify-tracker"]
     const [placement] = useState("left");
     const download = () => {
         const userAgent = navigator.userAgent.toLowerCase();
@@ -54,7 +57,7 @@ const Header = () => {
             <Box
                 borderBottom="1px solid"
                 borderColor="border"
-                bgColor={location.pathname === "/" ? "background" : "white"}
+                bgColor={notWhiteBgRoute.includes(location.pathname) ? "background" : "white"}
                 position="fixed"
                 minW="100vw"
                 zIndex={99}
@@ -84,63 +87,41 @@ const Header = () => {
                                             <Image src={DropDown} alt="dropdown"/>
                                         </HStack>
                                     </MenuButton>
-                                    <MenuList>
-                                        <MenuItem
+                                    <MenuList border="6px solid" borderColor="lightGray02" py={1}>
+                                        <SimpleGrid columns={{ base: 1, md: 2 }} p={3} spacing={2}>
+                                            {navItems.map((item, index) => (
+                                            <MenuItem
+                                            key={index}
+                                            borderRadius={"5px"}
                                             _hover={{
-                                                bgColor: "bgFinanceCompanion",
+                                                bgColor: "lightGray01",
                                                 color: "secondaryColor",
                                             }}
-                                        >
-                                            <Link to="/ola-ai">
-                                                <HStack
-                                                    color="neutralGray900"
-                                                    fontWeight="semibold"
-                                                    spacing="10px"
-                                                >
-                                                    <Image src={UserProfile} alt="ola ai"/>
-                                                    <Text>OLA AI</Text>
-                                                </HStack>
-                                            </Link>
-                                        </MenuItem>
-
-                                        <MenuItem
-                                            _hover={{
-                                                bgColor: "bgFinanceCompanion",
-                                                color: "secondaryColor",
-                                            }}
-                                        >
-                                            <Link to="/spendify-app">
-                                                <HStack
-                                                    color="neutralGray900"
-                                                    fontWeight="semibold"
-                                                    spacing="10px"
-                                                >
-                                                    <Image src={UserProfile} alt="spendify app"/>
-                                                    <Text>Spendify App</Text>
-                                                </HStack>
-                                            </Link>
-                                        </MenuItem>
-                                        <MenuItem
-                                            _hover={{
-                                                bgColor: "bgFinanceCompanion",
-                                                color: "secondaryColor",
-                                            }}
-                                        >
-                                            <Link to="/spendify-analytics">
-                                                <HStack
-                                                    color="neutralGray900"
-                                                    fontWeight="semibold"
-                                                    spacing="10px"
-                                                >
-                                                    <Image src={Chart} alt="spendify analytics"/>
-                                                    <Text>Spendify Analytics</Text>
-                                                </HStack>
-                                            </Link>
-                                        </MenuItem>
+                                            >
+                                                <Link to={item.to}>
+                                                    <VStack >
+                                                        <Container p={0}>
+                                                            <Text 
+                                                            color="neutralGray900"
+                                                            fontFamily={"Gilroy700"} 
+                                                            fontSize={14} 
+                                                            fontWeight={900}>{item.name}</Text>
+                                                        </Container>
+                                                        <Container p={0} mt={-2}>
+                                                            <Text color="lightGray00" fontSize={[10, 12]} fontWeight="extrabold">{item.subText}</Text>
+                                                        </Container>
+                                                    </VStack>
+                                                </Link>
+                                            </MenuItem>
+                                            ))}
+                                        </SimpleGrid>
                                     </MenuList>
                                 </Menu>
                                 <Link to="/faq">
                                     <Box px={5}>F.A.Q</Box>
+                                </Link>
+                                <Link to="/blog">
+                                    <Box px={5}>Blog</Box>
                                 </Link>
                             </HStack>
                         </Box>
@@ -230,69 +211,27 @@ const Header = () => {
                                                 {dropdown && (
                                                     <VStack w="100%" textAlign="center">
                                                         <UnorderedList spacing={5} listStyleType="none">
+                                                            {navItems.map((item, index) => (
                                                             <ListItem
+                                                                key={index}
                                                                 p={2}
                                                                 _hover={{
                                                                     bgColor: "bgFinanceCompanion",
                                                                     color: "secondaryColor",
                                                                 }}
                                                             >
-                                                                <Link to="/ola-ai">
+                                                                <Link to={item.to}>
                                                                     <HStack
                                                                         color="neutralGray900"
                                                                         fontWeight={600}
                                                                         fontFamily="Gilroy600"
                                                                         spacing="10px"
                                                                     >
-                                                                        <Image src={UserProfile} alt="ola ai"/>
-                                                                        <Text>OLA AI</Text>
+                                                                        <Text>{item.name}</Text>
                                                                     </HStack>
                                                                 </Link>
                                                             </ListItem>
-                                                            <ListItem
-                                                                p={2}
-                                                                _hover={{
-                                                                    bgColor: "bgFinanceCompanion",
-                                                                    color: "secondaryColor",
-                                                                }}
-                                                            >
-                                                                <Link to="/spendify-app">
-                                                                    <HStack
-                                                                        color="neutralGray900"
-                                                                        fontWeight={600}
-                                                                        fontFamily="Gilroy600"
-                                                                        spacing="10px"
-                                                                    >
-                                                                        <Image
-                                                                            src={UserProfile}
-                                                                            alt="spendify app"
-                                                                        />
-                                                                        <Text>Spendify App</Text>
-                                                                    </HStack>
-                                                                </Link>
-                                                            </ListItem>
-                                                            <ListItem
-                                                                p={2}
-                                                                _hover={{
-                                                                    bgColor: "bgFinanceCompanion",
-                                                                    color: "secondaryColor",
-                                                                }}
-                                                            >
-                                                                <Link to="/spendify-analytics">
-                                                                    <HStack
-                                                                        color="neutralGray900"
-                                                                        fontWeight={600}
-                                                                        fontFamily="Gilroy600"
-                                                                        spacing="10px"
-                                                                    >
-                                                                        <Image
-                                                                            src={Chart}
-                                                                            alt="spendify analytics"
-                                                                        />
-                                                                        <Text>Spendify Analytics</Text>
-                                                                    </HStack>
-                                                                </Link>
-                                                            </ListItem>
+                                                            ))}
                                                         </UnorderedList>
                                                     </VStack>
                                                 )}
