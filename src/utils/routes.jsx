@@ -11,6 +11,7 @@ import {
   Blog
 } from "../pages";
 import { BlogDetail } from "../pages/blog/BlogDetail.jsx";
+import FaqPage from "../pages/faq/index.jsx";
 import Privacy from "../pages/privacy/index.jsx";
 import Terms from "../pages/terms/index.jsx";
 
@@ -28,4 +29,5 @@ export const routes = [
   { path: "/analysis", element: <Analysis /> },
   { path: "/blog", element: <Blog /> },
   { path: "/blog/:id", element: <BlogDetail /> },
+  { path: "/faq", element: <FaqPage /> },
 ];
