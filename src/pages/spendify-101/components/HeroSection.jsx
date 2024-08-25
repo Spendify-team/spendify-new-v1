@@ -1,5 +1,6 @@
 import { Box, Button, Center, Container, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
 import React from 'react'
+import { download } from '../../../utils/constants';
 
 const HeroSection = () => {
   return (
@@ -53,6 +54,7 @@ const HeroSection = () => {
               fontFamily="Gilroy700"
               fontSize={18}
               data-aos="fade-right"
+              onClick={download}
             >
               Learn now
             </Button>

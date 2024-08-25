@@ -30,3 +30,19 @@ export const navItems = [
         to: "/spendify-101",
     },
 ]
+
+
+export const download = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    let targetUrl;
+
+    if (userAgent.includes('iphone') || userAgent.includes('ipad') || userAgent.includes('macintosh')) {
+        // Redirect for iOS devices
+        targetUrl = 'https://apps.apple.com/us/app/spendify/id1629340357';
+    } else {
+        // Redirect for Android devices
+        targetUrl = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite';
+    }
+    window.open(targetUrl, "_blank")
+}
