@@ -17,7 +17,23 @@ const MoneyManagerSummary = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  const download = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isIphone = /iphone/i.test(navigator.userAgent);
+    const isIpad = /ipad/i.test(navigator.userAgent);
+    const isMacOS = /mac/i.test(navigator.userAgent);
 
+    let targetUrl;
+
+    if (isIphone || isIpad || isMacOS) {
+      // Redirect for iOS devices
+      targetUrl = 'https://apps.apple.com/us/app/spendify/id1629340357';
+    } else {
+      // Redirect for Android devices
+      targetUrl = 'https://play.google.com/store/apps/details?id=com.rscbyte.spendifylite';
+    }
+    window.open(targetUrl, "_blank")
+  }
   return (
     <section>
       <Container size="xl" centerContent py={55}>
@@ -86,6 +102,7 @@ const MoneyManagerSummary = () => {
               fontFamily="Gilroy700"
               fontSize={18}
               data-aos="fade-left"
+              onClick={download}
             >
               Get Started
             </Button>

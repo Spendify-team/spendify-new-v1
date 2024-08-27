@@ -12,6 +12,7 @@ import AllinOne from "../../../assets/img/AllinOne.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import {download} from "../../../utils/constants.jsx";
 
 const MoneyManager = () => {
   useEffect(() => {
@@ -70,6 +71,7 @@ const MoneyManager = () => {
               fontFamily="Gilroy700"
               fontSize={18}
               data-aos="fade-right"
+              onClick={download}
             >
               Get Started
             </Button>

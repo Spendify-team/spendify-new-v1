@@ -12,6 +12,7 @@ import PeriodicReportImg from "../../../assets/img/PeriodicReport.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import {download} from "../../../utils/constants.jsx";
 
 const PeriodicReport = () => {
   useEffect(() => {
@@ -85,6 +86,7 @@ const PeriodicReport = () => {
               fontFamily="Gilroy700"
               fontSize={18}
               data-aos="fade-left"
+              onClick={download}
             >
               Get Started
             </Button>

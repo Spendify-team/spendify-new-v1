@@ -34,10 +34,13 @@ export const navItems = [
 
 export const download = () => {
     const userAgent = navigator.userAgent.toLowerCase();
+    const isIphone = /iphone/i.test(navigator.userAgent);
+    const isIpad = /ipad/i.test(navigator.userAgent);
+    const isMacOS = /mac/i.test(navigator.userAgent);
 
     let targetUrl;
 
-    if (userAgent.includes('iphone') || userAgent.includes('ipad') || userAgent.includes('macintosh')) {
+    if (isIphone || isIpad || isMacOS) {
         // Redirect for iOS devices
         targetUrl = 'https://apps.apple.com/us/app/spendify/id1629340357';
     } else {

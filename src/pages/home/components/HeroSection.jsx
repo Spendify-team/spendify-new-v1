@@ -82,7 +82,7 @@ const HeroSection = () => {
                         fontFamily="Gilroy400"
                         data-aos="fade-up"
                     >
-                        Take charge of your finances at no cost!
+                        Track spending , manage budgets and get insights
                     </Text>
                     <Stack direction={["column", "row"]} spacing={21}>
                         {buttons.map((btn, i) => (
@@ -100,16 +100,16 @@ const HeroSection = () => {
                         ))}
                     </Stack>
                     <Box data-aos="fade-up" maxW={405} w="20em" h="auto">
-                        <video
-                            onLoadedMetadata={(event) => {
-                                event.target.playbackRate = 2.0;
-                            }}
-                            autoPlay muted loop playsInline={true} style={{width: "inherit"}}>
-                            <source
-                                src="https://res.cloudinary.com/dckonxwzh/video/upload/v1710113533/pc6dnu2bnfjdby5eb4yv.mp4"
-                                type="video/mp4"/>
-                        </video>
-                        {/*<Image src={IphoneHero} alt="phone"/>*/}
+                        {/*<video*/}
+                        {/*    onLoadedMetadata={(event) => {*/}
+                        {/*        event.target.playbackRate = 2.0;*/}
+                        {/*    }}*/}
+                        {/*    autoPlay muted loop playsInline={true} style={{width: "inherit"}}>*/}
+                        {/*    <source*/}
+                        {/*        src="https://res.cloudinary.com/dckonxwzh/video/upload/v1710113533/pc6dnu2bnfjdby5eb4yv.mp4"*/}
+                        {/*        type="video/mp4"/>*/}
+                        {/*</video>*/}
+                        <Image src={IphoneHero} alt="phone"/>
                     </Box>
                 </VStack>
             </Container>

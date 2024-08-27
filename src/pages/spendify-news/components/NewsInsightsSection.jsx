@@ -64,8 +64,8 @@ const NewsInsightsSection = () => {
                                         >
                                         Stay informed with global finance news, economic updates , market trends and investments.
                                     </Text>
-                                    <Box data-aos="fade-right" maxW="452px" w="100%" h="auto" mt={[0, 12]}>
-                                        {/* <Image src={SpendifyTracker1} alt="phone img" /> */}
+                                    <Box data-aos="fade-top" maxW="352px" w="100%" margin={"auto"} h="auto">
+                                        <Image src={NewsInsights2} alt="phone img" />
                                     </Box>
                                 </Container>
                             </Box>

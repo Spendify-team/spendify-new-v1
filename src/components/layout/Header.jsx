@@ -30,7 +30,7 @@ import Chart from "../../assets/icon/Chart.svg";
 import {Link, useLocation} from "react-router-dom";
 import HamburgerIcon from "../../assets/icon/HamburgerIcon";
 import {useState} from "react";
-import { navItems } from "../../utils/constants";
+import {navItems} from "../../utils/constants";
 
 const Header = () => {
     const [dropdown, setDropdown] = useState(false);
@@ -40,10 +40,13 @@ const Header = () => {
     const [placement] = useState("left");
     const download = () => {
         const userAgent = navigator.userAgent.toLowerCase();
+        const isIphone = /iphone/i.test(navigator.userAgent);
+        const isIpad = /ipad/i.test(navigator.userAgent);
+        const isMacOS = /mac/i.test(navigator.userAgent);
 
         let targetUrl;
 
-        if (userAgent.includes('iphone') || userAgent.includes('ipad') || userAgent.includes('macintosh')) {
+        if (isIphone || isIpad || isMacOS) {
             // Redirect for iOS devices
             targetUrl = 'https://apps.apple.com/us/app/spendify/id1629340357';
         } else {
@@ -88,31 +91,32 @@ const Header = () => {
                                         </HStack>
                                     </MenuButton>
                                     <MenuList border="6px solid" borderColor="lightGray02" py={1}>
-                                        <SimpleGrid columns={{ base: 1, md: 2 }} p={3} spacing={2}>
+                                        <SimpleGrid columns={{base: 1, md: 2}} p={3} spacing={2}>
                                             {navItems.map((item, index) => (
-                                            <MenuItem
-                                            key={index}
-                                            borderRadius={"5px"}
-                                            _hover={{
-                                                bgColor: "lightGray01",
-                                                color: "secondaryColor",
-                                            }}
-                                            >
-                                                <Link to={item.to}>
-                                                    <VStack >
-                                                        <Container p={0}>
-                                                            <Text 
-                                                            color="neutralGray900"
-                                                            fontFamily={"Gilroy700"} 
-                                                            fontSize={14} 
-                                                            fontWeight={900}>{item.name}</Text>
-                                                        </Container>
-                                                        <Container p={0} mt={-2}>
-                                                            <Text color="lightGray00" fontSize={[10, 12]} fontWeight="extrabold">{item.subText}</Text>
-                                                        </Container>
-                                                    </VStack>
-                                                </Link>
-                                            </MenuItem>
+                                                <MenuItem
+                                                    key={index}
+                                                    borderRadius={"5px"}
+                                                    _hover={{
+                                                        bgColor: "lightGray01",
+                                                        color: "secondaryColor",
+                                                    }}
+                                                >
+                                                    <Link to={item.to}>
+                                                        <VStack>
+                                                            <Container p={0}>
+                                                                <Text
+                                                                    color="neutralGray900"
+                                                                    fontFamily={"Gilroy700"}
+                                                                    fontSize={14}
+                                                                    fontWeight={900}>{item.name}</Text>
+                                                            </Container>
+                                                            <Container p={0} mt={-2}>
+                                                                <Text color="lightGray00" fontSize={[10, 12]}
+                                                                      fontWeight="extrabold">{item.subText}</Text>
+                                                            </Container>
+                                                        </VStack>
+                                                    </Link>
+                                                </MenuItem>
                                             ))}
                                         </SimpleGrid>
                                     </MenuList>
@@ -209,33 +213,34 @@ const Header = () => {
                                                     </HStack>
                                                 </Box>
                                                 {dropdown && (
-                                                    <VStack w="100%" textAlign="center">
+                                                    <VStack w="100%" textAlign="center"
+                                                            backgroundColor={"bgFinanceCompanion"} borderRadius={10}>
                                                         <UnorderedList spacing={5} listStyleType="none">
                                                             {navItems.map((item, index) => (
-                                                            <ListItem
-                                                                key={index}
-                                                                p={2}
-                                                                _hover={{
-                                                                    bgColor: "bgFinanceCompanion",
-                                                                    color: "secondaryColor",
-                                                                }}
-                                                            >
-                                                                <Link to={item.to}>
-                                                                    <HStack
-                                                                        color="neutralGray900"
-                                                                        fontWeight={600}
-                                                                        fontFamily="Gilroy600"
-                                                                        spacing="10px"
-                                                                    >
-                                                                        <Text>{item.name}</Text>
-                                                                    </HStack>
-                                                                </Link>
-                                                            </ListItem>
+                                                                <ListItem
+                                                                    key={index}
+                                                                    p={2}
+                                                                    _hover={{
+                                                                        bgColor: "bgFinanceCompanion",
+                                                                        color: "secondaryColor",
+                                                                    }}
+                                                                >
+                                                                    <Link to={item.to}>
+                                                                        <HStack
+                                                                            color="neutralGray900"
+                                                                            fontWeight={600}
+                                                                            fontFamily="Gilroy600"
+                                                                            spacing="10px"
+                                                                        >
+                                                                            <Text>{item.name}</Text>
+                                                                        </HStack>
+                                                                    </Link>
+                                                                </ListItem>
                                                             ))}
                                                         </UnorderedList>
                                                     </VStack>
                                                 )}
-                                                <Link to="/">
+                                                <Link to="/faq">
                                                     <Text
                                                         color="neutralGray900"
                                                         fontWeight={600}
@@ -246,6 +251,9 @@ const Header = () => {
                                                         F.A.Q
                                                     </Text>
                                                 </Link>
+                                                <Link to="/blog">
+                                                    <Box px={5}>Blog</Box>
+                                                </Link>
                                                 <Link to="/">
                                                     <Box
                                                         color="primaryColor"
@@ -253,6 +261,7 @@ const Header = () => {
                                                         fontFamily="Gilroy600"
                                                         py={3}
                                                         px="18px"
+                                                        onClick={download}
                                                     >
                                                         Sign In
                                                     </Box>
@@ -264,6 +273,7 @@ const Header = () => {
                                                     py={3}
                                                     px="18px"
                                                     w="100%"
+                                                    onClick={download}
                                                 >
                                                     Download
                                                 </Button>

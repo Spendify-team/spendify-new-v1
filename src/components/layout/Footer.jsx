@@ -7,7 +7,7 @@ import {
     Image,
     Stack,
     Text,
-    VStack,
+    VStack, useBreakpointValue,
 } from "@chakra-ui/react";
 import {Link} from "react-router-dom";
 import BrandLogo from "../../assets/img/BrandLogo.png";
@@ -22,6 +22,8 @@ import "aos/dist/aos.css";
 import {useEffect} from "react";
 
 const Footer = () => {
+    const isMobile = useBreakpointValue({base: true, md: false});
+
     const currentYear = new Date().getFullYear();
 
     useEffect(() => {
@@ -77,11 +79,13 @@ const Footer = () => {
                     py={55}
                     spacing={[6, null]}
                 >
-                    <Box w="156px" h="45.8px">
-                        <Link to="/">
-                            <Image src={BrandLogo} alt="logo"/>
-                        </Link>
-                    </Box>
+                    {!isMobile && (
+                        <Box w="156px" h="45.8px" display={["none", "block"]}>
+                            <Link to="/">
+                                <Image src={BrandLogo} alt="logo"/>
+                            </Link>
+                        </Box>
+                    )}
                     <Box>
                         <Heading
                             as="h6"
@@ -161,7 +165,7 @@ const Footer = () => {
                                 </Link>
                             ))}
                         </HStack>
-                        <HStack spacing={21} mt={43}>
+                        <HStack spacing={21} mt={10} display={"grid"}>
                             {buttons.map((btn, i) => (
                                 <Box key={i} cursor="pointer" w={118} h={37}>
                                     <Image src={btn.button} alt={btn.name}
