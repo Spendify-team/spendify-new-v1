@@ -1,38 +1,62 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react';
 import {
     Box,
     Container,
     Heading,
     SimpleGrid,
-    Stack,
-} from '@chakra-ui/react'
-import { ArticleCard } from './ArticleCard'
-import { navItems } from '../../../utils/constants'
+} from '@chakra-ui/react';
+import {ArticleCard} from './ArticleCard';
+
 
 const ArticlesSection = () => {
-  return (
-    <Container h={"100%"} size="xl" py={55}>
-        <Heading
-            fontFamily="Gilroy400"
-            fontSize={[20, null, 25]}
-            fontWeight={400}
-            color="neutralGray900"
-            mt={[4, null, 6]}
-            mb={10}
-            data-aos="fade-up"
-        >
-          ALL ARTICLES  
-        </Heading>
-        <Box>
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} p={0}>
-                {/* TODO: replace navItems with blog array response from endpoint  */}
-                {navItems.map((item, index) => (
-                    <ArticleCard props={item} key={index} />
-                ))}
-            </SimpleGrid>
-        </Box>
-    </Container>
-  )
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const response = await fetch("https://api.spendify.ca/api/v1/admin/blogs");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch blogs data");
+                }
+                const data = await response.json();
+                const filteredBlogs = data.data.filter(blog => blog.status);
+                setBlogs(filteredBlogs);
+            } catch (error) {
+                console.error("Error fetching blogs data:", error);
+            }
+        };
+
+        fetchBlogs();
+    }, []);
+
+    return (
+        <Container h={"100%"} size="xl" py={55}>
+            <Heading
+                fontFamily="Gilroy400"
+                fontSize={[20, null, 25]}
+                fontWeight={400}
+                color="neutralGray900"
+                mt={[4, null, 6]}
+                mb={10}
+                data-aos="fade-up"
+            >
+                ALL ARTICLES
+            </Heading>
+            <Box>
+                <SimpleGrid columns={{base: 1, md: 2, lg: 3}} p={0}>
+                    {blogs.map((blog) => (
+                        <ArticleCard
+                            imgBanner={blog.imgBanner}
+                            link={blog.link}
+                            title={blog.title}
+                            description={blog.description}
+                            key={blog.bid}
+                        />
+                    ))}
+                </SimpleGrid>
+            </Box>
+        </Container>
+    );
 }
 
-export default ArticlesSection
+export default ArticlesSection;
