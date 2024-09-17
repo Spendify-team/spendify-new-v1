@@ -18,7 +18,9 @@ export const ArticleCard = ({imgBanner, link, title, description}) => {
                 <Stack spacing='3'>
                     <Heading fontFamily="Gilroy700" size='md'>
                         {/*<Link to={link}>{title}</Link>*/}
-                        <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                            <span dangerouslySetInnerHTML={{__html: title}}/>
+                        </a>
                     </Heading>
                     <Text fontFamily="Gilroy400" fontWeight={400} dangerouslySetInnerHTML={{__html: description}}/>
                 </Stack>
