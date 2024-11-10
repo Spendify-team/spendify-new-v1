@@ -134,7 +134,7 @@ const Footer = () => {
                         >
                             <Link to="/policies/terms">Terms and conditions</Link>
                             <Link to="/policies/privacy">Privacy</Link>
-                            <Link to="/">Contact us</Link>
+                            <Link to="mailto:info@spendify.ca">Contact us</Link>
                         </VStack>
                     </Box>
                     <Box>

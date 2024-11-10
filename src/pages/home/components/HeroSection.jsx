@@ -82,7 +82,7 @@ const HeroSection = () => {
                         fontFamily="Gilroy400"
                         data-aos="fade-up"
                     >
-                        Track, Measure & Manage
+                        Every Transaction Tells a Story
                     </Text>
                     <Stack direction={["column", "row"]} spacing={21}>
                         {buttons.map((btn, i) => (
