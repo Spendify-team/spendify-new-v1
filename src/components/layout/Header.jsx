@@ -148,16 +148,16 @@ const Header = () => {
                                         </HStack>
                                     </HStack>
                                 </Box>
-                                <Box
-                                    display={["none", null, null, "block"]}
-                                    color="primaryColor"
-                                    fontWeight={600}
-                                    fontFamily="Gilroy600"
-                                    py={3}
-                                    px="18px"
-                                >
-                                    <Link to="" onClick={download}>Sign In</Link>
-                                </Box>
+                                {/*<Box*/}
+                                {/*    display={["none", null, null, "block"]}*/}
+                                {/*    color="primaryColor"*/}
+                                {/*    fontWeight={600}*/}
+                                {/*    fontFamily="Gilroy600"*/}
+                                {/*    py={3}*/}
+                                {/*    px="18px"*/}
+                                {/*>*/}
+                                {/*    <Link to="" onClick={download}>Sign In</Link>*/}
+                                {/*</Box>*/}
                                 <Button
                                     display={["none", null, null, "block"]}
                                     variant="primaryButton"
@@ -254,18 +254,18 @@ const Header = () => {
                                                 <Link to="/blog">
                                                     <Box px={5}>Blog</Box>
                                                 </Link>
-                                                <Link to="/">
-                                                    <Box
-                                                        color="primaryColor"
-                                                        fontWeight={600}
-                                                        fontFamily="Gilroy600"
-                                                        py={3}
-                                                        px="18px"
-                                                        onClick={download}
-                                                    >
-                                                        Sign In
-                                                    </Box>
-                                                </Link>
+                                                {/*<Link to="/">*/}
+                                                {/*    <Box*/}
+                                                {/*        color="primaryColor"*/}
+                                                {/*        fontWeight={600}*/}
+                                                {/*        fontFamily="Gilroy600"*/}
+                                                {/*        py={3}*/}
+                                                {/*        px="18px"*/}
+                                                {/*        onClick={download}*/}
+                                                {/*    >*/}
+                                                {/*        Sign In*/}
+                                                {/*    </Box>*/}
+                                                {/*</Link>*/}
                                                 <Button
                                                     variant="primaryButton"
                                                     fontFamily="Gilroy600"
