@@ -14,10 +14,12 @@ import { BlogDetail } from "../pages/blog/BlogDetail.jsx";
 import FaqPage from "../pages/faq/index.jsx";
 import Privacy from "../pages/privacy/index.jsx";
 import Terms from "../pages/terms/index.jsx";
+import Pricing from "../pages/pricing/index.jsx";
 
 export const routes = [
   { path: "/", element: <HomePage /> },
   { path: "/ola-ai", element: <OlaAi /> },
+  { path: "/pricing", element: <Pricing /> },
   { path: "/policies/privacy", element: <Privacy /> },
   { path: "/policies/terms", element: <Terms /> },
   { path: "/spendify-app", element: <SpendifyApp /> },
