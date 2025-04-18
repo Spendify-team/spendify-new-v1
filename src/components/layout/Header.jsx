@@ -127,6 +127,9 @@ const Header = () => {
                                 <Link to="/blog">
                                     <Box px={5}>Blog</Box>
                                 </Link>
+                                <Link to="/pricing">
+                                    <Box px={5}>Pricing</Box>
+                                </Link>
                             </HStack>
                         </Box>
                         <Box>

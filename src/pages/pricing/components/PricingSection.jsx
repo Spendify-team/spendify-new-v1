@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import GirlBg from "../../../assets/img/girl.png";
 
 // Custom icons
 const CheckIcon = (props) => (
@@ -161,16 +162,16 @@ const PlanCard = ({isBasic, isYearly}) => {
                         </HStack>
                     ))}
                 </VStack>
-                <Button
-                    colorScheme="purple"
-                    fontFamily="Gilroy600"
-                    fontWeight={600}
-                    width="100%"
-                    mt="auto"
-                    borderRadius="md"
-                >
-                    Choose Plan
-                </Button>
+                {/*<Button*/}
+                {/*    colorScheme="purple"*/}
+                {/*    fontFamily="Gilroy600"*/}
+                {/*    fontWeight={600}*/}
+                {/*    width="100%"*/}
+                {/*    mt="auto"*/}
+                {/*    borderRadius="md"*/}
+                {/*>*/}
+                {/*    Choose Plan*/}
+                {/*</Button>*/}
             </VStack>
         </Box>
     );
@@ -297,26 +298,26 @@ const PlanComparison = ({isYearly}) => {
                 <GridItem textAlign="center">
                     <Heading size="lg" color="gray.900" fontWeight={600}>${basicPrice}</Heading>
                     <Text color="gray.500" fontSize="sm" mb={4}>{isYearly ? "Yearly" : "Monthly"}</Text>
-                    <Button
-                        colorScheme="purple"
-                        fontFamily="Gilroy600"
-                        fontWeight={600}
-                        width="100%"
-                    >
-                        Choose Plan
-                    </Button>
+                    {/*<Button*/}
+                    {/*    colorScheme="purple"*/}
+                    {/*    fontFamily="Gilroy600"*/}
+                    {/*    fontWeight={600}*/}
+                    {/*    width="100%"*/}
+                    {/*>*/}
+                    {/*    Choose Plan*/}
+                    {/*</Button>*/}
                 </GridItem>
                 <GridItem textAlign="center">
                     <Heading size="lg" color="gray.900" fontWeight={600}>${premiumPrice}</Heading>
                     <Text color="gray.500" fontSize="sm" mb={4}>{isYearly ? "Yearly" : "Monthly"}</Text>
-                    <Button
-                        colorScheme="purple"
-                        fontFamily="Gilroy600"
-                        fontWeight={600}
-                        width="100%"
-                    >
-                        Choose Plan
-                    </Button>
+                    {/*<Button*/}
+                    {/*    colorScheme="purple"*/}
+                    {/*    fontFamily="Gilroy600"*/}
+                    {/*    fontWeight={600}*/}
+                    {/*    width="100%"*/}
+                    {/*>*/}
+                    {/*    Choose Plan*/}
+                    {/*</Button>*/}
                 </GridItem>
             </Grid>
         </Box>
@@ -326,7 +327,7 @@ const PlanComparison = ({isYearly}) => {
 const PricingHero = () => {
     return (
         <Box
-            bg="purple.500"
+            className="pricingBg"
             color="white"
             p={6}
             borderRadius="lg"
@@ -339,6 +340,26 @@ const PricingHero = () => {
             overflow="hidden"
             boxShadow="md"
         >
+            {/* Background Image */}
+            <Box
+                position="absolute"
+                top="0"
+                left="0"
+                width="100%"
+                height="100%"
+                overflow="hidden"
+                zIndex="0"
+            >
+                <Image
+                    src={GirlBg}
+                    fallbackSrc="https://via.placeholder.com/800x600"
+                    alt="Spendify customer"
+                    objectFit="cover"
+                    height="100%"
+                    width="100%"
+                />
+            </Box>
+
             <Box position="relative" zIndex="1">
                 <Heading as="h2" size="lg" mb={2}>Save More</Heading>
                 <Heading as="h3" size="md" mb={4}>With Good-plans.</Heading>
@@ -356,25 +377,6 @@ const PricingHero = () => {
                 >
                     Learn More
                 </Button>
-            </Box>
-
-            <Box
-                position="absolute"
-                bottom="0"
-                right="0"
-                width="70%"
-                height="70%"
-                overflow="hidden"
-                zIndex="0"
-            >
-                <Image
-                    src="/assets/img/customer.jpg"
-                    fallbackSrc="https://via.placeholder.com/300x300"
-                    alt="Spendify customer"
-                    objectFit="cover"
-                    height="100%"
-                    width="100%"
-                />
             </Box>
         </Box>
     );
