@@ -257,6 +257,8 @@ const Header = () => {
                                                 <Link to="/blog">
                                                     <Box px={5}>Blog</Box>
                                                 </Link>
+
+                                                <Link to="/pricing">Pricing</Link>
                                                 {/*<Link to="/">*/}
                                                 {/*    <Box*/}
                                                 {/*        color="primaryColor"*/}
