@@ -106,19 +106,15 @@ const PricingToggle = ({ isYearly, setIsYearly }) => {
     );
 };
 
-const PlanCard = ({isBasic, isYearly}) => {
-    const title = isBasic ? "Basic Plan" : "Premium Plan";
-    const description = isBasic
-        ? "Perfect for personal finance beginners who want to track and manage their money"
-        : "For power users who need unlimited tracking and seamless bank integration.";
-    // Monthly prices are 1 for Basic and 2 for Premium
-    // Yearly prices are 10 for Basic and 20 for Premium
-    const monthlyPrice = isBasic ? 1 : 2;
-    const yearlyPrice = isBasic ? 10 : 20;
-    const price = isYearly ? yearlyPrice : monthlyPrice;
+const PlanCard = ({planType, isYearly}) => {
+    // Determine plan details based on plan type
+    let title, description, price, features;
 
-    const features = isBasic
-        ? [
+    if (planType === "free") {
+        title = "Free Plan";
+        description = "Perfect for personal finance beginners who want to track and manage their money";
+        price = 0;
+        features = [
             "Spendify 101",
             "Income & Expense Tracker",
             "Spendify Budget",
@@ -127,12 +123,31 @@ const PlanCard = ({isBasic, isYearly}) => {
             "Spendify AI (OLA)",
             "Spendify Wallet",
             "Track up to 10 expense"
-        ]
-        : [
+        ];
+    } else if (planType === "basic") {
+        title = "Basic Plan";
+        description = "Perfect for personal finance beginners who want to track and manage their money";
+        price = isYearly ? 10 : 1;
+        features = [
+            "Spendify 101",
+            "Income & Expense Tracker",
+            "Spendify Budget",
+            "Insights & Reports",
+            "Reminders & News",
+            "Spendify AI (OLA)",
+            "Spendify Wallet",
+            "Unlimited Tracking"
+        ];
+    } else { // premium
+        title = "Premium Plan";
+        description = "For power users who need unlimited tracking and seamless bank integration.";
+        price = isYearly ? 20 : 2;
+        features = [
             "Everything in Basic +",
-            "Unlimited",
+            "Unlimited Tracking",
             "Bank Account Sync"
         ];
+    }
 
     return (
         <Box
@@ -164,7 +179,6 @@ const PlanCard = ({isBasic, isYearly}) => {
                 </VStack>
                 {/*<Button*/}
                 {/*    colorScheme="purple"*/}
-                {/*    fontFamily="Gilroy600"*/}
                 {/*    fontWeight={600}*/}
                 {/*    width="100%"*/}
                 {/*    mt="auto"*/}
@@ -182,73 +196,83 @@ const PlanComparison = ({isYearly}) => {
         {
             name: "Spendify 101",
             desc: "Learn the basics of personal finance",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Income & Expense Tracker",
             desc: "Monitor your earnings and spending",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Spendify Budget",
             desc: "Create and manage budgets",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Insights",
             desc: "Get insights into your spending habits",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Reminders",
             desc: "Set reminders for bill payments and other financial tasks",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "News",
             desc: "Stay up to date with personal finance news",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Spendify AI (OLA)",
             desc: "Get personalized financial tips",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Wallet",
             desc: "Customize your spending categories",
+            free: true,
             basic: true,
             premium: true
         },
         {
             name: "Limit",
             desc: "Track up to 10 expense, income, and budget records",
-            basic: true,
+            free: true,
+            basic: false,
             premium: false
         },
         {
             name: "Unlimited income, expense, and budget tracking",
             desc: "",
-            basic: false,
+            free: false,
+            basic: true,
             premium: true
         },
         {
             name: "Bank Account Sync",
             desc: "Connect your Nigerian bank account for automatic tracking",
+            free: false,
             basic: false,
             premium: true
         },
     ];
 
-    // Monthly prices are 1 for Basic and 2 for Premium
-    // Yearly prices are 10 for Basic and 20 for Premium
+    const freePrice = 0;
     const basicPrice = isYearly ? 10 : 1;
     const premiumPrice = isYearly ? 20 : 2;
 
@@ -256,7 +280,22 @@ const PlanComparison = ({isYearly}) => {
         <Box width="100%" mt={12}>
             <Heading size="md" mb={8} textAlign="center" fontWeight={600}>Compare plans</Heading>
             <Box border="1px solid" borderColor="gray.200" borderRadius="lg" overflow="hidden" mb={8} boxShadow="sm">
-                <Grid templateColumns="repeat(3, 1fr)" gap={0}>
+                <Grid templateColumns="repeat(4, 1fr)" gap={0}>
+                    {/* Table header */}
+                    <GridItem p={4} borderBottom="1px solid" borderRight="1px solid" borderColor="gray.200">
+                        <Text fontWeight="bold">Feature</Text>
+                    </GridItem>
+                    <GridItem p={4} borderBottom="1px solid" borderRight="1px solid" borderColor="gray.200" textAlign="center">
+                        <Text fontWeight="bold">Free Plan</Text>
+                    </GridItem>
+                    <GridItem p={4} borderBottom="1px solid" borderRight="1px solid" borderColor="gray.200" textAlign="center">
+                        <Text fontWeight="bold">Basic Plan</Text>
+                    </GridItem>
+                    <GridItem p={4} borderBottom="1px solid" borderColor="gray.200" textAlign="center">
+                        <Text fontWeight="bold">Premium Plan</Text>
+                    </GridItem>
+
+                    {/* Feature rows */}
                     {features.map((feature, idx) => (
                         <React.Fragment key={`row-${idx}`}>
                             <GridItem
@@ -268,6 +307,16 @@ const PlanComparison = ({isYearly}) => {
                             >
                                 <Text fontWeight="medium">{feature.name}</Text>
                                 {feature.desc && <Text fontSize="sm" color="gray.600">{feature.desc}</Text>}
+                            </GridItem>
+                            <GridItem
+                                p={4}
+                                borderBottom={idx < features.length - 1 ? "1px solid" : "none"}
+                                borderRight="1px solid"
+                                borderColor="gray.200"
+                                textAlign="center"
+                                bg={idx % 2 === 0 ? "gray.50" : "white"}
+                            >
+                                {feature.free && <CircledCheckIcon boxSize={5}/>}
                             </GridItem>
                             <GridItem
                                 p={4}
@@ -293,14 +342,24 @@ const PlanComparison = ({isYearly}) => {
                 </Grid>
             </Box>
 
-            <Grid templateColumns="repeat(3, 1fr)" gap={6} mt={10}>
+            <Grid templateColumns="repeat(4, 1fr)" gap={6} mt={10}>
                 <GridItem></GridItem>
+                <GridItem textAlign="center">
+                    <Heading size="lg" color="gray.900" fontWeight={600}>${freePrice}</Heading>
+                    <Text color="gray.500" fontSize="sm" mb={4}>{isYearly ? "Yearly" : "Monthly"}</Text>
+                    {/*<Button*/}
+                    {/*    colorScheme="purple"*/}
+                    {/*    fontWeight={600}*/}
+                    {/*    width="100%"*/}
+                    {/*>*/}
+                    {/*    Choose Plan*/}
+                    {/*</Button>*/}
+                </GridItem>
                 <GridItem textAlign="center">
                     <Heading size="lg" color="gray.900" fontWeight={600}>${basicPrice}</Heading>
                     <Text color="gray.500" fontSize="sm" mb={4}>{isYearly ? "Yearly" : "Monthly"}</Text>
                     {/*<Button*/}
                     {/*    colorScheme="purple"*/}
-                    {/*    fontFamily="Gilroy600"*/}
                     {/*    fontWeight={600}*/}
                     {/*    width="100%"*/}
                     {/*>*/}
@@ -312,7 +371,6 @@ const PlanComparison = ({isYearly}) => {
                     <Text color="gray.500" fontSize="sm" mb={4}>{isYearly ? "Yearly" : "Monthly"}</Text>
                     {/*<Button*/}
                     {/*    colorScheme="purple"*/}
-                    {/*    fontFamily="Gilroy600"*/}
                     {/*    fontWeight={600}*/}
                     {/*    width="100%"*/}
                     {/*>*/}
@@ -425,22 +483,27 @@ const PricingSection = () => {
                     align="stretch"
                     w="100%"
                 >
-                    <Box flex="0 0 auto" width={{base: "100%", lg: "33.333%"}} data-aos="fade-right"
+                    <Box flex="0 0 auto" width={{base: "100%", lg: "25%"}} data-aos="fade-right"
                          data-aos-duration="500">
                         <PricingHero/>
                     </Box>
 
                     <Flex
                         direction={{base: "column", md: "row", lg: "row"}}
-                        gap={8}
+                        gap={6}
                         align="stretch"
                         flex="1"
+                        wrap={{base: "nowrap", md: "wrap", lg: "nowrap"}}
+                        justify="space-between"
                     >
-                        <Box flex="1" data-aos="fade" data-aos-duration="700" data-aos-delay="100">
-                            <PlanCard isBasic={true} isYearly={isYearly}/>
+                        <Box flex="1" minWidth={{md: "calc(50% - 12px)", lg: "0"}} data-aos="fade" data-aos-duration="700" data-aos-delay="50">
+                            <PlanCard planType="free" isYearly={isYearly}/>
                         </Box>
-                        <Box flex="1" data-aos="fade-left" data-aos-duration="700" data-aos-delay="200">
-                            <PlanCard isBasic={false} isYearly={isYearly}/>
+                        <Box flex="1" minWidth={{md: "calc(50% - 12px)", lg: "0"}} data-aos="fade" data-aos-duration="700" data-aos-delay="150">
+                            <PlanCard planType="basic" isYearly={isYearly}/>
+                        </Box>
+                        <Box flex="1" minWidth={{md: "calc(50% - 12px)", lg: "0"}} data-aos="fade-left" data-aos-duration="700" data-aos-delay="250">
+                            <PlanCard planType="premium" isYearly={isYearly}/>
                         </Box>
                     </Flex>
                 </Flex>
