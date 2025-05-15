@@ -122,7 +122,7 @@ const PlanCard = ({planType, isYearly}) => {
             "Reminders & News",
             "Spendify AI (OLA)",
             "Spendify Wallet",
-            "Track up to 10 expense"
+            "Limited access to Tracker"
         ];
     } else if (planType === "basic") {
         title = "Basic Plan";
@@ -251,7 +251,7 @@ const PlanComparison = ({isYearly}) => {
         },
         {
             name: "Limit",
-            desc: "Track up to 10 expense, income, and budget records",
+            desc: "Limited access to expense, income and budget tracking",
             free: true,
             basic: false,
             premium: false
