@@ -140,7 +140,7 @@ const PlanCard = ({planType, isYearly}) => {
         ];
     } else { // premium
         title = "Premium Plan";
-        description = "For power users who need unlimited tracking and seamless bank integration.";
+        description = "For power users who need unlimited tracking.";
         price = isYearly ? 20 : 2;
         features = [
             "Everything in Basic +",
@@ -261,13 +261,6 @@ const PlanComparison = ({isYearly}) => {
             desc: "",
             free: false,
             basic: true,
-            premium: true
-        },
-        {
-            name: "Bank Account Sync",
-            desc: "Connect your Nigerian bank account for automatic tracking",
-            free: false,
-            basic: false,
             premium: true
         },
     ];
@@ -471,7 +464,7 @@ const PricingSection = () => {
                         mx="auto"
                     >
                         Spendify makes managing your finances easy, whether you're just getting started or
-                        need unlimited tracking and bank sync. Pick a plan that fits your needs:
+                        need unlimited tracking. Pick a plan that fits your needs:
                     </Text>
                 </Box>
 
